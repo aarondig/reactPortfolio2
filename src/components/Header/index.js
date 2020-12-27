@@ -11,6 +11,7 @@ import { MeshMatcapMaterial } from "three";
 
 const textProps = {
   fontSize: 2.5,
+  position: [0,0, -3],
   font: 'https://fonts.gstatic.com/s/syncopate/v12/pe0pMIuPIYBCpEV5eFdKvtKqBP5p.woff'
 }
 
