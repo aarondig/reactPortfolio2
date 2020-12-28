@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect, useMemo } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame, useResource } from "react-three-fiber";
-import { Physics, useSphere } from "use-cannon";
+import { Physics, useBox } from "use-cannon";
 import {
   Text,
   Box,
@@ -15,8 +15,8 @@ import "./style.css";
 import { MeshMatcapMaterial } from "three";
 
 const textProps = {
-  fontSize: 1,
-  position: [0, 0, -2],
+  fontSize: .8,
+  position: [0, 0, 3],
   font:
     "https://fonts.gstatic.com/s/syncopate/v12/pe0pMIuPIYBCpEV5eFdKvtKqBP5p.woff",
 };
@@ -65,12 +65,13 @@ function Mirrors({ envMap }) {
     <>
       <meshLambertMaterial
         ref={sideMaterial}
-        map={thinFilmFresnelMap}
+        // map={thinFilmFresnelMap}
         color={0xaaaaa}
       />
       <meshLambertMaterial
         ref={reflectionMaterial}
-        map={thinFilmFresnelMap}
+        // map={thinFilmFresnelMap}
+        color={0xD5555}
         envMap={envMap}
       />
       {mirrorsData.mirrors.map((mirror, index) => (
@@ -104,6 +105,8 @@ function Mirror({ sideMaterial, reflectionMaterial, args, ...props }) {
 }
 
 function Scene() {
+  const group = useRef();
+  const [ref, api] = useBox(() => ({args: .01, mass: 50}));
   const [renderTarget] = useState(
     new THREE.WebGLCubeRenderTarget(1024, {
       format: THREE.RGBAFormat,
@@ -112,26 +115,42 @@ function Scene() {
   );
   const cubeCamera = useRef();
 
-  useFrame(({ gl, scene }) => {
-    cubeCamera.current.update(gl, scene);
+  // useFrame(({ gl, scene }) => {
+  //   cubeCamera.current.update(gl, scene);
+  // });
+
+  useFrame((state) => {
+    if (Math.sign(state.mouse.y) == -1){
+      ref.current.rotation.set((Math.abs(state.mouse.y) * state.viewport.height)/ 80, (state.mouse.x * state.viewport.width)/ 80, 0);
+    }
+    if (Math.sign(state.mouse.y) == 1){
+      ref.current.rotation.set((-Math.abs(state.mouse.y) * state.viewport.height)/ 80, (state.mouse.x * state.viewport.width)/ 80, 0);
+    }
+    if (Math.sign(state.mouse.y) == 0){
+      ref.current.rotation.set((state.mouse.y * state.viewport.height)/ 80, (state.mouse.x * state.viewport.width)/ 80, 0);
+    }
   });
 
+
+
+
+
   return (
-    <>
+    <group ref={ref}>
       <Octahedron layers={[11]} name="background" args={[20, 4, 4]} position={[0, 0, -5]}>
-          <meshMatcapMaterial side={THREE.BackSide} transparent opacity={0.3} color="#FFFFFF" />
+          <meshMatcapMaterial side={THREE.BackSide} transparent opacity={0.3} color="#FFF" />
       </Octahedron>
       <cubeCamera
         layers={[11]}
         name="cubeCamera"
         ref={cubeCamera}
-        args={[0.1, 100, renderTarget]}
+        args={[.1, 100, renderTarget]}
         position={[0, 0, 5]}
       />
       <Title name="title" position={[0, 0, -10]} />
       <TitleCopies layers={[11]} />
       <Mirrors layers={[0, 11]} envMap={renderTarget.texture} />
-    </>
+    </group>
   );
 }
 
@@ -139,10 +158,13 @@ function Header(props) {
   return (
     <div id="header">
       <Canvas concurrent shadowMap camera={{ position: [0, 0, 20], fov: 50 }}>
+      <color attach="background" args={['#000']} />
         <ambientLight intensity={0.4} />
         {/* <pointLight position={[10, 10, 5]} /> */}
         <OrbitControls />
+        <Physics>
         <Scene />
+        </Physics>
       </Canvas>
     </div>
   );
