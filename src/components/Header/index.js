@@ -12,23 +12,27 @@ import {
   Html,
 } from "@react-three/drei";
 import { mirrorsData } from "./mirrorsData";
-import font from "/Users/Aaron/Desktop/aaronDiggdon/src/fonts/OpenSans-ExtraBold.ttf";
+import font from "../../../src/fonts/Metropolis-ExtraBold.otf";
 import "./style.css";
 
-const textProps = {
-  fontSize: 0.8,
-  position: [0, 0, 3],
-  anchorX: "center",
-  font: font
-    // "https://fonts.gstatic.com/s/syncopate/v12/pe0pMIuPIYBCpEV5eFdKvtKqBP5p.woff",
-  // font: "https://fonts.gstatic.com/s/kanit/v7/nKKU-Go6G5tXcr4WPBWnVac.woff",
-};
 
-function Title({ layers = undefined, ...props }) {
+
+function Title({layers = undefined, titlePosi, ...props}) {
   const group = useRef();
+  // const [titlePosition, setTitlePosition]= useState(3);
+  // setTitlePosition(titlePosi);
   useEffect(() => {
     group.current.lookAt(0, 0, 0);
   }, []);
+  const textProps = {
+    fontSize: 0.8,
+    position: [0, 0, titlePosi],
+    anchorX: "center",
+    font: font,
+      // "https://fonts.gstatic.com/s/syncopate/v12/pe0pMIuPIYBCpEV5eFdKvtKqBP5p.woff",
+    // font: "https://fonts.gstatic.com/s/kanit/v7/nKKU-Go6G5tXcr4WPBWnVac.woff",
+  };
+  console.log(titlePosi)
   return (
     <group {...props} ref={group}>
       <Text
@@ -47,7 +51,7 @@ function Title({ layers = undefined, ...props }) {
 
 function TitleCopies({ layers }) {
   const vertices = useMemo(() => {
-    const y = new THREE.IcosahedronGeometry(8);
+    const y = new THREE.IcosahedronGeometry(6);
     return y.vertices;
   }, []);
 
@@ -128,7 +132,7 @@ function useRenderTarget() {
   return [cubeCamera, renderTarget];
 }
 
-function Scene() {
+function Scene({titlePosi}) {
   const group = useRef();
   const [cubeCamera, renderTarget] = useRenderTarget();
   const [ref, api] = useBox(() => ({ args: 0.01, mass: 50 }));
@@ -156,7 +160,7 @@ function Scene() {
       );
     }
   });
-
+  
   return (
     <group ref={ref}>
       <Octahedron
@@ -179,7 +183,7 @@ function Scene() {
         args={[0.1, 100, renderTarget]}
         position={[0, 0, 5]}
       />
-      <Title name="title" position={[0, 0, -9]} />
+      <Title name="title" position={[0, 0, -9]}  titlePosi={titlePosi}/>
       <TitleCopies layers={[11]} />
       <Mirrors layers={[0, 11]} envMap={renderTarget.texture} />
     </group>
@@ -195,17 +199,21 @@ function Loader() {
   );
 }
 
-function Header(props) {
+function Header({blur, blurValue, titlePosi}) {
+  const style = {
+    filter: "blur("+ blurValue +")",
+  }
+  
   return (
-    <div id="header">
+    <div id="header" style={style}>
       <Canvas concurrent shadowMap camera={{ position: [0, 0, 3], fov: 70 }}>
         <color attach="background" args={["#000"]} />
         <ambientLight intensity={0.4} />
         <Suspense fallback={<Loader />}>
           {/* <pointLight position={[10, 10, 5]} /> */}
-          <OrbitControls />
+          {/* <OrbitControls /> */}
           <Physics>
-            <Scene />
+            <Scene titlePosi={titlePosi} />
           </Physics>
         </Suspense>
       </Canvas>
