@@ -3,6 +3,7 @@ import About from "../About";
 import Header from "../Header"
 import "./style.css";
 import { motion, useViewportScroll } from "framer-motion"
+import {useSpring, a} from "react-spring"
 
 function Landing(props) {
   const { scrollYProgress } = useViewportScroll()
@@ -16,6 +17,9 @@ function Landing(props) {
   // if (progress > .9) {
   //   setBlur(true)
   // }
+
+//   const props = useSpring({ number: 1, from: { number: 0 } })
+// return <animated.span>{props.number}</animated.span>
 
 
     return <div id="landing">

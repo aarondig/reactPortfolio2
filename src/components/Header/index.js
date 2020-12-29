@@ -11,28 +11,28 @@ import {
   useProgress,
   Html,
 } from "@react-three/drei";
+import { animated as a } from "react-spring";
 import { mirrorsData } from "./mirrorsData";
 import font from "../../../src/fonts/Metropolis-ExtraBold.otf";
+import { ThinFilmFresnelMap } from './ThinFilmFresnelMap.js'
 import "./style.css";
 
-
-
-function Title({layers = undefined, titlePosi, ...props}) {
+function Title({ layers = undefined, titlePosi, ...props }) {
   const group = useRef();
-  // const [titlePosition, setTitlePosition]= useState(3);
-  // setTitlePosition(titlePosi);
+  const [event, setEvent] = useState(false);
+  const x = window.matchMedia("(max-width: 650px)");
+  x.addListener(setEvent);
+
   useEffect(() => {
     group.current.lookAt(0, 0, 0);
   }, []);
   const textProps = {
     fontSize: 0.8,
-    position: [0, 0, titlePosi],
     anchorX: "center",
     font: font,
-      // "https://fonts.gstatic.com/s/syncopate/v12/pe0pMIuPIYBCpEV5eFdKvtKqBP5p.woff",
+    // "https://fonts.gstatic.com/s/syncopate/v12/pe0pMIuPIYBCpEV5eFdKvtKqBP5p.woff",
     // font: "https://fonts.gstatic.com/s/kanit/v7/nKKU-Go6G5tXcr4WPBWnVac.woff",
   };
-  console.log(titlePosi)
   return (
     <group {...props} ref={group}>
       <Text
@@ -40,10 +40,13 @@ function Title({layers = undefined, titlePosi, ...props}) {
         depthTest={false}
         material-toneMapped={false}
         material-color="#FFFFFF"
+        position={[x.matches ? 0.5 : 0, 0, titlePosi]}
+        maxWidth={x.matches ? 6 : 12}
+        textAlign={x.matches ? "left" : "center"}
         {...textProps}
         layers={layers}
       >
-        AARONDIGGDON
+        AARON DIGGDON
       </Text>
     </group>
   );
@@ -64,38 +67,10 @@ function TitleCopies({ layers }) {
   );
 }
 
-function Mirrors({ envMap }) {
-  const sideMaterial = useResource();
-  const reflectionMaterial = useResource();
-  return (
-    <>
-      <meshLambertMaterial
-        ref={sideMaterial}
-        // map={thinFilmFresnelMap}
-        color={0xaaaaa}
-      />
-      <meshLambertMaterial
-        ref={reflectionMaterial}
-        // map={thinFilmFresnelMap}
-        color={0xd5555}
-        envMap={envMap}
-      />
-      {mirrorsData.mirrors.map((mirror, index) => (
-        <Mirror
-          key={`mirror-${index}`}
-          {...mirror}
-          sideMaterial={sideMaterial.current}
-          reflectionMaterial={reflectionMaterial.current}
-        />
-      ))}
-    </>
-  );
-}
-
 function Mirror({ sideMaterial, reflectionMaterial, args, ...props }) {
   const ref = useRef();
-
   useFrame(() => {
+    // ref.current.rotation.y += (props.position[2] / 10000);
     ref.current.rotation.y += 0.001;
     ref.current.rotation.z += 0.01;
   });
@@ -117,6 +92,37 @@ function Mirror({ sideMaterial, reflectionMaterial, args, ...props }) {
   );
 }
 
+function Mirrors({ envMap }) {
+  const sideMaterial = useResource();
+  const reflectionMaterial = useResource();
+  const [thinFilmFresnelMap] = useState(new ThinFilmFresnelMap())
+  return (
+    <>
+      <meshLambertMaterial
+        ref={sideMaterial}
+        map={thinFilmFresnelMap}
+        color={0xaaaaa}
+        // color={"#C0C0C0"}
+      />
+      <meshLambertMaterial
+        ref={reflectionMaterial}
+        map={thinFilmFresnelMap}
+        color={0xd5555}
+        // color={"#808080"}
+        envMap={envMap}
+      />
+      {mirrorsData.mirrors.map((mirror, index) => (
+        <Mirror
+          key={`mirror-${index}`}
+          {...mirror}
+          sideMaterial={sideMaterial.current}
+          reflectionMaterial={reflectionMaterial.current}
+        />
+      ))}
+    </>
+  );
+}
+
 function useRenderTarget() {
   const cubeCamera = useRef();
   const [renderTarget] = useState(
@@ -132,7 +138,7 @@ function useRenderTarget() {
   return [cubeCamera, renderTarget];
 }
 
-function Scene({titlePosi}) {
+function Scene({ titlePosi }) {
   const group = useRef();
   const [cubeCamera, renderTarget] = useRenderTarget();
   const [ref, api] = useBox(() => ({ args: 0.01, mass: 50 }));
@@ -160,7 +166,7 @@ function Scene({titlePosi}) {
       );
     }
   });
-  
+
   return (
     <group ref={ref}>
       <Octahedron
@@ -183,7 +189,7 @@ function Scene({titlePosi}) {
         args={[0.1, 100, renderTarget]}
         position={[0, 0, 5]}
       />
-      <Title name="title" position={[0, 0, -9]}  titlePosi={titlePosi}/>
+      <Title name="title" position={[0, 0, -9]} titlePosi={titlePosi} />
       <TitleCopies layers={[11]} />
       <Mirrors layers={[0, 11]} envMap={renderTarget.texture} />
     </group>
@@ -199,18 +205,19 @@ function Loader() {
   );
 }
 
-function Header({blur, blurValue, titlePosi}) {
+function Header({ blur, blurValue, titlePosi }) {
   const style = {
-    filter: "blur("+ blurValue +")",
-  }
-  
+    filter: "blur(" + blurValue + ")",
+    background: "rgba(255, 255, 255,"+ blurValue +")"
+  };
+
   return (
     <div id="header" style={style}>
       <Canvas concurrent shadowMap camera={{ position: [0, 0, 3], fov: 70 }}>
         <color attach="background" args={["#000"]} />
-        <ambientLight intensity={0.4} />
+        <ambientLight intensity={0.2} />
         <Suspense fallback={<Loader />}>
-          {/* <pointLight position={[10, 10, 5]} /> */}
+          <pointLight position={[0, 10, 20]} intensity={2}  />
           {/* <OrbitControls /> */}
           <Physics>
             <Scene titlePosi={titlePosi} />
