@@ -43,7 +43,7 @@ const AnimatedText = animated(Text)
         name="title-text"
         depthTest={false}
         material-toneMapped={false}
-        material-color="#FFFFFF"
+        material-color="#000"
         position={[x.matches ? 0.5 : 0, 0, titlePosi]}
         maxWidth={x.matches ? 6 : 12}
         textAlign={x.matches ? "left" : "center"}
@@ -104,15 +104,16 @@ function Mirrors({ envMap }) {
     <>
       <meshLambertMaterial
         ref={sideMaterial}
-        map={thinFilmFresnelMap}
-        color={0xaaaaa}
-        // color={"#C0C0C0"}
+        // map={thinFilmFresnelMap}
+        // color={0xaaaaa}
+        color={"#C0C0C0"}
       />
       <meshLambertMaterial
         ref={reflectionMaterial}
-        map={thinFilmFresnelMap}
-        color={0xd5555}
+        // map={thinFilmFresnelMap}
+        // color={0xd5555}
         // color={"#808080"}
+        
         envMap={envMap}
       />
       {mirrorsData.mirrors.map((mirror, index) => (
@@ -183,7 +184,7 @@ function Scene({ titlePosi }) {
           side={THREE.BackSide}
           transparent
           opacity={0.3}
-          color="#FFF"
+          color="#FFFFF"
         />
       </Octahedron>
       <cubeCamera
@@ -217,7 +218,7 @@ function Header({ blur, blurValue, titlePosi }) {
   return (
     <div id="header" style={style}>
       <Canvas concurrent shadowMap camera={{ position: [0, 0, 3], fov: 70 }}>
-        <color attach="background" args={["#000"]} />
+        <color attach="background" args={["#fff"]} />
         <ambientLight intensity={0.2} />
         <Suspense fallback={<Loader />}>
           <pointLight position={[0, 10, 20]} intensity={2}  />
