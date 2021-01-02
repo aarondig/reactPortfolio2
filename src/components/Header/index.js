@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useMemo, Suspense } from "react";
+import React, { useRef, useState, useEffect, useMemo, Suspense, useLayoutEffect } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame, useResource } from "react-three-fiber";
 import { Physics, useBox } from "use-cannon";
@@ -11,11 +11,12 @@ import {
   useProgress,
   Html,
 } from "@react-three/drei";
-import { animated as a } from "react-spring";
 import { mirrorsData } from "./mirrorsData";
 import font from "../../../src/fonts/Metropolis-ExtraBold.otf";
 import { ThinFilmFresnelMap } from './ThinFilmFresnelMap.js'
 import "./style.css";
+import {useSpring, a, animated} from "react-spring"
+
 
 function Title({ layers = undefined, titlePosi, ...props }) {
   const group = useRef();
@@ -33,9 +34,12 @@ function Title({ layers = undefined, titlePosi, ...props }) {
     // "https://fonts.gstatic.com/s/syncopate/v12/pe0pMIuPIYBCpEV5eFdKvtKqBP5p.woff",
     // font: "https://fonts.gstatic.com/s/kanit/v7/nKKU-Go6G5tXcr4WPBWnVac.woff",
   };
+
+const AnimatedText = animated(Text)
   return (
     <group {...props} ref={group}>
-      <Text
+      <AnimatedText
+        native
         name="title-text"
         depthTest={false}
         material-toneMapped={false}
@@ -47,7 +51,7 @@ function Title({ layers = undefined, titlePosi, ...props }) {
         layers={layers}
       >
         AARON DIGGDON
-      </Text>
+      </AnimatedText>
     </group>
   );
 }
@@ -57,7 +61,7 @@ function TitleCopies({ layers }) {
     const y = new THREE.IcosahedronGeometry(6);
     return y.vertices;
   }, []);
-
+  const AnimatedTitle = animated(Title);
   return (
     <group name="titleCopies">
       {vertices.map((vertex, i) => (
@@ -166,7 +170,7 @@ function Scene({ titlePosi }) {
       );
     }
   });
-
+  const AnimatedTitle = animated(Title);
   return (
     <group ref={ref}>
       <Octahedron
@@ -189,7 +193,7 @@ function Scene({ titlePosi }) {
         args={[0.1, 100, renderTarget]}
         position={[0, 0, 5]}
       />
-      <Title name="title" position={[0, 0, -9]} titlePosi={titlePosi} />
+      <AnimatedTitle native name="title" titlePosi={titlePosi} />
       <TitleCopies layers={[11]} />
       <Mirrors layers={[0, 11]} envMap={renderTarget.texture} />
     </group>
@@ -208,9 +212,8 @@ function Loader() {
 function Header({ blur, blurValue, titlePosi }) {
   const style = {
     filter: "blur(" + blurValue + ")",
-    background: "rgba(255, 255, 255,"+ blurValue +")"
   };
-
+  
   return (
     <div id="header" style={style}>
       <Canvas concurrent shadowMap camera={{ position: [0, 0, 3], fov: 70 }}>

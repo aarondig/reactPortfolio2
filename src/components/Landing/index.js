@@ -1,33 +1,43 @@
 import React, {useState} from "react";
 import About from "../About";
 import Header from "../Header"
+import ProgressBar from "../ProgressBar"
 import "./style.css";
 import { motion, useViewportScroll } from "framer-motion"
-import {useSpring, a} from "react-spring"
+import {useSpring, a, animated} from "react-spring"
 
-function Landing(props) {
+function Landing() {
   const { scrollYProgress } = useViewportScroll()
   const [progress, setProgress] = useState(0);
   scrollYProgress.onChange(e => setProgress(e));
+  // const progress = useSpring(scrollYProgress, { stiffness: 400, damping: 90 });
   const blurValue = (progress * 10) + "px";
   const num = progress * -6;
-  const titlePosi = 3 + Math.pow(num, 3);
-  const [blur, setBlur] = useState(false);
+  const titlePosi = -6 + (Math.pow(num, 3));
+  const [scroll, setScroll] = useState(false);
   console.log(progress)
   // if (progress > .9) {
   //   setBlur(true)
   // }
 
-//   const props = useSpring({ number: 1, from: { number: 0 } })
-// return <animated.span>{props.number}</animated.span>
 
+  // window.addEventListener('wheel', (e)=>{
+    
+  // })
+  // useLayoutEffect(()=> {
+  //   setScroll(progress);
+  // })
 
+  const props = useSpring({ number: titlePosi, from: { number: 0 } })
+  
+{/* <animated.span>{props.number}</animated.span> */}
+// console.log(titlePosi)
     return <div id="landing">
       
-      <Header blur={blur} blurValue={blurValue} titlePosi={titlePosi} />
-
-      {progress > .9 ? <About/> : <div id="prompt"></div> }
+      <Header blurValue={blurValue} titlePosi={props.number} />
       
+      {progress > .2 ? <About progress={progress}/> : <div id="prompt"></div> }
+      <ProgressBar progress={progress}/>
     </div>;
   }
   

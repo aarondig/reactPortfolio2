@@ -4,3 +4,17 @@
 ::-webkit-scrollbar {
   display: none;
 }
+.container{
+  display: flex;
+  justify-content: space-around;
+}
+.grid{
+  display: grid;
+}
+#test {
+  position: fixed;
+  background: white;
+  color: red;
+  font-size: 40px;
+  z-index: 10000;
+}
