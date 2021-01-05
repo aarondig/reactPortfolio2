@@ -1,5 +1,13 @@
 .App {
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+body {
+  overscroll-behavior-y: none;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -12,7 +20,7 @@
   display: grid;
 }
 #test {
-  position: fixed;
+  /* position: fixed; */
   background: white;
   color: red;
   font-size: 40px;
