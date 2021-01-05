@@ -20,7 +20,7 @@ body {
   display: grid;
 }
 #test {
-  /* position: fixed; */
+  position: fixed;
   background: white;
   color: red;
   font-size: 40px;

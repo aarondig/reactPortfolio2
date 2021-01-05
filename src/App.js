@@ -1,8 +1,10 @@
 import React, { useRef, useEffect } from "react";
 import useWindowSize from "./hooks/windowSize";
 import "./App.css";
+import About from "./components/About";
 import Wrapper from "./components/Wrapper";
 import Landing from "./components/Landing";
+import ProgressBar from "./components/ProgressBar"
 
 function App() {
   const size = useWindowSize();
@@ -50,16 +52,14 @@ function App() {
   };
   return (
     <div ref={app} className="App">
-      
       <Wrapper>
         <div ref={scrollContainer} className="scroll">
-        <Landing />
+        <Landing size={size.width}/>
         <div ref={scrollable}>
-        <div id="test">HI THERE</div>
+        <About/>
         </div>
         </div>
       </Wrapper>
-      
     </div>
   );
 }

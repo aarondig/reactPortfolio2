@@ -16,7 +16,7 @@ function Progress({progress}) {
         <motion.path
           fill="none"
           strokeWidth="5"
-          stroke="white"
+          stroke="#e9322e"
           d="M0,0 V323"
           style={{
             pathLength,

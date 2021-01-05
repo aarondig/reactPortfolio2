@@ -15,10 +15,10 @@ import { OrbitControls } from "@react-three/drei";
 import Model from "../../models/venus.gltf";
 import "./style.css";
 
-function Char() {
-  // const [load, setLoad] = useState(false);
+function Char({size}) {
+
+  const [mobile, setMobile] = useState(false);
   const scene = useLoader(GLTFLoader, Model);
-  // useMemo(() => setLoad(!load))
   console.log(scene);
   const [ref, api] = useBox(() => ({ args: 0.01, mass: 1 }));
   const [hovered, setHovered] = useState(false);
@@ -32,12 +32,11 @@ function Char() {
     // ref.current.rotation.set(0, state.mouse.x * state.viewport.width /80, 0)
     ref.current.rotation.set(
       0,
-      8.5 + (state.mouse.x * state.viewport.width) / 80,
+      8.5 + (state.mouse.x * state.viewport.width) / 50,
       0
     );
     ref.current.rotation.y += 0.001;
-
-    ref.current.position.set(15, -73, -50);
+    ref.current.position.set(size > 600 ? 18 : 0, -73, -50);
   });
   return (
     <group>
@@ -57,7 +56,7 @@ function Char() {
   );
 }
 
-function Scene({ blur, blurValue }) {
+function Scene({ size, blurValue }) {
   const style = {
     filter: "blur(" + blurValue + ")",
   };
@@ -66,10 +65,10 @@ function Scene({ blur, blurValue }) {
       <Canvas concurrent shadowMap camera={{ position: [0, 0, 3], fov: 70 }}>
         {/* <color attach="background" args={["#0d0d0d"]} /> */}
         {/* <ambientLight intensity={0.2} /> */}
-        <pointLight position={[3, -10, -45]} intensity={0.4} />
-        <OrbitControls />
+        <pointLight position={[size > 600 ? 20 : 3, -4, -40]} intensity={size > 600 ? .4 : .13} />
+        {/* <OrbitControls /> */}
         <Physics>
-          <Char />
+          <Char size={size}/>
         </Physics>
       </Canvas>
     </div>

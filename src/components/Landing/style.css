@@ -2,21 +2,20 @@
     height: 100vh;
     /* background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
     background: #0a0a0a;
-    z-index: -1;
 }
 
 .mainHeader {
     height:100vh;
     position: fixed;
     font-size: 50px;
-    margin-left: 12vw;
+    margin-left: 10vw;
        display: flex;
        justify-content: center;
        flex-direction: column;
        /* transform: rotate(90deg); */
        line-height: 2em;
-       z-index: 3;
-       /* pointer-events: none; */
+       pointer-events: none;
+       z-index: 2;
 }
 #outlineHead {
     font-family: 'MADE TOMMY OUTLINE';

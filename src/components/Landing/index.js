@@ -6,7 +6,7 @@ import { motion, useViewportScroll } from "framer-motion"
 import "./style.css";
 
 
-function Landing() {
+function Landing({size}) {
   const { scrollYProgress } = useViewportScroll()
   const [progress, setProgress] = useState(0);
   scrollYProgress.onChange(e => setProgress(e));
@@ -19,7 +19,7 @@ function Landing() {
 
 
     return <div id="landing">
-      <div className="mainHeader">
+      <div className="mainHeader" style={{fontSize: size > 700 ? "50px" : "30px"}}>
       <h1 id="outlineHead">
         AARON
       </h1>
@@ -27,7 +27,7 @@ function Landing() {
         DIGGDON
       </h1>
       </div>
-      <Scene blurValue={blurValue} />
+      <Scene blurValue={blurValue} size={size}/>
 
       
       {/* {progress > .2 ? <About progress={progress}/> : <div id="prompt"></div> } */}
