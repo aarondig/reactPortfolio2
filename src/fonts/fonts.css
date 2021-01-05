@@ -1,4 +1,23 @@
 @font-face {
+    font-family: 'Made Tommy';
+    src: url('./TOMMY.otf');
+}
+/* @font-face {
+    font-family: 'Made Tommy Light';
+    src: url('./TOMMYLightOutline.otf');
+} */
+
+
+@font-face {
     font-family: 'Avenir';
-    src: url('./Metropolis-ExtraBold.otf')  format('truetype');
+    src: url('./Metropolis-ExtraBold.otf')  format('opentype');
+}
+
+@font-face {
+    font-family: 'Karu';
+    src: url('./Karu-ExtraBold.otf')  format('truetype');
+}
+@font-face {
+    font-family: 'Paladin';
+    src: url('./paladin.ttf')  format('truetype');
 }

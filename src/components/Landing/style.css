@@ -1,4 +1,53 @@
 #landing {
-    height: 150vh;
+    height: 100vh;
     /* background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
+    background: #0a0a0a;
 }
+
+.mainHeader {
+    height:100vh;
+    position: fixed;
+    font-size: 50px;
+    margin-left: 12vw;
+       display: flex;
+       justify-content: center;
+       flex-direction: column;
+       /* transform: rotate(90deg); */
+       line-height: 2em;
+       z-index: 3;
+       /* pointer-events: none; */
+}
+#outlineHead {
+    font-family: 'MADE TOMMY OUTLINE';
+    font-weight: 400;
+    /* color: #e9322e; */
+    color: rgba(255, 255, 255, 0.731);
+    margin: 0;
+}
+#fillHead {
+    font-family: 'MADE TOMMY';
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.895);
+    margin: 0;
+}
+@media screen and (min-width: 700px) and (max-width: 1000px)  {
+    /* .mainHeader {
+        position: absolute;
+        transform: rotate(270deg);
+        display: flex;
+       justify-content: center;
+       flex-direction: row;
+    } */
+
+}
+/* @media screen and (max-width: 800px)  {
+    .mainHeader {
+        position: absolute;
+        transform: rotate(270deg);
+        display: inline-grid;
+        justify-content: center;
+       flex-direction: row;
+       margin-left: 0;
+    }
+
+} */
