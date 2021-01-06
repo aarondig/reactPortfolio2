@@ -19,6 +19,7 @@ function Landing({size}) {
 
 
     return <div id="landing">
+      <Scene blurValue={blurValue} size={size}/>
       <div className="mainHeader" style={{fontSize: size > 700 ? "50px" : "30px"}}>
       <h1 id="outlineHead">
         AARON
@@ -27,11 +28,8 @@ function Landing({size}) {
         DIGGDON
       </h1>
       </div>
-      <Scene blurValue={blurValue} size={size}/>
-
-      
       {/* {progress > .2 ? <About progress={progress}/> : <div id="prompt"></div> } */}
-      <ProgressBar progress={progress}/>
+      {/* <ProgressBar progress={progress}/> */}
     </div>;
   }
   

@@ -15,7 +15,6 @@
        /* transform: rotate(90deg); */
        line-height: 2em;
        pointer-events: none;
-       z-index: 2;
 }
 #outlineHead {
     font-family: 'MADE TOMMY OUTLINE';
