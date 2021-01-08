@@ -11,12 +11,17 @@ function About({ progress }) {
 
   return (
     <div id="About" style={style}>
-      
-        <div className="container headerPosi">
-          <h1 className="header">Freelance Web Developer.</h1>
-          <h3 className="subtext">Breaking the bounds of convention.</h3>
+      <div id="foreground"/>
+       <div className="profileC">
+          <div className="overlay" />
+          <img id="profilePic"  src={profilePic} />
         </div>
         
+        <div className="flex-col">
+        <div className="center">
+          <h1 className="header">Freelance Web Developer.</h1>
+          </div>
+          {/* <h3 className="subtext">Breaking the bounds of convention.</h3> */}
         <div className="inline">
           <div className="slider">
             <div className="slide-track">
@@ -48,10 +53,15 @@ function About({ progress }) {
                 {" "}
                 Visual Narratives
               </h2>
+              <h2 className="list" id="minimalism">
+                {" "}
+                minimalism
+              </h2>
             </div>
           </div>
         </div>
-        <div className="flex-grid">
+        </div>
+        {/* <div className="flex-grid">
         <div className="col">
           <ul>
             <li className="item">HTML</li>
@@ -60,11 +70,10 @@ function About({ progress }) {
           </ul>
         </div>
         <div className="col">
-        <div className="profileC">
-          <img id="profilePic" src={profilePic} />
+       
         </div>
-        </div>
-      </div>
+        
+      </div> */}
 
       {/* <div className="grid">
         <div className="gridBanner">
@@ -80,6 +89,7 @@ function About({ progress }) {
           <div className="blah">hello</div>
         </div>
       </div> */}
+      
     </div>
   );
 }
