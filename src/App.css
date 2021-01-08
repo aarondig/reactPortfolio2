@@ -13,12 +13,38 @@ body {
   display: none;
 }
 .container{
+  width: 100%;
   display: flex;
   justify-content: space-around;
 }
-.grid{
-  display: grid;
+.center {
+  display: flex;
+  justify-content: center;
 }
+.flex-grid {
+  display: flex;
+  justify-content: space-around;
+}
+.flex-grid .col {
+  flex: 1;
+  width: 50%;
+  display: flex;
+  justify-content: left;
+}
+@media (max-width: 800px) {
+  .flex-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .flex-grid .col {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 #test {
   position: fixed;
   background: white;

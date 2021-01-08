@@ -6,6 +6,10 @@
     font-family: 'Made Tommy Light';
     src: url('./TOMMYLightOutline.otf');
 } */
+@font-face {
+    font-family: 'Colus';
+    src: url('./Colus.otf');
+}
 
 
 @font-face {

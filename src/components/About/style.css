@@ -1,15 +1,172 @@
 @font-face {
-    font-family: 'Avenir';
-    src: url('../../fonts/Metropolis-ExtraBold.otf')  format('truetype');
+  font-family: "Avenir";
+  src: url("../../fonts/Metropolis-ExtraBold.otf") format("truetype");
 }
 
 #About {
-    height: 100vh;
-    width: 100%;
-    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  height: 100vh;
+  width: 100%;
+  /* background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
+  padding-left: 60px;
+  padding-right: 60px;
+  background: #0a0a0a;
+  border-style: solid;
+  border-bottom: none;
+  border-left: none;
+  border-color: #ebedee;
+  border-width: 5px;
 }
-#background {
-    font-family: Avenir;
+
+.header {
+    font-family: 'MADE TOMMY';
+    font-weight: 100;
     font-size: 100px;
-    color: black;
+    color: #ebedee;
+    width: 100%;
+    margin-right: 60px;
+    margin-left: 40px;
+    flex: 1;
 }
+.inline{
+    width: 100%;
+    display: -webkit-inline-box;
+    margin-top: -20px;
+  }
+
+
+.profileC {
+  width: 27%;
+  object-fit: scale-down;
+}
+#profilePic {
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.395);
+}
+@media screen and (max-width: 800px)  {
+    #About {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+      .header {
+        font-size: 70px;
+    }
+    .list {
+        font-family: 'MADE TOMMY';
+        font-size: 40px;
+        color: #545454;
+        margin: 6px;
+    }
+    .inline{
+        display: flex;
+        justify-content: space-around;
+      }
+}
+@media screen and (max-width: 700px)  {
+  
+    .header {
+        font-size: 60px;
+    }
+}
+
+@-webkit-keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 7));
+    }
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 7));
+    }
+  }
+  .slider {
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+  }
+  .slider::before, .slider::after {
+    background: linear-gradient(to right, #0a0a0a 0%, #0000000f 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+  .slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+  .slider::before {
+    left: 0;
+    top: 0;
+  }
+  .slider .slide-track {
+    -webkit-animation: scroll 40s linear infinite;
+            animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+  }
+  .slider .slide {
+    height: 100px;
+    width: 250px;
+  }
+  .list {
+    font-family: 'MADE TOMMY';
+    font-size: 60px;
+    color: #545454;
+    margin: 6px;
+    opacity: none;
+}
+#minimalism {
+    /* background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    font-weight: 200;
+    text-transform: uppercase;
+}
+#ux {
+    background: -webkit-linear-gradient(100deg,#ee0979, #ff6a00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#visNar {
+    background: -webkit-linear-gradient(100deg,#8E2DE2, #4A00E0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* .grid {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 2px 2px;
+  grid-template-areas:
+    "banner banner"
+    "gLeft gRight"
+    "gLeft gRight";
+}
+.gridBanner {
+  grid-area: banner;
+  background: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gridLeft {
+  grid-area: gLeft;
+  background: #000000e2;
+}
+.gridRight {
+  grid-area: gRight;
+  background: #0a0a0a;
+} */
