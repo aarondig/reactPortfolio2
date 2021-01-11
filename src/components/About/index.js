@@ -2,13 +2,19 @@ import React, { useState } from "react";
 import "./style.css";
 import { motion, useViewportScroll } from "framer-motion";
 import profilePic from "../../img/me.jpg";
-import useScroll from "../../hooks/scroll";
 
 
 
-function About({ progress }) {
-const scroll = useScroll();
-console.log(scroll.percent)
+function About({ scroll }) {
+
+
+ const move = (scroll) - 798.4;
+const style = {
+  
+    opacity: ((scroll / 1000)* 1.5 -.5),
+    transform: `translateX(${move}px)`,
+  
+}
 
   return (
     <div id="About">
@@ -16,14 +22,14 @@ console.log(scroll.percent)
       <div className="overlay" />
       <div className="pageWrap">
         <div className="picPosi">
-       <div className="profileC">
+       <div className="profileC" style={style}>
           <img id="profilePic"  src={profilePic} />
           <div className="picOverlay" />
         </div>
         </div>
         
-        <div className="headerC center">
-          <h1 className="header">Freelance Web Developer.</h1>
+        <div className="headerC center" >
+          <h1 className="header" style={style}>Freelance Web Developer.</h1>
           </div>
           {/* <h3 className="subtext">Breaking the bounds of convention.</h3> */}
         {/* <div className="inline">

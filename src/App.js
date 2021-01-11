@@ -7,6 +7,9 @@ import Landing from "./components/Landing";
 import ProgressBar from "./components/ProgressBar";
 
 function App() {
+  const [scroll, setScroll] = useState();
+
+
   const size = useWindowSize();
 
   const app = useRef();
@@ -44,10 +47,15 @@ function App() {
     const velocity = + acceleration;
     const skew = velocity * 7.5;
     const round = Math.abs(velocity) * 100;
-    //Assign skew and smooth scrolling to the scroll container
+    //Assign skew and smooth scrolling to the scroll container based on certain scroll amounts
     scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0) skewY(${skew}deg)`;
+    if (data.rounded > window.innerHeight) {
+      scrollable.current.style.transform = `translate3d(0, -${window.innerHeight}px, 0) skewY(${skew/1.5}deg)`;
+    } 
+    // skewY(${skew}deg)
     // scrollable.current.style.borderRadius = `${round}%`;
 
+    setScroll(data.rounded)
     requestAnimationFrame(() => skewScrolling());
   };
 
@@ -57,11 +65,11 @@ function App() {
         <div ref={scrollContainer} className="scroll">
           <Landing size={size.width} />
           <div id="scrollable" ref={scrollable}>
-            <About />
-           {/* <div className="nothing">
+            <About scroll={scroll}/>
+           <div className="nothing">
              HI EVERYBODY
              <h1>HI EVERYBODY</h1>
-           </div> */}
+           </div>
           </div>
         </div>
       </Wrapper>
