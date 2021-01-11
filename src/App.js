@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import useWindowSize from "./hooks/windowSize";
 import "./App.css";
 import About from "./components/About";
@@ -41,14 +41,16 @@ function App() {
     //VARIABLES
     const difference = data.current - data.rounded;
     const acceleration = difference / size.width;
-    const velocity = +acceleration;
+    const velocity = + acceleration;
     const skew = velocity * 7.5;
     const round = Math.abs(velocity) * 100;
     //Assign skew and smooth scrolling to the scroll container
     scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0) skewY(${skew}deg)`;
     // scrollable.current.style.borderRadius = `${round}%`;
+
     requestAnimationFrame(() => skewScrolling());
   };
+
   return (
     <div ref={app} className="App">
       <Wrapper>
@@ -56,6 +58,10 @@ function App() {
           <Landing size={size.width} />
           <div id="scrollable" ref={scrollable}>
             <About />
+           {/* <div className="nothing">
+             HI EVERYBODY
+             <h1>HI EVERYBODY</h1>
+           </div> */}
           </div>
         </div>
       </Wrapper>

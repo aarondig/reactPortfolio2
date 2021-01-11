@@ -19,7 +19,6 @@ function Char({size}) {
 
   const [mobile, setMobile] = useState(false);
   const scene = useLoader(GLTFLoader, Model);
-  console.log(scene);
   const [ref, api] = useBox(() => ({ args: 0.01, mass: 1 }));
   const [hovered, setHovered] = useState(false);
   const [active, setActive] = useState(false);

@@ -2,21 +2,23 @@ import React, { useState } from "react";
 import "./style.css";
 import { motion, useViewportScroll } from "framer-motion";
 import profilePic from "../../img/me.jpg";
+import useScroll from "../../hooks/scroll";
+
+
 
 function About({ progress }) {
-  const style = {
-    // pointerEvents: progress > .5 ? "auto" : "none",
-    // opacity: progress
-  };
+const scroll = useScroll();
+console.log(scroll.percent)
 
   return (
-    <div id="About" style={style}>
+    <div id="About">
       <div id="foreground"/>
       <div className="overlay" />
       <div className="pageWrap">
         <div className="picPosi">
        <div className="profileC">
           <img id="profilePic"  src={profilePic} />
+          <div className="picOverlay" />
         </div>
         </div>
         
@@ -24,7 +26,7 @@ function About({ progress }) {
           <h1 className="header">Freelance Web Developer.</h1>
           </div>
           {/* <h3 className="subtext">Breaking the bounds of convention.</h3> */}
-        <div className="inline">
+        {/* <div className="inline">
           <div className="slider">
             <div className="slide-track">
               <h2 className="list" id="ux">
@@ -60,8 +62,8 @@ function About({ progress }) {
                 minimalism
               </h2>
             </div>
-          </div>
-        </div>
+          </div> 
+        </div> */}
         
         {/* <div className="flex-grid">
         <div className="col">
