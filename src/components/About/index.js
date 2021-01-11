@@ -12,13 +12,15 @@ function About({ progress }) {
   return (
     <div id="About" style={style}>
       <div id="foreground"/>
+      <div className="overlay" />
+      <div className="pageWrap">
+        <div className="picPosi">
        <div className="profileC">
-          <div className="overlay" />
           <img id="profilePic"  src={profilePic} />
         </div>
+        </div>
         
-        <div className="flex-col">
-        <div className="center">
+        <div className="headerC center">
           <h1 className="header">Freelance Web Developer.</h1>
           </div>
           {/* <h3 className="subtext">Breaking the bounds of convention.</h3> */}
@@ -60,7 +62,7 @@ function About({ progress }) {
             </div>
           </div>
         </div>
-        </div>
+        
         {/* <div className="flex-grid">
         <div className="col">
           <ul>
@@ -89,7 +91,7 @@ function About({ progress }) {
           <div className="blah">hello</div>
         </div>
       </div> */}
-      
+       </div>
     </div>
   );
 }

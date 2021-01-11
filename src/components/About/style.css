@@ -2,15 +2,21 @@
   height: 100vh;
   width: 100%;
   /* background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
-  padding-left: 60px;
-  padding-right: 60px;
   background: linear-gradient(180deg, #0a0a0a 42%, #0b0b0b2b 80%);
   border-style: solid;
   border-bottom: none;
   border-left: none;
   border-color: #ebedee;
   border-width: 5px;
+  
+  
 }
+
+.pageWrap {
+  padding-top: 60px;
+  padding-left: 60px;
+}
+
 #foreground {
   position: absolute;
   height: 100%;
@@ -18,33 +24,38 @@
   background: linear-gradient(180deg, #0a0a0a 100%, #0b0b0b99 100%);
   z-index: -3;
 }
-
+.headerC {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 .header {
+  
     font-family: 'MADE TOMMY';
     font-weight: 100;
     font-size: 100px;
     color: #ebedee;
-    width: 100%;
-    margin-right: 60px;
+
 }
 
-
 .profileC {
+  float: left;
+  
   width: 30%;
-  object-fit: scale-down;
-  /* display: none; */
-  z-index: -1;
+  z-index: 0;
 }
 #profilePic {
   width: 100%;
-  margin-top: 60px;
 }
 .overlay {
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   background: radial-gradient(ellipse at 50% 10%, rgba(255, 255, 255, 0.038) 20%, #0a0a0a );
   position: absolute;
-  margin-left: -60px;
+  z-index: 3;
+  /* margin-left: -60px; */
 }
 
 
@@ -109,52 +120,38 @@
 }
 
 @media screen and (max-width: 800px)  {
-    #About {
-        padding-left: 0px;
-        /* padding-right: 0px; */
-      }
-      .header {
+      
+  .pageWrap {
+    padding: 0;
+  }
+  .header {
         font-size: 70px;
-        padding-left: 60px;
+        
     }
     .list {
-        font-family: 'MADE TOMMY';
         font-size: 40px;
-        color: #545454;
-        margin: 6px;
     }
     .inline{
         display: flex;
         justify-content: space-around;
       }
       .profileC {
-        display: block;
         margin-top: 50vh;
         top: 0;
+        left: 0;
         position: absolute;
-        height:100%;
         width: 100%;
-        object-fit: scale-down;
-      }
-      #profilePic {
-        margin-top: 0px;
+        z-index: -1;
       }
       .slider {
         width: 100%;
         height: fit-content;
       }
-      .flex-col {
+      /* .flex-col {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-      }
-      .overlay {
-        width: 100%;
-        height: 100%;
-        /* background: radial-gradient(ellipse at 20% 10%, rgba(255, 255, 255, 0.038) 20%, #0a0a0a ); */
-        position: absolute;
-        margin-left: 0px;
-      }
+      } */
 }
 @media screen and (max-width: 700px)  {
   
