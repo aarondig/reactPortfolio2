@@ -1,37 +1,68 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./style.css";
 import { motion, useViewportScroll } from "framer-motion";
 import profilePic from "../../img/me.jpg";
-
-
+import useWindowSize from "../../hooks/windowSize";
 
 function About({ scroll }) {
+  const size = useWindowSize();
+  const eq = -Math.pow((scroll / window.innerHeight) * 1.2 - 1.4, 2) + 1;
 
+  const move = (window.innerHeight / scroll - 1) * 50;
+  const style = {
+    fade: {
+      opacity: eq,
+    },
+    reveal: {
+      transform:
+        size.width > 700 ? `translateX(-${move}px)` : `translateY(${move}px)`,
+      objectPosition: +"%",
+    },
 
- const move = (scroll) - 798.4;
-const style = {
-  
-    opacity: ((scroll / 1000)* 1.5 -.5),
-    transform: `translateX(${move}px)`,
-  
-}
+    // opacity:  scroll < window.innerHeight ? ((scroll / 1000)* 1.5 -.5) : ((scroll / 1000)* 1.5 -.5) - (scroll / 1000)* 1.5,
+    // transform: `translateX(${move}px)`,
+  };
 
+  console.log(size);
   return (
     <div id="About">
-      <div id="foreground"/>
-      <div className="overlay" />
+      <div id="foreground" />
+      {/* <div id="spotlight">
+      <div id="spotlight-child"/>
+      </div> */}
       <div className="pageWrap">
         <div className="picPosi">
-       <div className="profileC" style={style}>
-          <img id="profilePic"  src={profilePic} />
-          <div className="picOverlay" />
-        </div>
-        </div>
-        
-        <div className="headerC center" >
-          <h1 className="header" style={style}>Freelance Web Developer.</h1>
+          <div className="profileC" style={style.reveal}>
+            <img id="profilePic" src={profilePic} />
+            <img id="profilePic" src={profilePic} />
+            <img id="profilePic" src={profilePic} />
+            <img id="profilePic" src={profilePic} />
+            <div className="picOverlay" />
           </div>
-          {/* <h3 className="subtext">Breaking the bounds of convention.</h3> */}
+        </div>
+        {eq > 0 ? (
+          <div className="content">
+            <div className="headerC container">
+              <h1 className="header container" style={style.fade}>
+                Freelance Web Developer.
+              </h1>
+              <h4 className="subHeader" style={style.fade}>
+                Take a card.
+              </h4>
+            </div>
+            <div className="skills"></div>
+          </div>
+        ) : (
+          <div className="headerC center">
+            {scroll > window.innerHeight ? (
+              <h1 className="header">Contact</h1>
+            ) : (
+              <div />
+            )}
+          </div>
+        )}
+
+        {/* <h3 className="subtext">Breaking the bounds of convention.</h3> */}
         {/* <div className="inline">
           <div className="slider">
             <div className="slide-track">
@@ -70,7 +101,7 @@ const style = {
             </div>
           </div> 
         </div> */}
-        
+
         {/* <div className="flex-grid">
         <div className="col">
           <ul>
@@ -85,7 +116,7 @@ const style = {
         
       </div> */}
 
-      {/* <div className="grid">
+        {/* <div className="grid">
         <div className="gridBanner">
           <div className="aboutBackground" id="who1">WHO AM I</div>
             <div className="container">
@@ -99,7 +130,7 @@ const style = {
           <div className="blah">hello</div>
         </div>
       </div> */}
-       </div>
+      </div>
     </div>
   );
 }

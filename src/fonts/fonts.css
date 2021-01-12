@@ -1,11 +1,8 @@
 @font-face {
     font-family: 'Made Tommy';
-    src: url('./TOMMY.otf');
+    src: url('./TOMMY.otf') format('truetype');
 }
-/* @font-face {
-    font-family: 'Made Tommy Light';
-    src: url('./TOMMYLightOutline.otf');
-} */
+
 @font-face {
     font-family: 'Colus';
     src: url('./Colus.otf');
@@ -14,7 +11,7 @@
 
 @font-face {
     font-family: 'Avenir';
-    src: url('./Metropolis-ExtraBold.otf')  format('opentype');
+    src: url('./Metropolis-ExtraBold.otf');
 }
 
 @font-face {

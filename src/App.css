@@ -35,6 +35,7 @@ body {
 .center {
   display: flex;
   justify-content: center;
+  
 }
 .flex-grid {
   display: flex;

@@ -50,7 +50,7 @@ function App() {
     //Assign skew and smooth scrolling to the scroll container based on certain scroll amounts
     scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0) skewY(${skew}deg)`;
     if (data.rounded > window.innerHeight) {
-      scrollable.current.style.transform = `translate3d(0, -${window.innerHeight}px, 0) skewY(${skew/1.5}deg)`;
+      scrollable.current.style.transform = `translate3d(0, -${window.innerHeight}px, 0) skewY(0deg)`;
     } 
     // skewY(${skew}deg)
     // scrollable.current.style.borderRadius = `${round}%`;
