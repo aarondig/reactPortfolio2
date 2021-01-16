@@ -22,6 +22,13 @@ function App() {
     previous: 0,
     rounded: 0,
   };
+
+  // let speed = 0;
+  // let position = 0;
+  // let rounded = 0;
+  // window.addEventListener('wheel',(e) => {
+  //   speed += e.deltaY*.0003
+  // })
   useEffect(() => {
     requestAnimationFrame(() => skewScrolling());
   }, []);
@@ -31,7 +38,8 @@ function App() {
       scrollContainer.current.getBoundingClientRect().height
     }px`;
   }, [size.height]);
-
+ 
+  
   // SCROLLING
   const skewScrolling = () => {
     //Set Current to the scroll position amount
@@ -40,8 +48,21 @@ function App() {
     data.previous += (data.current - data.previous) * data.ease;
     // Set rounded to
     data.rounded = Math.round(data.previous * 100) / 100;
-
     //VARIABLES
+
+    // position += speed;
+    // speed *= 0.8;
+    // // let position = data.current*.01
+    // rounded = Math.round(position)
+
+    // const diff = (rounded - position)
+    // position += diff*.05;
+
+
+    
+
+
+
     const difference = data.current - data.rounded;
     const acceleration = difference / size.width;
     const velocity = + acceleration;
@@ -54,7 +75,7 @@ function App() {
     } 
     // skewY(${skew}deg)
     // scrollable.current.style.borderRadius = `${round}%`;
-
+    
     setScroll(data.rounded)
     requestAnimationFrame(() => skewScrolling());
   };

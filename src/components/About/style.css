@@ -41,11 +41,12 @@
   text-align: center;
   font-family: 'MADE TOMMY';
   font-weight: 100;
-  font-size: 20px;
+  font-size: 30px;
   color: #ebedee;
+  margin-top: 0;
 }
 
-.profileC {
+.cardContainer {
   position: absolute;
   top: 3px;
   left: 0%;
@@ -53,34 +54,49 @@
   height: 100vh;
   float: left;
   z-index: 0;
-  overflow: hidden;
   /* transform: translate(-50%, -50%); */
+  /* transform-style: preserve-3d; */
+  overflow: hidden;
   transform-style: preserve-3d;
+  background: #0000004b;
 }
 #profilePic {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-img {
+.card {
+  height: 100%;
+  overflow: hidden;
   transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 400px, 70px);
- 
-  box-shadow: -80px 60px 15px 5px rgba(0, 0, 0, 0.662);
+  box-shadow: -80px 60px 15px 5px rgba(0, 0, 0, 0.662) !important;
   transition: all .4s;
   transform-style: preserve-3d;
 }
-.profileC:hover img {
+.cardContainer:hover .card {
   
   transform: rotateX(0deg) rotateZ(0deg) translate3d(0px, 0px, 0px);
   box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0);
 }
+/* .cardHead {
+  transform: rotate(270deg);
+position: absolute;
+left: -53%;
+bottom: 35%;
+white-space: nowrap;
+font-family: 'MADE TOMMY';
+    font-weight: 400;
+    font-size: 70px;
+    color: #ebedee45;
+    z-index: 5;
+} */
 
 .picOverlay {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(#0000003d 60%, #000000ce 90%);;
+  background: linear-gradient(#0000003d 60%, #000000ce 90%);
   z-index: 1;
 }
 #spotlight {
@@ -100,49 +116,6 @@ img {
   box-shadow: inset 0px 0px 150px 150px rgba(0, 0, 0, 0.779);
 }
 
-  .slider {
-    float: right;
-    height: 100px;
-    overflow: hidden;
-    position: relative;
-    width: 50%;
-  }
-  .slider::before, .slider::after {
-    background: linear-gradient(to right, #0a0a0a 0%, #0000000f 100%);
-    content: "";
-    height: 100px;
-    position: absolute;
-    width: 200px;
-    margin-left: -1px;
-    margin-right: -1px;
-    z-index: 2;
-  }
-  .slider::after {
-    right: 0;
-    top: 0;
-    transform: rotateZ(180deg);
-  }
-  .slider::before {
-    left: 0;
-    top: 0;
-  }
-  .slider .slide-track {
-    -webkit-animation: scroll 40s linear infinite;
-            animation: scroll 40s linear infinite;
-    display: flex;
-    width: calc(250px * 14);
-  }
-  .slider .slide {
-    height: 100px;
-    width: 250px;
-  }
-  .list {
-    font-family: 'MADE TOMMY';
-    font-size: 60px;
-    color: #545454;
-    margin: 6px;
-    opacity: none;
-}
 #minimalism {
     /* background: -webkit-linear-gradient(#eee, #333);
     -webkit-background-clip: text;
@@ -185,21 +158,20 @@ img {
         font-size: 50px;
         padding-left: 10px;
     }
-    .list {
-        font-size: 40px;
-    }
-    .inline{
-        display: flex;
-        justify-content: space-around;
-      }
-      .profileC {
+
+      .cardContainer {
         width: 100%;
-        max-width: 100%;
+        max-width: 100% !important;
         height: auto;
         top: 0;
         left: 0;
         margin-top: 40vh;
         z-index: -1;
+        
+      }
+      .card {
+        min-width: 100%;
+        max-width: 100%;
       }
       #profilePic {
         width: 100%;
@@ -224,37 +196,6 @@ img {
   } */
 }
 
-@-webkit-keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-250px * 7));
-    }
-  }
-  
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-250px * 7));
-    }
-  }
-
-
-@media screen and (max-height: 700px)  {
-  .slider::before, .slider::after {
-    background: none;
-  }
-
-}
-@media screen and (min-height: 700px)  {
-  .slider::before, .slider::after {
-    background: linear-gradient(to right, #0a0a0a 0%, #0000000f 100%);
-  }
-
-}
 /* .grid {
   display: grid;
   width: 100%;

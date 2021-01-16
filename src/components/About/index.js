@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./style.css";
 import { motion, useViewportScroll } from "framer-motion";
 import profilePic from "../../img/me.jpg";
@@ -6,24 +6,40 @@ import useWindowSize from "../../hooks/windowSize";
 
 function About({ scroll }) {
   const size = useWindowSize();
-  const eq = -Math.pow((scroll / window.innerHeight) * 1.2 - 1.4, 2) + 1;
+  const opacity = -Math.pow((scroll / window.innerHeight) * 1.2 - 1.4, 2) + 1;
+  const containerWidth = (scroll / window.innerHeight - 1.1) * 100;
 
-  const move = (window.innerHeight / scroll - 1) * 50;
+  const move = (window.innerHeight / scroll - 1) * 100;
+
+  const cardwX =
+    (500 / window.innerWidth) * 100 * (window.innerHeight / scroll);
+  // const cardwY =
+  //   ((400 / window.innerWidth) * 100 * window.innerHeight) / scroll;
+  const cardWidth = -((scroll / window.innerHeight) * 50) + 150;
   const style = {
     fade: {
-      opacity: eq,
+      opacity: opacity,
     },
     reveal: {
+      maxWidth: containerWidth > 40 ? containerWidth + "vw" : "40%",
       transform:
         size.width > 700 ? `translateX(-${move}px)` : `translateY(${move}px)`,
-      objectPosition: +"%",
+      
     },
-
-    // opacity:  scroll < window.innerHeight ? ((scroll / 1000)* 1.5 -.5) : ((scroll / 1000)* 1.5 -.5) - (scroll / 1000)* 1.5,
-    // transform: `translateX(${move}px)`,
+    cardWidth: {
+      transform: scroll / window.innerHeight > 1.7 ? `rotateX(70deg) rotateZ(-60deg) translate3d(-120px, ${cardwX}%, 70px)` : `rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 400px, 70px)`,
+      // minWidth: scroll / window.innerHeight > 1 ? `${cardWidth}%` : "100%",
+      maxWidth: 
+      containerWidth > 40
+          ? `${cardWidth}%`
+          : `40vw`,
+      minWidth: "400px"
+    },
   };
 
-  console.log(size);
+  console.log(move);
+
+  console.log(move < 0);
   return (
     <div id="About">
       <div id="foreground" />
@@ -32,22 +48,25 @@ function About({ scroll }) {
       </div> */}
       <div className="pageWrap">
         <div className="picPosi">
-          <div className="profileC" style={style.reveal}>
-            <img id="profilePic" src={profilePic} />
-            <img id="profilePic" src={profilePic} />
-            <img id="profilePic" src={profilePic} />
-            <img id="profilePic" src={profilePic} />
-            <div className="picOverlay" />
+          <div className="cardContainer" style={style.reveal}>
+            <div className="card" style={style.cardWidth}>
+              <img id="profilePic" src={profilePic} />
+
+              {/* <h1 className="cardHead" style={style.fade}>
+                AARON DIGGDON
+              </h1> */}
+              <div className="picOverlay" />
+            </div>
           </div>
         </div>
-        {eq > 0 ? (
+        {opacity > 0 ? (
           <div className="content">
             <div className="headerC container">
               <h1 className="header container" style={style.fade}>
                 Freelance Web Developer.
               </h1>
               <h4 className="subHeader" style={style.fade}>
-                Take a card.
+                Where creativity meets creation.
               </h4>
             </div>
             <div className="skills"></div>
@@ -61,46 +80,6 @@ function About({ scroll }) {
             )}
           </div>
         )}
-
-        {/* <h3 className="subtext">Breaking the bounds of convention.</h3> */}
-        {/* <div className="inline">
-          <div className="slider">
-            <div className="slide-track">
-              <h2 className="list" id="ux">
-                {" "}
-                User Experience
-              </h2>
-              <h2 className="list" id="minimalism">
-                {" "}
-                minimalism
-              </h2>
-              <h2 className="list" id="visNar">
-                {" "}
-                Visual Narratives
-              </h2>
-              <h2 className="list" id="minimalism">
-                {" "}
-                minimalism
-              </h2>
-              <h2 className="list" id="ux">
-                {" "}
-                User Experience
-              </h2>
-              <h2 className="list" id="minimalism">
-                {" "}
-                minimalism
-              </h2>
-              <h2 className="list" id="visNar">
-                {" "}
-                Visual Narratives
-              </h2>
-              <h2 className="list" id="minimalism">
-                {" "}
-                minimalism
-              </h2>
-            </div>
-          </div> 
-        </div> */}
 
         {/* <div className="flex-grid">
         <div className="col">
