@@ -8,7 +8,8 @@ function About({ scroll }) {
   const size = useWindowSize();
   const opacity = -Math.pow((scroll / window.innerHeight) * 1.2 - 1.4, 2) + 1;
   const containerWidth = (scroll / window.innerHeight - 1.1) * 100;
-
+  const negativeSpace = 100 - containerWidth;
+  const negativeSpaceSlide = 60 - containerWidth;
   const move = (window.innerHeight / scroll - 1) * 100;
 
   const cardwX =
@@ -24,22 +25,27 @@ function About({ scroll }) {
       maxWidth: containerWidth > 40 ? containerWidth + "vw" : "40%",
       transform:
         size.width > 700 ? `translateX(-${move}px)` : `translateY(${move}px)`,
-      
+    },
+    slideOut: {
+      width: containerWidth > 40 ? negativeSpace + "%" : "60%",
+    },
+    slide1: {
+      marginLeft: containerWidth * .8,
+    },
+    slide2: {
+      marginLeft: containerWidth * 3,
     },
     cardWidth: {
-      transform: scroll / window.innerHeight > 1.7 ? `rotateX(70deg) rotateZ(-60deg) translate3d(-120px, ${cardwX}%, 70px)` : `rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 400px, 70px)`,
+      transform:
+        scroll / window.innerHeight > 1.7
+          ? `rotateX(70deg) rotateZ(-60deg) translate3d(-120px, ${cardwX}%, 70px)`
+          : `rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 400px, 70px)`,
       // minWidth: scroll / window.innerHeight > 1 ? `${cardWidth}%` : "100%",
-      maxWidth: 
-      containerWidth > 40
-          ? `${cardWidth}%`
-          : `40vw`,
-      minWidth: "400px"
+      maxWidth: containerWidth > 40 ? `${cardWidth}%` : `40vw`,
+      minWidth: "400px",
     },
   };
 
-  console.log(move);
-
-  console.log(move < 0);
   return (
     <div id="About">
       <div id="foreground" />
@@ -47,34 +53,55 @@ function About({ scroll }) {
       <div id="spotlight-child"/>
       </div> */}
       <div className="pageWrap">
-        <div className="picPosi">
-          <div className="cardContainer" style={style.reveal}>
-            <div className="card" style={style.cardWidth}>
-              <img id="profilePic" src={profilePic} />
+        <div className="cardContainer" style={style.reveal}>
+          <div className="card" style={style.cardWidth}>
+            <img id="profilePic" src={profilePic} />
 
-              {/* <h1 className="cardHead" style={style.fade}>
+            {/* <h1 className="cardHead" style={style.fade}>
                 AARON DIGGDON
               </h1> */}
-              <div className="picOverlay" />
-            </div>
+            <div className="picOverlay" />
           </div>
         </div>
         {opacity > 0 ? (
           <div className="content">
             <div className="headerC container">
-              <h1 className="header container" style={style.fade}>
+              <h1
+                className="header container"
+                id="freelance"
+                style={style.fade}
+              >
                 Freelance Web Developer.
               </h1>
-              <h4 className="subHeader" style={style.fade}>
-                Where creativity meets creation.
-              </h4>
+              {size.width < 700 ? (
+                <h4 className="subHeader" style={style.fade}>
+                  Where creativity meets creation.
+                </h4>
+              ) : (
+                <div />
+              )}
             </div>
+            {size.width > 700 ? (
+              <div className="slideContent" style={style.slideOut}>
+                <div className="slideWrap" style={ style.slideOut}>
+                  <h2 className="subHeader" style={ style.slide1}>
+                    Where creativity meets creation.
+                  </h2>
+                  <h3 className="title" style={ style.slide2}>
+                    Specializing in: 
+                  </h3>
+                </div>
+              </div>
+            ) : (
+              <div />
+            )}
+
             <div className="skills"></div>
           </div>
         ) : (
           <div className="headerC center">
             {scroll > window.innerHeight ? (
-              <h1 className="header">Contact</h1>
+              <h1 className="header">Let's stay in touch.</h1>
             ) : (
               <div />
             )}

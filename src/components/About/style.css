@@ -23,6 +23,20 @@
   background: linear-gradient(180deg, #0a0a0a 80%, #0b0b0b 100%);
   z-index: -3;
 }
+
+.slideContent {
+  position: relative;
+  width: auto;
+  float: right;
+  z-index: 10;
+  overflow: visible;
+  white-space: nowrap;
+  word-wrap: none;
+}
+.slideWrap {
+  
+
+}
 .headerC {
   margin-top: -5%;
   margin-left: 32%;
@@ -36,14 +50,23 @@
     font-size: 80px;
     color: #ebedee;
     z-index: 5;
+    margin-bottom: 5%;
 }
 .subHeader {
-  text-align: center;
+  text-align: left;
   font-family: 'MADE TOMMY';
   font-weight: 100;
-  font-size: 30px;
-  color: #ebedee;
-  margin-top: 0;
+  font-size: 35px;
+  color: #ebedeed3;
+  margin-top: 0px;
+}
+.title {
+  text-align: center;
+  font-family: 'MADE TOMMY';
+  font-weight: 400;
+  font-size: 25px;
+  color: #e9322e;
+  margin-top: 0px;
 }
 
 .cardContainer {
@@ -152,11 +175,18 @@ font-family: 'MADE TOMMY';
   }
   .headerC {
     margin-top: 2%;
-    margin-left: auto;
+    margin-left: 15%;
   }
   .header {
         font-size: 50px;
-        padding-left: 10px;
+        padding-left: 20px;
+    }
+
+    .subHeader {
+      text-align: center;
+      font-size: 20px;
+      margin-top: -10px;
+      white-space: nowrap;
     }
 
       .cardContainer {

@@ -69,7 +69,7 @@ function App() {
     const skew = velocity * 7.5;
     const round = Math.abs(velocity) * 100;
     //Assign skew and smooth scrolling to the scroll container based on certain scroll amounts
-    scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0) skewY(${skew}deg)`;
+    scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
     if (data.rounded > window.innerHeight) {
       scrollable.current.style.transform = `translate3d(0, -${window.innerHeight}px, 0) skewY(0deg)`;
     } 
@@ -92,6 +92,7 @@ function App() {
              <h1>HI EVERYBODY</h1>
            </div>
           </div>
+          {/* <ProgressBar/> */}
         </div>
       </Wrapper>
     </div>
