@@ -34,7 +34,10 @@
   word-wrap: none;
 }
 .slideWrap {
-  
+  width: 90%;
+  overflow: visible;
+  margin-right: auto !important;
+  margin-left: -10px !important;
 
 }
 .headerC {
@@ -57,7 +60,7 @@
   font-family: 'MADE TOMMY';
   font-weight: 100;
   font-size: 35px;
-  color: #ebedeed3;
+  color: #ebedee;
   margin-top: 0px;
 }
 .title {
@@ -68,10 +71,24 @@
   color: #e9322e;
   margin-top: 0px;
 }
+.buttonC {
+width: 100%;
+min-width: 400px;
+margin-top: 10vh;
+}
+
+.button {
+  width: 80px;
+  height: 80px;
+  border: solid #e9322e 2px;
+  border-radius: 10px;
+}
+
+
 
 .cardContainer {
   position: absolute;
-  top: 3px;
+  top: 1.5px;
   left: 0%;
   max-width: 40%;
   height: 100vh;
@@ -87,33 +104,52 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+  
 }
 .card {
-  height: 100%;
-  overflow: hidden;
+  height: 100vh !important;
   transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 400px, 70px);
   box-shadow: -80px 60px 15px 5px rgba(0, 0, 0, 0.662) !important;
-  transition: all .4s;
+  transition: all .5s;
   transform-style: preserve-3d;
+
 }
-.cardContainer:hover .card {
+/* .card:hover {
   
-  transform: rotateX(0deg) rotateZ(0deg) translate3d(0px, 0px, 0px);
+  transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg) translate3d(0px, 0px, 0px) !important;
   box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0);
-}
-/* .cardHead {
-  transform: rotate(270deg);
-position: absolute;
-left: -53%;
-bottom: 35%;
-white-space: nowrap;
-font-family: 'MADE TOMMY';
-    font-weight: 400;
-    font-size: 70px;
-    color: #ebedee45;
-    z-index: 5;
 } */
 
+.cardFace {
+
+  /* overflow: hidden; */
+  }
+.cardFront, .cardBack {
+  position: relative;
+  height: 100vh;
+    -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+/* .cardFront {
+  width: 100%;
+  
+} */
+.cardBack {
+  width: 100%;
+  max-height: 100%;
+  max-height: inherit;
+  background: rgb(255, 255, 255);
+  transform: rotateX(180deg) rotateZ(180deg);
+  /* box-shadow: -80px 60px 15px 5px rgba(0, 0, 0, 0.662) !important; */
+}
+
+
+ /* #cardOverlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
 .picOverlay {
   position: absolute;
   top: 0;
@@ -121,7 +157,7 @@ font-family: 'MADE TOMMY';
   height: 100%;
   background: linear-gradient(#0000003d 60%, #000000ce 90%);
   z-index: 1;
-}
+} */
 #spotlight {
   width: 30em;
   height: 30em;

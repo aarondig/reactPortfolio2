@@ -23,12 +23,8 @@ function App() {
     rounded: 0,
   };
 
-  // let speed = 0;
-  // let position = 0;
-  // let rounded = 0;
-  // window.addEventListener('wheel',(e) => {
-  //   speed += e.deltaY*.0003
-  // })
+
+  
   useEffect(() => {
     requestAnimationFrame(() => skewScrolling());
   }, []);
@@ -40,6 +36,10 @@ function App() {
   }, [size.height]);
  
   
+
+
+  
+
   // SCROLLING
   const skewScrolling = () => {
     //Set Current to the scroll position amount
@@ -49,18 +49,10 @@ function App() {
     // Set rounded to
     data.rounded = Math.round(data.previous * 100) / 100;
     //VARIABLES
-
-    // position += speed;
-    // speed *= 0.8;
-    // // let position = data.current*.01
-    // rounded = Math.round(position)
-
-    // const diff = (rounded - position)
-    // position += diff*.05;
-
-
+    
     
 
+    
 
 
     const difference = data.current - data.rounded;
@@ -70,6 +62,7 @@ function App() {
     const round = Math.abs(velocity) * 100;
     //Assign skew and smooth scrolling to the scroll container based on certain scroll amounts
     scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
+
     if (data.rounded > window.innerHeight) {
       scrollable.current.style.transform = `translate3d(0, -${window.innerHeight}px, 0) skewY(0deg)`;
     } 
@@ -79,7 +72,6 @@ function App() {
     setScroll(data.rounded)
     requestAnimationFrame(() => skewScrolling());
   };
-
   return (
     <div ref={app} className="App">
       <Wrapper>
