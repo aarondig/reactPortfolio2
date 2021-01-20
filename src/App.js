@@ -5,6 +5,7 @@ import About from "./components/About";
 import Wrapper from "./components/Wrapper";
 import Landing from "./components/Landing";
 import ProgressBar from "./components/ProgressBar";
+import Nav from "./components/Nav";
 
 function App() {
   const [scroll, setScroll] = useState();
@@ -78,6 +79,7 @@ function App() {
         <div ref={scrollContainer} className="scroll">
           <Landing size={size.width} />
           <div id="scrollable" ref={scrollable}>
+            
             <About scroll={scroll}/>
            <div className="nothing">
              HI EVERYBODY
@@ -86,6 +88,7 @@ function App() {
           </div>
           {/* <ProgressBar/> */}
         </div>
+        <Nav/>
       </Wrapper>
     </div>
   );

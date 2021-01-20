@@ -63,9 +63,6 @@ function About({ scroll }) {
   const onExit = () => {
     
       hoverRef.current.style.transform = `rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 400px, 70px)`;
-    
-    
-    // absolute.current.style.position = `initial`;
   };
   return (
     <div id="About">

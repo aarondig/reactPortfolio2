@@ -1,0 +1,37 @@
+#nav {
+    position: absolute;
+    top: 0;
+}
+nav {
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+  }
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(255, 255, 255);
+    /* backdrop-filter: blur(200px); */
+    /* z-index: 10000; */
+  }
+  .navButton {
+    outline: none;
+    border: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 18px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    mix-blend-mode: difference;
+
+  }
