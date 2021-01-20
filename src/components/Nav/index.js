@@ -27,6 +27,28 @@ const Path = (props) => (
   <motion.path fill="transparent" strokeWidth="1" stroke="white" {...props} />
 );
 
+
+const navItems = {
+  home: {
+    title: "Home",
+    link: "",
+  },
+  Projects: {
+    title: "Projects",
+    link: "",
+  },
+  About: {
+    title: "About",
+    link: "",
+  },
+  Contact: {
+    title: "Contact",
+    link: "",
+  },
+}
+
+
+
 function Nav() {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
@@ -39,7 +61,6 @@ function Nav() {
         ref={containerRef}
       >
         <motion.div className="background" variants={sidebar} />
-
         <button className="navButton" onClick={() => toggleOpen()}>
           <svg width="70" height="70" viewBox="0 0 50 50">
             <Path
@@ -64,6 +85,9 @@ function Nav() {
             />
           </svg>
         </button>
+        {/* {navItems.map(i => (
+          <div key={i} />
+        ))} */}
       </motion.nav>
     </div>
   );
