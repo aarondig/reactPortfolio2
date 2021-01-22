@@ -28,7 +28,7 @@ function About({ scroll }) {
     reveal: {
       maxWidth: containerWidth > 40 ? containerWidth + "vw" : "40%",
       transform:
-        size.width > 700 ? `translateX(-${move}px)` : `translateY(${move}px)`,
+        size.width > 700 ? `translateX(-${move}px)` : `translateY(${move - 20}px)`,
     },
     slideOut: {
       width: containerWidth > 40 ? negativeSpace + "%" : "60%",
@@ -50,7 +50,7 @@ function About({ scroll }) {
           ? `rotateX(70deg) rotateZ(-60deg) translate3d(-120px, ${cardwX}%, 70px) !important`
           : `rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 400px, 70px) !important`,
       maxWidth: containerWidth > 40 ? `${cardWidth}%` : `40vw`,
-      minWidth: "400px",
+      minWidth: "400px"
     },
   };
 
