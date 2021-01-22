@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import About from "../About";
 import Scene from "../Scene";
 import ProgressBar from "../ProgressBar";
@@ -7,6 +7,11 @@ import "./style.css";
 
 function Landing({ size }) {
   const { scrollYProgress } = useViewportScroll();
+  const pageH = useRef(0);
+  useEffect(() => {
+    pageH.current.style.height = window.visualViewport.height + "px";
+  })
+ 
   const [progress, setProgress] = useState(0);
   scrollYProgress.onChange((e) => setProgress(e));
   const blurValue = progress * 10 + "px";
@@ -14,8 +19,9 @@ function Landing({ size }) {
   const titlePosi = -6 + Math.pow(num, 3);
   const [scroll, setScroll] = useState(false);
 
+  
   return (
-    <div id="landing">
+    <div id="landing" ref={pageH}>
        <div className="center">
         <div className="outline" />
         </div>
