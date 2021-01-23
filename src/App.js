@@ -54,7 +54,7 @@ function App() {
     //Assign skew and smooth scrolling to the scroll container based on certain scroll amounts
     scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
     if (data.rounded > containerHeight/2) {
-      scrollable.current.style.transform = `translate3d(0, -${containerHeight/2 + (skew * 3)}px, 0)`
+      scrollable.current.style.transform = `translate3d(0, -${containerHeight/2}px, 0)`
       fixedScroll.current.style.transform = `translate3d(0, -${
       data.rounded
       }px, 0)`;
