@@ -6,7 +6,9 @@ function Projects() {
 
   return (
     <div id="projects">
-      
+      <div className="container">
+      <h1 className="test">Projects</h1>
+      </div>
     </div>
   );
 }

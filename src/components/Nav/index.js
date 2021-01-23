@@ -52,7 +52,6 @@ const navItems = {
 function Nav() {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
-  console.log(isOpen);
   return (
     <div id="nav">
       <motion.nav

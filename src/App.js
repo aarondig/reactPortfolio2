@@ -6,16 +6,17 @@ import Wrapper from "./components/Wrapper";
 import Landing from "./components/Landing";
 import ProgressBar from "./components/ProgressBar";
 import Nav from "./components/Nav";
+import Projects from "./components/Projects";
 
 function App() {
   const [scroll, setScroll] = useState();
-
 
   const size = useWindowSize();
 
   const app = useRef();
   const scrollContainer = useRef();
   const scrollable = useRef();
+  const fixedScroll = useRef();
 
   const data = {
     ease: 0.1,
@@ -24,8 +25,6 @@ function App() {
     rounded: 0,
   };
 
-
-  
   useEffect(() => {
     requestAnimationFrame(() => skewScrolling());
   }, []);
@@ -35,14 +34,11 @@ function App() {
       scrollContainer.current.getBoundingClientRect().height
     }px`;
   }, [size.height]);
- 
-  
-
-
-  
 
   // SCROLLING
   const skewScrolling = () => {
+    const containerHeight = scrollable.current.getBoundingClientRect()
+      .height  + 1;
     //Set Current to the scroll position amount
     data.current = window.scrollY;
     // Set Previous to the scroll previous position
@@ -50,45 +46,49 @@ function App() {
     // Set rounded to
     data.rounded = Math.round(data.previous * 100) / 100;
     //VARIABLES
-    
-    
-
-    
-
 
     const difference = data.current - data.rounded;
     const acceleration = difference / size.width;
-    const velocity = + acceleration;
+    const velocity = +acceleration;
     const skew = velocity * 7.5;
-    const round = Math.abs(velocity) * 100;
     //Assign skew and smooth scrolling to the scroll container based on certain scroll amounts
     scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
+    if (data.rounded > containerHeight/2) {
+      scrollable.current.style.transform = `translate3d(0, -${containerHeight/2 + (skew * 3)}px, 0)`
+      fixedScroll.current.style.transform = `translate3d(0, -${
+      data.rounded
+      }px, 0)`;
+    }
 
-    if (data.rounded > window.innerHeight) {
-      scrollable.current.style.transform = `translate3d(0, -${window.innerHeight}px, 0) skewY(0deg)`;
-    } 
+    // if (data.rounded > containerHeight/2) {
+    //   scrollable.current.style.transform = `translate3d(0, -${data.rounded + containerHeight/2}px, 0)`;
+    // }
+
+    if (data.rounded > containerHeight) {
+      fixedScroll.current.style.transform = `translate3d(0, -${containerHeight}px, 0) skewY(0deg)`;
+    }
     // skewY(${skew}deg)
     // scrollable.current.style.borderRadius = `${round}%`;
-    
-    setScroll(data.rounded)
+    setScroll(data.rounded - containerHeight/2);
     requestAnimationFrame(() => skewScrolling());
   };
   return (
     <div ref={app} className="App">
       <Wrapper>
         <div ref={scrollContainer} className="scroll">
-          <Landing size={size.width} />
           <div id="scrollable" ref={scrollable}>
-            
-            <About scroll={scroll}/>
-           <div className="nothing">
-             HI EVERYBODY
-             <h1>HI EVERYBODY</h1>
-           </div>
-          </div>
-          {/* <ProgressBar/> */}
+            <Landing size={size.width} />
+            <Projects />
+
+            {/* <ProgressBar/> */}
+            </div>
+            <div id="fixed" ref={fixedScroll}>
+              <About scroll={scroll} />
+              <div className="nothing"/>
+            </div>
+          
         </div>
-        <Nav/>
+        <Nav />
       </Wrapper>
     </div>
   );

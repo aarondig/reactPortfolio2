@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-
 let speed = 0;
 let position = 0;
 let rounded = 0;

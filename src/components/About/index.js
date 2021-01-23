@@ -26,6 +26,7 @@ function About({ scroll }) {
       opacity: opacity,
     },
     reveal: {
+      display: containerWidth < -100 ? "none" : "block",
       maxWidth: containerWidth > 40 ? containerWidth + "vw" : "40%",
       transform:
         size.width > 700 ? `translateX(-${move}px)` : `translateY(${move - 20}px)`,
@@ -53,7 +54,7 @@ function About({ scroll }) {
       minWidth: "400px"
     },
   };
-
+console.log(containerWidth)
   const hoverRef = useRef();
   const onHover = () => {
     if (containerWidth < 40) {

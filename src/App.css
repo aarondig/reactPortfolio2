@@ -15,9 +15,9 @@ body {
   overflow: hidden;
 }
 
-#fixed {
+/* #fixed {
   position: fixed;
-}
+} */
 
 .nothing {
   width: 100%;
