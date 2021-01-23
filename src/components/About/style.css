@@ -3,12 +3,12 @@
   width: 100%;
   /* background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
   /* background: linear-gradient(180deg, #0a0a0a 50%, #00000000 100%); */
-  border-style: solid;
+  /* border-style: solid;
   border-bottom: none;
-  border-left: none;
+  border-left: none; */
   border-color: #ebedee;
   border-width: 2px;
-  
+  box-shadow: 0 10px 50px rgb(18, 18, 18);
 }
 
 .pageWrap {

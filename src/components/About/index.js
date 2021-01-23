@@ -54,7 +54,6 @@ function About({ scroll }) {
       minWidth: "400px"
     },
   };
-console.log(containerWidth)
   const hoverRef = useRef();
   const onHover = () => {
     if (containerWidth < 40) {

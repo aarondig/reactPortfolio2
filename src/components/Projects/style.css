@@ -1,10 +1,8 @@
 #projects {
     height: 100vh;
-    background: rgba(248, 0, 0, 0.991);
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
-.test {
-    position: relative;
-    z-index: 100;
-    font-size: 100;
+.projectsHead {
+   padding-top: 25%;
 }

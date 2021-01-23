@@ -53,20 +53,19 @@ function App() {
     const skew = velocity * 7.5;
     //Assign skew and smooth scrolling to the scroll container based on certain scroll amounts
     scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
-    if (data.rounded > containerHeight/2) {
+    if (data.rounded> containerHeight/2 ) {
       scrollable.current.style.transform = `translate3d(0, -${containerHeight/2}px, 0)`
       fixedScroll.current.style.transform = `translate3d(0, -${
-      data.rounded
+        data.rounded
       }px, 0)`;
     }
-
-    // if (data.rounded > containerHeight/2) {
-    //   scrollable.current.style.transform = `translate3d(0, -${data.rounded + containerHeight/2}px, 0)`;
-    // }
-
+    if (data.rounded > containerHeight/2) {
+      
+    }
     if (data.rounded > containerHeight) {
       fixedScroll.current.style.transform = `translate3d(0, -${containerHeight}px, 0) skewY(0deg)`;
     }
+
     // skewY(${skew}deg)
     // scrollable.current.style.borderRadius = `${round}%`;
     setScroll(data.rounded - containerHeight/2);
@@ -78,16 +77,26 @@ function App() {
         <div ref={scrollContainer} className="scroll">
           <div id="scrollable" ref={scrollable}>
             <Landing size={size.width} />
-            <Projects />
+            <Projects scroll={scroll}/>
 
             {/* <ProgressBar/> */}
             </div>
             <div id="fixed" ref={fixedScroll}>
+              
               <About scroll={scroll} />
               <div className="nothing"/>
             </div>
           
         </div>
+         {/* <div id="fixed" ref={fixedScroll}>
+            {((scroll + (container/2) +1) > container/2) &&
+              <div style={{height: "100%", width: "100%"}}>
+                <About scroll={scroll}/>
+              <div className="nothing"/>
+              </div>
+              }
+            </div> */}
+
         <Nav />
       </Wrapper>
     </div>

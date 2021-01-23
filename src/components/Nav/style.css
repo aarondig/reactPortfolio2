@@ -1,6 +1,8 @@
 #nav {
     position: absolute;
     top: 0;
+    background: transparent;
+    
 }
 nav {
     width: 100vw;
@@ -8,6 +10,7 @@ nav {
     top: 0;
     left: 0;
     z-index: 10000;
+    mix-blend-mode: difference;
   }
   .background {
     position: absolute;
@@ -15,9 +18,10 @@ nav {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgb(255, 255, 255);
+    background: white;
     /* backdrop-filter: blur(200px); */
     /* z-index: 10000; */
+    mix-blend-mode: difference;
   }
   .navButton {
     outline: none;
