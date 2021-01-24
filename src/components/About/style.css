@@ -63,6 +63,7 @@
   font-size: 35px;
   color: #ebedee;
   margin-top: 0px;
+  mix-blend-mode: difference;
 }
 .title {
   text-align: center;

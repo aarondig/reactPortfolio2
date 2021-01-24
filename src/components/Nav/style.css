@@ -1,7 +1,6 @@
 #nav {
     position: absolute;
     top: 0;
-    background: transparent;
     
 }
 nav {
@@ -18,10 +17,8 @@ nav {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: white;
-    /* backdrop-filter: blur(200px); */
-    /* z-index: 10000; */
-    mix-blend-mode: difference;
+    background: linear-gradient(rgb(255, 49, 60), #e9322e);
+    
   }
   .navButton {
     outline: none;
@@ -36,6 +33,6 @@ nav {
     width: 50px;
     height: 50px;
     background: transparent;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
 
   }

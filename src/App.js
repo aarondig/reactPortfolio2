@@ -39,6 +39,8 @@ function App() {
   const skewScrolling = () => {
     const containerHeight = scrollable.current.getBoundingClientRect()
       .height  + 1;
+    const pageTotal = 3;
+    
     //Set Current to the scroll position amount
     data.current = window.scrollY;
     // Set Previous to the scroll previous position
@@ -53,13 +55,13 @@ function App() {
     const skew = velocity * 7.5;
     //Assign skew and smooth scrolling to the scroll container based on certain scroll amounts
     scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
-    if (data.rounded> containerHeight/2 ) {
-      scrollable.current.style.transform = `translate3d(0, -${containerHeight/2}px, 0)`
+    if (data.rounded> containerHeight/pageTotal ) {
+      scrollable.current.style.transform = `translate3d(0, -${containerHeight/3}px, 0)`
       fixedScroll.current.style.transform = `translate3d(0, -${
         data.rounded
       }px, 0)`;
     }
-    if (data.rounded > containerHeight/2) {
+    if (data.rounded > containerHeight/pageTotal) {
       
     }
     if (data.rounded > containerHeight) {
@@ -68,7 +70,7 @@ function App() {
 
     // skewY(${skew}deg)
     // scrollable.current.style.borderRadius = `${round}%`;
-    setScroll(data.rounded - containerHeight/2);
+    setScroll(data.rounded - containerHeight / pageTotal);
     requestAnimationFrame(() => skewScrolling());
   };
   return (
@@ -78,7 +80,7 @@ function App() {
           <div id="scrollable" ref={scrollable}>
             <Landing size={size.width} />
             <Projects scroll={scroll}/>
-
+            <div className="nothing"/>
             {/* <ProgressBar/> */}
             </div>
             <div id="fixed" ref={fixedScroll}>
@@ -89,7 +91,7 @@ function App() {
           
         </div>
          {/* <div id="fixed" ref={fixedScroll}>
-            {((scroll + (container/2) +1) > container/2) &&
+            {((scroll + (container/3) +1) > container/3) &&
               <div style={{height: "100%", width: "100%"}}>
                 <About scroll={scroll}/>
               <div className="nothing"/>

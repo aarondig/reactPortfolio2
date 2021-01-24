@@ -59,7 +59,7 @@ function Nav() {
         animate={isOpen ? "open" : "closed"}
         ref={containerRef}
       >
-        <motion.div className="background" variants={sidebar} />
+        
         <button className="navButton" onClick={() => toggleOpen()}>
           <svg width="70" height="70" viewBox="0 0 50 50">
             <Path
@@ -88,6 +88,13 @@ function Nav() {
           <div key={i} />
         ))} */}
       </motion.nav>
+      <motion.div
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+        ref={containerRef}
+      >
+      <motion.div className="background" variants={sidebar} />
+      </motion.div>
     </div>
   );
 }

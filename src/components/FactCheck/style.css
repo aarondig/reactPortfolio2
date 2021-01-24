@@ -1,0 +1,19 @@
+#factCheck {
+    height: 100vh;
+    background: red;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.projectsHead {
+    width: 50%;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   padding-top: 25vh;
+   margin-left: auto;
+   margin-right: auto;
+   /* text-align: center; */
+}

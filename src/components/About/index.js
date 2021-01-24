@@ -64,6 +64,7 @@ function About({ scroll }) {
     
       hoverRef.current.style.transform = `rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 400px, 70px)`;
   };
+
   return (
     <div id="About">
       <div id="foreground" />
