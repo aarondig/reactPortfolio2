@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/aaronDiggdon/static/css/main.52bf697a.chunk.css",
+    "main.css": "/aaronDiggdon/static/css/main.caaf0f85.chunk.css",
     "main.js": "/aaronDiggdon/static/js/main.c1cac363.chunk.js",
     "main.js.map": "/aaronDiggdon/static/js/main.c1cac363.chunk.js.map",
     "runtime-main.js": "/aaronDiggdon/static/js/runtime-main.cab6a408.js",
@@ -10,7 +10,7 @@
     "static/js/3.7771679a.chunk.js": "/aaronDiggdon/static/js/3.7771679a.chunk.js",
     "static/js/3.7771679a.chunk.js.map": "/aaronDiggdon/static/js/3.7771679a.chunk.js.map",
     "index.html": "/aaronDiggdon/index.html",
-    "static/css/main.52bf697a.chunk.css.map": "/aaronDiggdon/static/css/main.52bf697a.chunk.css.map",
+    "static/css/main.caaf0f85.chunk.css.map": "/aaronDiggdon/static/css/main.caaf0f85.chunk.css.map",
     "static/js/2.dd01e63a.chunk.js.LICENSE.txt": "/aaronDiggdon/static/js/2.dd01e63a.chunk.js.LICENSE.txt",
     "static/media/me.120f84ea.jpg": "/aaronDiggdon/static/media/me.120f84ea.jpg",
     "static/media/venus.3df63535.gltf": "/aaronDiggdon/static/media/venus.3df63535.gltf"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.cab6a408.js",
     "static/js/2.dd01e63a.chunk.js",
-    "static/css/main.52bf697a.chunk.css",
+    "static/css/main.caaf0f85.chunk.css",
     "static/js/main.c1cac363.chunk.js"
   ]
 }
