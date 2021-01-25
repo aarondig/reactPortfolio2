@@ -23,7 +23,7 @@
         transition: bottom .4s ease-in-out;
     }
     .learnMore:hover {
-        bottom: 6px;
+        bottom: 40px;
     }
     #burgerEater .projectsHead {
       width: 100vw;

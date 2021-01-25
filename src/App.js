@@ -54,6 +54,12 @@ function App() {
     const velocity = +acceleration;
     const skew = velocity * 7.5;
     //Assign skew and smooth scrolling to the scroll container based on certain scroll amounts
+    
+    
+    
+    
+     // NORMAL W INERTIA
+ if (window.innerWidth > 800) {
     scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
     if (data.rounded> containerHeight/pageTotal ) {
       scrollable.current.style.transform = `translate3d(0, -${containerHeight/pageTotal}px, 0)`
@@ -67,10 +73,29 @@ function App() {
     if (data.rounded > containerHeight) {
       fixedScroll.current.style.transform = `translate3d(0, -${containerHeight}px, 0) skewY(0deg)`;
     }
+    setScroll(data.rounded - containerHeight / pageTotal);
+  }
+
+
+// MOBILE RESPONSIVE W/O INERTIA
+if (window.innerWidth < 800) {
+  scrollable.current.style.transform = `translate3d(0, -${window.scrollY}px, 0)`;
+  if (window.scrollY > containerHeight/pageTotal ) {
+    scrollable.current.style.transform = `translate3d(0, -${containerHeight/pageTotal}px, 0)`
+    fixedScroll.current.style.transform = `translate3d(0, -${
+      window.scrollY
+    }px, 0)`;
+  }
+  if (window.scrollY > containerHeight) {
+    fixedScroll.current.style.transform = `translate3d(0, -${containerHeight}px, 0) skewY(0deg)`;
+  }
+  setScroll(window.scrollY - containerHeight / pageTotal);
+}
+
 
     // skewY(${skew}deg)
     // scrollable.current.style.borderRadius = `${round}%`;
-    setScroll(data.rounded - containerHeight / pageTotal);
+    
     requestAnimationFrame(() => skewScrolling());
   };
   return (
@@ -108,3 +133,34 @@ function App() {
 }
 
 export default App;
+
+
+//  // NORMAL W INERTIA
+//  if (window.innerWidth > 800) {
+//   scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
+//   if (data.rounded > containerHeight/pageTotal ) {
+//     scrollable.current.style.transform = `translate3d(0, -${containerHeight/pageTotal}px, 0)`
+//     fixedScroll.current.style.transform = `translate3d(0, -${
+//       data.rounded
+//     }px, 0)`;
+//   }
+//   if (data.rounded > containerHeight) {
+//     fixedScroll.current.style.transform = `translate3d(0, -${containerHeight}px, 0) skewY(0deg)`;
+//   }
+//   setScroll(data.rounded - containerHeight / pageTotal);
+// }
+
+// // MOBILE RESPONSIVE W/O INERTIA
+// if (window.innerWidth < 800) {
+//   scrollable.current.style.transform = `translate3d(0, -${window.scrollY}px, 0)`;
+//   if (window.scrollY > containerHeight/pageTotal ) {
+//     scrollable.current.style.transform = `translate3d(0, -${containerHeight/pageTotal}px, 0)`
+//     fixedScroll.current.style.transform = `translate3d(0, -${
+//       data.rounded
+//     }px, 0)`;
+//   }
+//   if (window.scrollY > containerHeight) {
+//     fixedScroll.current.style.transform = `translate3d(0, -${containerHeight}px, 0) skewY(0deg)`;
+//   }
+//   setScroll(window.scrollY - containerHeight / pageTotal);
+// }

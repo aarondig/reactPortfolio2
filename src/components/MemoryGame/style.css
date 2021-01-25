@@ -23,7 +23,7 @@
         transition: bottom .4s ease-in-out;
     }
     .learnMore:hover {
-        bottom: 6px;
+        bottom: 20px;
     }
     #memoryGame .projectsHead {
       width: 100vw;

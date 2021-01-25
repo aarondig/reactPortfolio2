@@ -6,7 +6,8 @@
 }
 
 .mainHeader {
-    height:100vh;
+    height:100%;
+    top: -40%;
     position: absolute;
     font-size: 50px;
     margin-left: 10vw;
