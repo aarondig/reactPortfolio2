@@ -33,7 +33,8 @@ function App() {
     document.body.style.height = `${
       scrollContainer.current.getBoundingClientRect().height
     }px`;
-  }, [size.height]);
+  }, []);
+  // size.height
 
   // SCROLLING
   const skewScrolling = () => {
