@@ -12,17 +12,17 @@
 @media screen and (max-width: 700px) {
     #memoryGame {
     }
-    .learnMore {
+    #memoryGame .learnMore {
         position: absolute;
         width: 85%;
         left: 0;
         padding-left: 8.5%;
-        bottom: -15px;
+        bottom: -350px;
         backdrop-filter: blur(100px);
         
         transition: bottom .4s ease-in-out;
     }
-    .learnMore:hover {
+    #memoryGame .learnMore:hover {
         bottom: 20px;
     }
     #memoryGame .projectsHead {

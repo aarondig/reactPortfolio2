@@ -59,7 +59,7 @@ function App() {
     
     
      // NORMAL W INERTIA
- if (window.innerWidth > 800) {
+//  if (window.innerWidth > 800) {
     scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
     if (data.rounded> containerHeight/pageTotal ) {
       scrollable.current.style.transform = `translate3d(0, -${containerHeight/pageTotal}px, 0)`
@@ -74,23 +74,23 @@ function App() {
       fixedScroll.current.style.transform = `translate3d(0, -${containerHeight}px, 0) skewY(0deg)`;
     }
     setScroll(data.rounded - containerHeight / pageTotal);
-  }
+  // }
 
 
 // MOBILE RESPONSIVE W/O INERTIA
-if (window.innerWidth < 800) {
-  scrollable.current.style.transform = `translate3d(0, -${window.scrollY}px, 0)`;
-  if (window.scrollY > containerHeight/pageTotal ) {
-    scrollable.current.style.transform = `translate3d(0, -${containerHeight/pageTotal}px, 0)`
-    fixedScroll.current.style.transform = `translate3d(0, -${
-      window.scrollY
-    }px, 0)`;
-  }
-  if (window.scrollY > containerHeight) {
-    fixedScroll.current.style.transform = `translate3d(0, -${containerHeight}px, 0) skewY(0deg)`;
-  }
-  setScroll(window.scrollY - containerHeight / pageTotal);
-}
+// if (window.innerWidth < 800) {
+//   scrollable.current.style.transform = `translate3d(0, -${window.scrollY}px, 0)`;
+//   if (window.scrollY > containerHeight/pageTotal ) {
+//     scrollable.current.style.transform = `translate3d(0, -${containerHeight/pageTotal}px, 0)`
+//     fixedScroll.current.style.transform = `translate3d(0, -${
+//       window.scrollY
+//     }px, 0)`;
+//   }
+//   if (window.scrollY > containerHeight) {
+//     fixedScroll.current.style.transform = `translate3d(0, -${containerHeight}px, 0) skewY(0deg)`;
+//   }
+//   setScroll(window.scrollY - containerHeight / pageTotal);
+// }
 
 
     // skewY(${skew}deg)
