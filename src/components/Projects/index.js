@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./style.css";
 import { motion, useViewportScroll } from "framer-motion";
 import FactCheck from "../FactCheck";
+import BurgerEater from "../BurgerEater";
+import MemoryGame from "../MemoryGame";
 
 function Projects({ scroll }) {
   const opacity = -Math.pow((scroll / window.innerHeight) * 2 - 0.2, 2) + 1;
@@ -31,14 +33,16 @@ function Projects({ scroll }) {
               Projects
             </h1>
             <h2 className="subHeader" style={style.fade}>
-              Welcome. These are my projects, that I completed with blah blah
-              blah.
+              These were completed while studying web development and design.
             </h2>
             <p className="text">Keep Scrolling...</p>
           </div>
         </div>
       </div>
+      
       <FactCheck scroll={scroll}/>
+      <BurgerEater scroll={scroll}/>
+      <MemoryGame scroll={scroll}/>
       </div>
   
   );

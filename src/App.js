@@ -39,7 +39,7 @@ function App() {
   const skewScrolling = () => {
     const containerHeight = scrollable.current.getBoundingClientRect()
       .height  + 1;
-    const pageTotal = 4;
+    const pageTotal = 5;
     
     //Set Current to the scroll position amount
     data.current = window.scrollY;
@@ -80,6 +80,7 @@ function App() {
           <div id="scrollable" ref={scrollable}>
             <Landing size={size.width} />
             <Projects scroll={scroll}/>
+            <div className="nothing"/>
             <div className="nothing"/>
             <div className="nothing"/>
             {/* <ProgressBar/> */}
