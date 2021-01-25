@@ -10,18 +10,18 @@ function Projects({ scroll }) {
       opacity: opacity,
     },
   };
-  console.log(scroll / window.innerHeight);
+
   return (
     <div id="projects">
       <div
         id="cover"
         style={
           scroll / window.innerHeight < 1
-            ? { display: "block" }
-            : { display: "none" }
+            ? { display: "block", }
+            : { display: "none", }
         }
       >
-        <div className="background" style={
+        <div className="background" id="coverBack" style={
           scroll / window.innerHeight < .5
             ? 
             { opacity: 1 } : { opacity: opacity + 1}
@@ -38,8 +38,9 @@ function Projects({ scroll }) {
           </div>
         </div>
       </div>
-      <FactCheck />
-    </div>
+      <FactCheck scroll={scroll}/>
+      </div>
+  
   );
 }
 

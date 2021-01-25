@@ -11,7 +11,7 @@ nav {
     z-index: 10000;
     mix-blend-mode: difference;
   }
-  .background {
+ #navBackground {
     position: absolute;
     top: 0;
     left: 0;

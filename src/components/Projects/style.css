@@ -4,18 +4,11 @@
     width: 100%;
 }
 
-
-
-#cover {
-    height: 100%;
-    width: 100%;
-}
-
 .background {
     height: 100%;
-    width: 100%;
-    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    width: 100%; 
 }
+
 
 .projectsHead {
     width: 50%;
@@ -26,8 +19,43 @@
    padding-top: 25vh;
    margin-left: auto;
    margin-right: auto;
-   /* text-align: center; */
 }
+
+
+
+#cover {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+}
+
+#coverBack {
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+
+
+#projects .header {
+      font-family: 'MADE TOMMY';
+      font-weight: 100;
+      font-size: 80px;
+      color: #ebedee;
+      margin-bottom: 5%;
+    mix-blend-mode: difference;
+  }
+#projects .subHeader {
+    text-align: left;
+    font-family: 'MADE TOMMY';
+    font-weight: 100;
+    font-size: 35px;
+    color: #ebedee;
+    margin-top: 0px;
+    mix-blend-mode: difference;
+  }
+
+
+
 .text {
   font-family: 'MADE TOMMY';
   font-weight: 400;
@@ -35,3 +63,19 @@
   color: #e9322e;
   margin-top: 0px;
 }
+
+@media screen and (max-width: 700px)  {
+
+    #projects {
+
+    }
+    #projects .header {
+          font-size: 50px;
+      }
+  
+      #projects .subHeader {
+        
+        font-size: 20px;
+        margin-top: -10px;
+      }
+    }

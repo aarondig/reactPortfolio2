@@ -34,6 +34,28 @@ body {
   justify-content: center;
   
 }
+
+
+.header {
+  font-family: 'MADE TOMMY';
+  font-size: 80px;
+  color: #ebedee;
+  /* mix-blend-mode: difference; */
+}
+.subHeader {
+text-align: left;
+font-family: 'MADE TOMMY';
+font-weight: 100;
+font-size: 35px;
+color: #ebedee;
+
+}
+
+
+
+
+
+
 .flex-grid {
   display: flex;
   justify-content: space-around;
@@ -44,7 +66,19 @@ body {
   display: flex;
   justify-content: left;
 }
-@media (max-width: 800px) {
+@media (max-width: 700px) {
+
+  .header {
+    font-size: 50px;
+  }
+  .subHeader {
+  text-align: left;
+  font-weight: 100;
+  font-size: 25px;
+  }
+
+
+
   .flex-grid {
     display: flex;
     flex-direction: column;

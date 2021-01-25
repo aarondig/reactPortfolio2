@@ -40,14 +40,14 @@
   margin-left: -10px !important;
 
 }
-.headerC {
+#About .headerC {
   margin-top: -5%;
   margin-left: 32%;
   margin-right: auto;
   width: 65%;
   flex-direction: column;
 }
-.header {
+#About .header {
     font-family: 'MADE TOMMY';
     font-weight: 100;
     font-size: 80px;
@@ -56,7 +56,7 @@
     margin-bottom: 5%;
     mix-blend-mode: difference;
 }
-.subHeader {
+#About .subHeader {
   text-align: left;
   font-family: 'MADE TOMMY';
   font-weight: 100;
@@ -65,7 +65,7 @@
   margin-top: 0px;
   mix-blend-mode: difference;
 }
-.title {
+#About .title {
   text-align: center;
   font-family: 'MADE TOMMY';
   font-weight: 400;
@@ -73,13 +73,13 @@
   color: #e9322e;
   margin-top: 0px;
 }
-.buttonC {
+#About .buttonC {
 width: 100%;
 min-width: 400px;
 margin-top: 10vh;
 }
 
-.button {
+#About .button {
   width: 80px;
   height: 80px;
   border: solid #e9322e 2px;
@@ -87,7 +87,7 @@ margin-top: 10vh;
   box-shadow: 0 5px 25px #0000008b;
   transition: all .3s;
 }
-.button:hover {
+#About .button:hover {
   width: 100px;
   height: 100px;
   transform: translateY(-10px)
@@ -204,7 +204,7 @@ margin-top: 10vh;
 
 @media screen and (max-width: 1050px)  {
   
-  .header {
+  #About .header {
       font-size: 60px;
   }
 }
@@ -218,16 +218,16 @@ margin-top: 10vh;
   .pageWrap {
     padding: 0;
   }
-  .headerC {
+  #About .headerC {
     margin-top: 2%;
     margin-left: 15%;
   }
-  .header {
+  #About .header {
         font-size: 50px;
         padding-left: 20px;
     }
 
-    .subHeader {
+    #About .subHeader {
       text-align: center;
       font-size: 20px;
       margin-top: -10px;
