@@ -12,7 +12,7 @@ export default function useWindowSize() {
 
   useEffect(() => {
     function handleResize() {
-      getSize().width > 800 && setWindowSize(getSize());
+      setWindowSize(getSize());
     }
          
     window.addEventListener("resize", handleResize);

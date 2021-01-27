@@ -48,7 +48,7 @@ function App() {
     const pageTotal = 5;
     
     //Set Current to the scroll position amount
-    data.current = size.width > 800 ? window.scrollY * 2 : window.scrollY * 4;
+    data.current = size.width > 800 ? window.scrollY : window.scrollY * 1.5;
     // Set Previous to the scroll previous position
     data.previous += (data.current - data.previous) * data.ease;
     // Set rounded to
