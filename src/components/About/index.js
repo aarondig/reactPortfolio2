@@ -6,7 +6,11 @@ import useWindowSize from "../../hooks/windowSize";
 import useScroll from "../../hooks/scroll";
 
 function About({ scroll }) {
-  const size = useWindowSize();
+  // const size = useWindowSize();
+  const size = {
+    width: window.innerWidth,
+    height: window.innerHeight
+  }
   const position = useScroll();
 
   const opacity = -Math.pow((scroll / window.innerHeight) * 1.2 - 1.4, 2) + 1;

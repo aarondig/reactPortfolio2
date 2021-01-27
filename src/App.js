@@ -11,7 +11,11 @@ import Projects from "./components/Projects";
 function App() {
   const [scroll, setScroll] = useState();
 
-  const size = useWindowSize();
+  // const size = useWindowSize();
+   const size = {
+     width: window.innerWidth,
+     height: window.innerHeight
+   }
 
   const app = useRef();
   const scrollContainer = useRef();
@@ -43,7 +47,7 @@ function App() {
     const pageTotal = 5;
     
     //Set Current to the scroll position amount
-    data.current = window.innerWidth > 800 ? window.scrollY * 2 : window.scrollY * 6;
+    data.current = window.innerWidth > 800 ? window.scrollY * 2 : window.scrollY * 4;
     // Set Previous to the scroll previous position
     data.previous += (data.current - data.previous) * data.ease;
     // Set rounded to
