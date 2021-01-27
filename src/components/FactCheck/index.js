@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./style.css";
 import { motion, useViewportScroll } from "framer-motion";
 
-function FactCheck({ scroll }) {
-  const opacity = -Math.pow((scroll / window.innerHeight) * 2 - 2.5, 2) + 1;
+function FactCheck({ scroll, size }) {
+  const opacity = -Math.pow((scroll / size.height) * 2 - 2.5, 2) + 1;
   const style = {
     fade: {
       opacity: opacity,
@@ -14,7 +14,7 @@ function FactCheck({ scroll }) {
     <div
       id="factCheck"
       style={
-        scroll / window.innerHeight < 2
+        scroll / size.height < 2
           ? { display: "block" }
           : { display: "none" }
       }
@@ -23,7 +23,7 @@ function FactCheck({ scroll }) {
         className="background"
         id="factCheckBack"
         style={
-          scroll / window.innerHeight < 1.5
+          scroll / size.height < 1.5
             ? { opacity: 1 }
             : { opacity: opacity + 1 }
         }

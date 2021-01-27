@@ -35,7 +35,7 @@ function Char({size}) {
       0
     );
     ref.current.rotation.y += 0.001;
-    ref.current.position.set(size > 600 ? 18 : 0, -73, -50);
+    ref.current.position.set(size.width > 600 ? 18 : 0, -73, -50);
   });
   return (
     <group>
@@ -64,10 +64,10 @@ function Scene({ size, blurValue }) {
       <Canvas concurrent shadowMap camera={{ position: [0, 0, 3], fov: 70 }}>
         {/* <color attach="background" args={["#0d0d0d"]} /> */}
         {/* <ambientLight intensity={0.2} /> */}
-        <pointLight position={[size > 600 ? 20 : 3, -4, -40]} intensity={size > 600 ? .4 : .13} />
+        <pointLight position={[size.width > 600 ? 20 : 3, -4, -40]} intensity={size.width > 600 ? .4 : .13} />
         {/* <OrbitControls /> */}
         <Physics>
-          <Char size={size}/>
+          <Char size={size.width}/>
         </Physics>
       </Canvas>
     </div>

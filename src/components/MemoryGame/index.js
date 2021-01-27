@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "./style.css";
 import { motion, useViewportScroll } from "framer-motion";
 
-function MemoryGame({ scroll }) {
+function MemoryGame({ scroll, size }) {
 
-  const opacity = -Math.pow((scroll / window.innerHeight) * 2 - 6.5, 2) + 1;
+  const opacity = -Math.pow((scroll / size.height) * 2 - 6.5, 2) + 1;
   const style = {
     fade: {
       opacity: opacity,
@@ -12,12 +12,12 @@ function MemoryGame({ scroll }) {
   }
   return (
     <div id="memoryGame" style={
-      scroll / window.innerHeight < 4
+      scroll / size.height < 4
         ? { display: "block" }
         : { display: "none" }
     }>
       <div className="background" id="memoryGameBack" style={
-          scroll / window.innerHeight < 3.5
+          scroll / size.height < 3.5
             ? 
             { opacity: 1 } : { opacity: opacity + 1}
         }>

@@ -11,11 +11,7 @@ import Projects from "./components/Projects";
 function App() {
   const [scroll, setScroll] = useState();
 
-  // const size = useWindowSize();
-   const size = {
-     width: window.innerWidth,
-     height: window.innerHeight
-   }
+  const size = useWindowSize();
 
   const app = useRef();
   const scrollContainer = useRef();
@@ -35,19 +31,24 @@ function App() {
 
   useEffect(() => {
     document.body.style.height = `${
-      scrollContainer.current.getBoundingClientRect().height
+      scrollContainer.current.clientHeight
     }px`;
   }, []);
   // size.height
 
+
+  // console.log(scrollContainer.current.getBoundingClientRect().height)
+
+
+
+
   // SCROLLING
   const skewScrolling = () => {
-    const containerHeight = scrollable.current.getBoundingClientRect()
-      .height  + 1;
+    const containerHeight = size.width > 800 ? scrollable.current.getBoundingClientRect().height + 1 : scrollable.current.clientHeight + 1;
     const pageTotal = 5;
     
     //Set Current to the scroll position amount
-    data.current = window.innerWidth > 800 ? window.scrollY * 2 : window.scrollY * 4;
+    data.current = size.width > 800 ? window.scrollY * 2 : window.scrollY * 4;
     // Set Previous to the scroll previous position
     data.previous += (data.current - data.previous) * data.ease;
     // Set rounded to
@@ -61,7 +62,7 @@ function App() {
     //Assign skew and smooth scrolling to the scroll container based on certain scroll amounts
     
      // NORMAL W INERTIA
-//  if (window.innerWidth > 800) {
+//  if (size.width > 800) {
     scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
     if (data.rounded> containerHeight/pageTotal ) {
       scrollable.current.style.transform = `translate3d(0, -${containerHeight/pageTotal}px, 0)`
@@ -80,7 +81,7 @@ function App() {
 
 
 // MOBILE RESPONSIVE W/O INERTIA
-// if (window.innerWidth < 800) {
+// if (size.width < 800) {
 //   scrollable.current.style.transform = `translate3d(0, -${window.scrollY}px, 0)`;
 //   if (window.scrollY > containerHeight/pageTotal ) {
 //     scrollable.current.style.transform = `translate3d(0, -${containerHeight/pageTotal}px, 0)`
@@ -105,7 +106,7 @@ function App() {
       <Wrapper>
         <div ref={scrollContainer} className="scroll">
           <div id="scrollable" ref={scrollable}>
-            <Landing size={size.width} />
+            <Landing size={size} />
             <Projects scroll={scroll}/>
             <div className="nothing"/>
             <div className="nothing"/>
@@ -138,7 +139,7 @@ export default App;
 
 
 //  // NORMAL W INERTIA
-//  if (window.innerWidth > 800) {
+//  if (size.width > 800) {
 //   scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
 //   if (data.rounded > containerHeight/pageTotal ) {
 //     scrollable.current.style.transform = `translate3d(0, -${containerHeight/pageTotal}px, 0)`
@@ -153,7 +154,7 @@ export default App;
 // }
 
 // // MOBILE RESPONSIVE W/O INERTIA
-// if (window.innerWidth < 800) {
+// if (size.width < 800) {
 //   scrollable.current.style.transform = `translate3d(0, -${window.scrollY}px, 0)`;
 //   if (window.scrollY > containerHeight/pageTotal ) {
 //     scrollable.current.style.transform = `translate3d(0, -${containerHeight/pageTotal}px, 0)`

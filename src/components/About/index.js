@@ -6,25 +6,21 @@ import useWindowSize from "../../hooks/windowSize";
 import useScroll from "../../hooks/scroll";
 
 function About({ scroll }) {
-  // const size = useWindowSize();
-  const size = {
-    width: window.innerWidth,
-    height: window.innerHeight
-  }
+  const size = useWindowSize();
   const position = useScroll();
 
-  const opacity = -Math.pow((scroll / window.innerHeight) * 1.2 - 1.4, 2) + 1;
-  // const containerWidth = (scroll / window.innerHeight - 1.1) * 100;
-  const containerWidth = (scroll / window.innerHeight - 1.1) * 100;
+  const opacity = -Math.pow((scroll / size.height) * 1.2 - 1.4, 2) + 1;
+  // const containerWidth = (scroll / size.height - 1.1) * 100;
+  const containerWidth = (scroll / size.height - 1.1) * 100;
   const negativeSpace = 100 - containerWidth;
   const negativeSpaceSlide = 60 - containerWidth;
-  const move = (window.innerHeight / scroll - 1) * 100;
+  const move = (size.height / scroll - 1) * 100;
 
   const cardwX =
-    (500 / window.innerWidth) * 100 * (window.innerHeight / scroll);
+    (500 / size.width) * 100 * (size.height / scroll);
   // const cardwY =
-  //   ((400 / window.innerWidth) * 100 * window.innerHeight) / scroll;
-  const cardWidth = -((scroll / window.innerHeight) * 50) + 150;
+  //   ((400 / size.width) * 100 * size.height) / scroll;
+  const cardWidth = -((scroll / size.height) * 50) + 150;
   const style = {
     fade: {
       opacity: opacity,
@@ -51,7 +47,7 @@ function About({ scroll }) {
     },
     cardWidth: {
       transform:
-        scroll / window.innerHeight > 1.7
+        scroll / size.height > 1.7
           ? `rotateX(70deg) rotateZ(-60deg) translate3d(-120px, ${cardwX}%, 70px) !important`
           : `rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 400px, 70px) !important`,
       maxWidth: containerWidth > 40 ? `${cardWidth}%` : `40vw`,
@@ -139,7 +135,7 @@ function About({ scroll }) {
           </div>
         ) : (
           <div className="headerC center">
-            {scroll > window.innerHeight ? (
+            {scroll > size.height ? (
               <h1 className="header">Let's stay in touch.</h1>
             ) : (
               <div />

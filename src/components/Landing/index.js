@@ -29,7 +29,7 @@ function Landing({ size }) {
      
       <div
         className="mainHeader"
-        style={{ fontSize: size > 700 ? "50px" : "30px" }}
+        style={{ fontSize: size.width > 700 ? "50px" : "30px" }}
       >
         <h1 id="outlineHead">AARON</h1>
         <h1 id="fillHead">DIGGDON</h1>

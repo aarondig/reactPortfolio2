@@ -4,9 +4,11 @@ import { motion, useViewportScroll } from "framer-motion";
 import FactCheck from "../FactCheck";
 import BurgerEater from "../BurgerEater";
 import MemoryGame from "../MemoryGame";
+import useWindowSize from "../../hooks/windowSize";
 
 function Projects({ scroll }) {
-  const opacity = -Math.pow((scroll / window.innerHeight) * 2 - 0.2, 2) + 1;
+  const size = useWindowSize();
+  const opacity = -Math.pow((scroll / size.height) * 2 - 0.2, 2) + 1;
   const style = {
     fade: {
       opacity: opacity,
@@ -18,13 +20,13 @@ function Projects({ scroll }) {
       <div
         id="cover"
         style={
-          scroll / window.innerHeight < 1
+          scroll / size.height < 1
             ? { display: "block", }
             : { display: "none", }
         }
       >
         <div className="background" id="coverBack" style={
-          scroll / window.innerHeight < .5
+          scroll / size.height < .5
             ? 
             { opacity: 1 } : { opacity: opacity + 1}
         }>
@@ -40,9 +42,9 @@ function Projects({ scroll }) {
         </div>
       </div>
       
-      <FactCheck scroll={scroll}/>
-      <BurgerEater scroll={scroll}/>
-      <MemoryGame scroll={scroll}/>
+      <FactCheck scroll={scroll} size={size}/>
+      <BurgerEater scroll={scroll} size={size}/>
+      <MemoryGame scroll={scroll} size={size}/>
       </div>
   
   );
