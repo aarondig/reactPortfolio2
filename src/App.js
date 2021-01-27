@@ -19,7 +19,7 @@ function App() {
   const fixedScroll = useRef();
 
   const data = {
-    ease: 0.1,
+    ease: size.width > 800 ? 0.1 : .05,
     current: 0,
     previous: 0,
     rounded: 0,
@@ -48,9 +48,12 @@ function App() {
     const pageTotal = 5;
     
     //Set Current to the scroll position amount
-    data.current = size.width > 800 ? window.scrollY : window.scrollY * 1.5;
+    data.current =  window.scrollY;
     // Set Previous to the scroll previous position
-    data.previous += (data.current - data.previous) * data.ease;
+    data.previous += size.width > 800 ? (data.current - data.previous) * data.ease : (data.current - data.previous);
+
+    // * data.ease
+
     // Set rounded to
     data.rounded = Math.round(data.previous * 100) / 100;
     //VARIABLES
