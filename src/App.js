@@ -43,7 +43,7 @@ function App() {
     const pageTotal = 5;
     
     //Set Current to the scroll position amount
-    data.current = window.scrollY;
+    data.current = window.innerWidth > 800 ? window.scrollY * 2 : window.scrollY * 6;
     // Set Previous to the scroll previous position
     data.previous += (data.current - data.previous) * data.ease;
     // Set rounded to
@@ -55,9 +55,6 @@ function App() {
     const velocity = +acceleration;
     const skew = velocity * 7.5;
     //Assign skew and smooth scrolling to the scroll container based on certain scroll amounts
-    
-    
-    
     
      // NORMAL W INERTIA
 //  if (window.innerWidth > 800) {

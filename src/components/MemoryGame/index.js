@@ -10,7 +10,6 @@ function MemoryGame({ scroll }) {
       opacity: opacity,
     },
   }
-  console.log(scroll / window.innerHeight)
   return (
     <div id="memoryGame" style={
       scroll / window.innerHeight < 4

@@ -10,7 +10,7 @@ function BurgerEater({ scroll }) {
       opacity: opacity,
     },
   }
-  console.log(scroll / window.innerHeight)
+ 
   return (
     <div id="burgerEater" style={
       scroll / window.innerHeight < 3

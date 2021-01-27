@@ -9,7 +9,7 @@ function FactCheck({ scroll }) {
       opacity: opacity,
     },
   };
-  console.log(opacity);
+
   return (
     <div
       id="factCheck"
