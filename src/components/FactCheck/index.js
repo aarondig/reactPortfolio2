@@ -13,20 +13,22 @@ function FactCheck({ scroll, size }) {
 
   const sliderStyle = {
     closed: {
-      width: size.width*2,
+      width: size.width * 2,
       transform: `translateX(0)`,
     },
     opened: {
-      width: size.width*2,
+      width: size.width * 2,
       transform: `translateX(-40%)`,
     },
   };
   const arrowStyle = {
     closed: {
       transform: `rotate(315deg)`,
+      marginLeft: `0px`,
     },
     opened: {
       transform: `rotate(135deg)`,
+      marginLeft: `33px`,
     },
   };
   console.log(click);
@@ -45,36 +47,41 @@ function FactCheck({ scroll, size }) {
         style={
           scroll / size.height < 1.5 ? { opacity: 1 } : { opacity: opacity + 1 }
         }
-      ><div className="slider" style={click ? sliderStyle.opened : sliderStyle.closed}>
-
-      
+      >
         <div
-          className="mainSlide"
-          
+          className="slider"
+          style={click ? sliderStyle.opened : sliderStyle.closed}
         >
-          <div className="projectsHead" style={style.fade}>
-            <div className="learnMore">
-              <h1 className="header">Google Fact Checker</h1>
-              <h2 className="subHeader">
-                Using Google's Fact Check API, this application ruturns fact
-                checked articles based on the user's input search query.
-              </h2>
+          <div className="mainSlide">
+            <div className="projectsHead" style={style.fade}>
+              <div className="learnMore">
+                <h1 className="header">Google Fact Checker</h1>
+                <h2 className="subHeader">
+                  Using Google's Fact Check API, this application ruturns fact
+                  checked articles based on the user's input search query.
+                </h2>
+              </div>
             </div>
           </div>
-          </div>
           <div className="arrowC">
-          <div
-            className="arrow"
-            style={click ? arrowStyle.opened : arrowStyle.closed}
-            onClick={() => setClick(!click)}
-          />
+            <div
+              className="arrow"
+              style={click ? arrowStyle.opened : arrowStyle.closed}
+              onClick={() => setClick(!click)}
+            />
           </div>
-          <div
-          className="nextSlide"
-          // style={click ? nextSlideStyle.opened : nextSlideStyle.closed}
-        ></div>
+          <div className="nextSlide">
+            <div className="center">
+              {/* <h1>hello</h1> */}
+              <div className="projectImgC">
+                <img
+                  className="projectImg"
+                  src="https://github.com/aarondig/factCheck/blob/main/assets/banner.png?raw=true"
+                ></img>
+              </div>
+            </div>
+          </div>
         </div>
-          
       </div>
     </div>
   );

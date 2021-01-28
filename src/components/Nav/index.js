@@ -49,17 +49,19 @@ const navItems = {
 
 
 
-function Nav() {
+function Nav({size}) {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   return (
     <div id="nav">
+      
       <motion.nav
         initial={false}
         animate={isOpen ? "open" : "closed"}
         ref={containerRef}
       >
-        <button className="navButton" onClick={() => toggleOpen()}>
+        <div className="leftNav">
+        <button className="navButton" onClick={() => toggleOpen()} style={{top: size.height * .05 + "px"}}>
           <svg width="70" height="70" viewBox="0 0 50 50">
             <Path
               variants={{
@@ -86,13 +88,15 @@ function Nav() {
         {/* {navItems.map(i => (
           <div key={i} />
         ))} */}
+        </div>
       </motion.nav>
+      
       <motion.div
         initial={false}
         animate={isOpen ? "open" : "closed"}
         ref={containerRef}
       >
-      <motion.div id="navBackground" variants={sidebar} />
+      <motion.div id="navBackground" style={{height: size.height}} variants={sidebar} />
       </motion.div>
     </div>
   );

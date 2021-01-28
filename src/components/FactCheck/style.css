@@ -3,26 +3,26 @@
     top: 0;
     width: 100%;
     z-index: 4;
+    
 }
 
 #factCheckBack {
     background: rgb(255, 255, 255);
 }
-#factCheck .projectsHead {
+/* #factCheck .projectsHead {
     width: 65%;
-    padding-top: 20%;
- 
-}
+} */
+
 #factCheck .header {
       font-size: 75px;
-      color: black;
+      color:#0a0a0a;
   }
 
   #factCheck .subHeader {
     
     font-size: 30px;
     margin-top: -15px;
-    color: black;
+    color: #0a0a0a;
   }
 
 @media screen and (max-width: 700px) {

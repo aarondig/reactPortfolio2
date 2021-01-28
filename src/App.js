@@ -132,7 +132,7 @@ function App() {
               }
             </div> */}
 
-        <Nav />
+        <Nav size={size}/>
       </Wrapper>
     </div>
   );
