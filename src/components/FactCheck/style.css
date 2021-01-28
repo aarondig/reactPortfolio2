@@ -1,26 +1,28 @@
 #factCheck {
-    height: 100vh;
     position: absolute;
     top: 0;
+    width: 100%;
     z-index: 4;
 }
 
 #factCheckBack {
-    background: rgb(255, 0, 0);
+    background: rgb(255, 255, 255);
 }
 #factCheck .projectsHead {
     width: 65%;
-    padding-top: 18vh;
+    padding-top: 20%;
  
 }
 #factCheck .header {
       font-size: 75px;
+      color: black;
   }
 
   #factCheck .subHeader {
     
     font-size: 30px;
     margin-top: -15px;
+    color: black;
   }
 
 @media screen and (max-width: 700px) {
@@ -41,8 +43,8 @@
     }
     #factCheck .projectsHead {
       width: 100vw;
-      height: 100vh;
-      padding-top: 20vh;
+      height: 100%;
+      padding-top: 20%;
     }
     #factCheck .header {
       font-size: 50px;

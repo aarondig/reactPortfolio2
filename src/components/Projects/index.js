@@ -16,7 +16,7 @@ function Projects({ scroll }) {
   };
 
   return (
-    <div id="projects">
+    <div id="projects" style={{height: size.height}}>
       <div
         id="cover"
         style={

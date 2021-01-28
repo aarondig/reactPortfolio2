@@ -19,6 +19,5 @@ export default function useWindowSize() {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  console.log(windowSize)
   return windowSize;
 }

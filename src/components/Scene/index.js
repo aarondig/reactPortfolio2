@@ -58,6 +58,7 @@ function Char({size}) {
 function Scene({ size, blurValue }) {
   const style = {
     filter: "blur(" + blurValue + ")",
+    height: size.height
   };
   return (
     <div id="scene" style={style}>
