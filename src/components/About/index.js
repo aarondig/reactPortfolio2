@@ -60,7 +60,7 @@ function About({ scroll, size }) {
     
       hoverRef.current.style.transform = `rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 400px, 70px)`;
   };
-  console.log(containerWidth);
+  
   return (
     <div id="About" style={{height: size.height}}>
       <div id="foreground" />
