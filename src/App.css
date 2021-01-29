@@ -5,11 +5,12 @@
   height: 100%;
   width: 100%;
   overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain !important;
 }
 body {
   height: 100%;
-  overscroll-behavior-y: none !important;
-  -webkit-overflow-scrolling: touch;
+  
   overflow: hidden;
 }
 
