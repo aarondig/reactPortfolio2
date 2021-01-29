@@ -5,7 +5,7 @@ import "./style.css";
 
 const sidebar = {
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 110vw -10vh)`,
+    clipPath: `circle(${height * 2 + 200}px at 110% -10%)`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -13,7 +13,7 @@ const sidebar = {
     },
   }),
   closed: {
-    clipPath: "circle(30px at 110vw -10vh)",
+    clipPath: "circle(30px at 110vw -10%)",
     transition: {
       delay: 0.2,
       type: "spring",

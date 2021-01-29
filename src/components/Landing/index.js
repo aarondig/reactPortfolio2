@@ -21,7 +21,7 @@ function Landing({ size }) {
 
   
   return (
-    <div id="landing" ref={pageH}>
+    <div id="landing" ref={pageH} style={{height: size.height}}>
        <div className="center">
         <div className="outline" />
         </div>
