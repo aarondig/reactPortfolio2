@@ -18,7 +18,7 @@ function FactCheck({ scroll, size }) {
     },
     opened: {
       width: size.width * 2,
-      transform: `translateX(-40%)`,
+      transform: size.width > 800 ? `translateX(-40%)` : `translateX(-40%)`,
     },
   };
   const arrowStyle = {
@@ -54,13 +54,13 @@ function FactCheck({ scroll, size }) {
         >
           <div className="mainSlide">
             <div className="projectsHead" style={style.fade}>
-              <div className="learnMore">
+              
                 <h1 className="header">Google Fact Checker</h1>
                 <h2 className="subHeader">
                   Using Google's Fact Check API, this application ruturns fact
                   checked articles based on the user's input search query.
                 </h2>
-              </div>
+              
             </div>
           </div>
           <div className="arrowC">

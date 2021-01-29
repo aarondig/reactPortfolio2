@@ -24,7 +24,7 @@ const sidebar = {
 };
 
 const Path = (props) => (
-  <motion.path fill="transparent" strokeWidth="1" stroke="white" {...props} />
+  <motion.path id="path" fill="white" strokeWidth="1" stroke="white" {...props} />
 );
 
 

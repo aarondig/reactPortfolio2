@@ -34,8 +34,12 @@ nav {
     width: 50px;
     height: 50px;
     background: transparent;
+      mix-blend-mode: difference;
     
 
+  }
+  #path {
+    background-blend-mode: difference;
   }
   /* @media screen and (max-width: 800px)  {
     .leftNav {

@@ -80,13 +80,12 @@ overflow-wrap: unset;
   }
 
   .icon {
-    /* position: absolute;   */
     margin-left: auto;
     margin-right: auto;
     
   }
   .githubLink:hover .iconColor{
-      fill: rgb(0, 200, 255);
+      fill: rgb(0, 242, 255);
   }
 
 .projectImgC {
@@ -154,7 +153,6 @@ overflow-wrap: unset;
   }
   #projects .projectsHead {
     width: 65%;
-    padding-top: 50%;
   }
   #projects .header {
     font-size: 55px;
