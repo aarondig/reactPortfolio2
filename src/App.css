@@ -8,8 +8,9 @@
 }
 body {
   height: 100%;
-  overscroll-behavior-y: none;
+  overscroll-behavior-y: none !important;
   -webkit-overflow-scrolling: touch;
+  overflow: hidden;
 }
 
 
