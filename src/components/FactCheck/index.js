@@ -31,7 +31,7 @@ function FactCheck({ scroll, size }) {
       marginLeft: `33px`,
     },
   };
-  console.log(click);
+  
   return (
     <div
       id="factCheck"

@@ -9,7 +9,6 @@ function About({ scroll, size }) {
   // const containerWidth = (scroll / size.height - 1.1) * 100;
   const containerWidth = (scroll / size.height - 1.1) * 100;
   const negativeSpace = 100 - containerWidth;
-  const negativeSpaceSlide = 60 - containerWidth;
   const move = (size.height / scroll - 1) * 100;
   // console.log(containerWidth)
   const cardwX =
@@ -23,9 +22,9 @@ function About({ scroll, size }) {
     },
     reveal: {
       display: containerWidth < -100 ? "none" : "block",
-      maxWidth: containerWidth > 40 ? containerWidth + "vw" : "40%",
+      maxWidth: containerWidth > 40 ? containerWidth + "%" : "40%",
       transform:
-        size.width > 700 ? `translateX(-${move}px)` : `translateY(${move - 20}px)`,
+        size.width > 700 ? `translateX(-${move}px)` : `translateY(${move + 10}px)`,
     },
     slideOut: {
       width: containerWidth > 40 ? negativeSpace + "%" : "60%",
@@ -46,8 +45,9 @@ function About({ scroll, size }) {
         scroll / size.height > 1.7
           ? `rotateX(70deg) rotateZ(-60deg) translate3d(-120px, ${cardwX}%, 70px) !important`
           : `rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 400px, 70px) !important`,
-      maxWidth: containerWidth > 40 ? `${cardWidth}%` : `40vw`,
-      minWidth: "400px"
+
+      maxWidth: containerWidth > 40 ? `${cardWidth}%` : `40%`,
+      minWidth:`400px`
     },
   };
   const hoverRef = useRef();
@@ -60,7 +60,7 @@ function About({ scroll, size }) {
     
       hoverRef.current.style.transform = `rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 400px, 70px)`;
   };
-console.log(cardwX)
+  console.log(containerWidth);
   return (
     <div id="About" style={{height: size.height}}>
       <div id="foreground" />
@@ -71,11 +71,11 @@ console.log(cardwX)
         <div className="cardContainer" style={style.reveal}>
           <div className="card" style={style.cardWidth} ref={hoverRef} >
             <div className="cardFace">
-              <div className="cardFront" style={{position: containerWidth < 40 ? "absolute" : "relative"}}>
+              <div className="cardFront" style={{position: containerWidth < 40 ? size.width > 700 && "absolute" : "relative"}}>
                 <img id="profilePic" src={profilePic} />
-                <div className="picOverlay" />
+                <div className="picOverlay"  style={style.reveal}/>
               </div>
-              <div className="cardBack" style={{position: containerWidth < 40 ? "absolute" : "relative"}}>
+              <div className="cardBack" style={{position: containerWidth < 40 ? size.width > 700 && "absolute" : "relative"}}>
                 <h1> hello</h1>
               </div>
             </div>
