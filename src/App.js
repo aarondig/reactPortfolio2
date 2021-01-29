@@ -45,6 +45,7 @@ function App() {
   // SCROLLING
   const skewScrolling = () => {
     const containerHeight = scrollContainer.current.clientHeight;
+    app.current.style.minHeight = containerHeight + "px"
     const scrollableHeight = scrollable.current.clientHeight;
     const pageTotal = 5;
     
@@ -112,7 +113,7 @@ function App() {
   // console.log(scroll)
   // console.log(scrollFixed)
   return (
-    <div ref={app} className="App">
+    <div ref={app} className="App" >
       <Wrapper>
         <div ref={scrollContainer} className="scroll">
           <div id="scrollable" ref={scrollable}>

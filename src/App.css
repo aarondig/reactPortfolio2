@@ -1,17 +1,16 @@
 .App {
-  /* position: fixed; */
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   overflow: hidden;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: contain !important;
-}
-body {
-  height: 100%;
   
-  overflow: hidden;
+}
+html, body {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none !important;
 }
 
 
