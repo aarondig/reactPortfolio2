@@ -118,9 +118,9 @@ function App() {
           <div id="scrollable" ref={scrollable}>
             <Landing size={size} />
             <Projects size={size} scroll={scroll}/>
-            <div className="nothing" style={{height: size.height}}/>
-            <div className="nothing" style={{height: size.height}}/>
-            <div className="nothing" style={{height: size.height}}/>
+            <div className="nothing" style={{minHeight: size.height}}/>
+            <div className="nothing" style={{minHeight: size.height}}/>
+            <div className="nothing" style={{minHeight: size.height}}/>
             {/* <ProgressBar/> */}
             </div>
             <div id="fixed" ref={fixedScroll}>
@@ -128,7 +128,7 @@ function App() {
               <About size={size} scroll={scrollFixed} />
               
             </div>
-            <div className="nothing" style={{height: size.height}}/>
+            <div className="nothing" style={{minHeight: size.height}}/>
         </div>
          {/* <div id="fixed" ref={fixedScroll}>
             {((scroll + (container/3) +1) > container/3) &&

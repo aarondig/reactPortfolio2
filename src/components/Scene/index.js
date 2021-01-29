@@ -17,7 +17,6 @@ import "./style.css";
 
 function Char({size}) {
 
-  const [mobile, setMobile] = useState(false);
   const scene = useLoader(GLTFLoader, Model);
   const [ref, api] = useBox(() => ({ args: 0.01, mass: 1 }));
   const [hovered, setHovered] = useState(false);

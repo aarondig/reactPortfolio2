@@ -96,7 +96,7 @@ function Nav({size}) {
         animate={isOpen ? "open" : "closed"}
         ref={containerRef}
       >
-      <motion.div id="navBackground" style={{height: size.height}} variants={sidebar} />
+      <motion.div id="navBackground" style={{minHeight: size.height}} variants={sidebar} />
       </motion.div>
     </div>
   );
