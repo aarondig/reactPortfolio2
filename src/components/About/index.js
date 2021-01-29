@@ -2,12 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import "./style.css";
 import { motion, useViewportScroll } from "framer-motion";
 import profilePic from "../../img/me.jpg";
-import useWindowSize from "../../hooks/windowSize";
-import useScroll from "../../hooks/scroll";
 
-function About({ scroll }) {
-  const size = useWindowSize();
-  const position = useScroll();
+function About({ scroll, size }) {
 
   const opacity = -Math.pow((scroll / size.height) * 1.2 - 1.4, 2) + 1;
   // const containerWidth = (scroll / size.height - 1.1) * 100;
@@ -15,7 +11,7 @@ function About({ scroll }) {
   const negativeSpace = 100 - containerWidth;
   const negativeSpaceSlide = 60 - containerWidth;
   const move = (size.height / scroll - 1) * 100;
-
+  // console.log(containerWidth)
   const cardwX =
     (500 / size.width) * 100 * (size.height / scroll);
   // const cardwY =
@@ -64,9 +60,9 @@ function About({ scroll }) {
     
       hoverRef.current.style.transform = `rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 400px, 70px)`;
   };
-
+console.log(cardwX)
   return (
-    <div id="About">
+    <div id="About" style={{height: size.height}}>
       <div id="foreground" />
       {/* <div id="spotlight">
       <div id="spotlight-child"/>

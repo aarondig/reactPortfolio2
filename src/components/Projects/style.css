@@ -77,17 +77,17 @@ overflow-wrap: unset;
     
       
       
-      
   }
 
   .icon {
     /* position: absolute;   */
-    stroke-width: 10%;
     margin-left: auto;
     margin-right: auto;
     
   }
-
+  .githubLink:hover .iconColor{
+      fill: rgb(0, 200, 255);
+  }
 
 .projectImgC {
     width: 100%;

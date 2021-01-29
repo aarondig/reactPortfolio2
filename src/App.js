@@ -10,7 +10,7 @@ import Projects from "./components/Projects";
 
 function App() {
   const [scroll, setScroll] = useState();
-
+  const [scrollFixed, setScrollFixed] = useState();
   const size = useWindowSize();
 
   const app = useRef();
@@ -44,7 +44,8 @@ function App() {
 
   // SCROLLING
   const skewScrolling = () => {
-    const containerHeight = size.width > 800 ? scrollable.current.getBoundingClientRect().height + 1 : scrollable.current.clientHeight + 1;
+    const containerHeight = scrollContainer.current.clientHeight;
+    const scrollableHeight = scrollable.current.clientHeight;
     const pageTotal = 5;
     
     //Set Current to the scroll position amount
@@ -67,61 +68,67 @@ function App() {
      // NORMAL W INERTIA
 //  if (size.width > 800) {
     scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
-    if (data.rounded> containerHeight/pageTotal ) {
-      scrollable.current.style.transform = `translate3d(0, -${containerHeight/pageTotal}px, 0)`
+    if (data.rounded> scrollableHeight/pageTotal ) {
+      scrollable.current.style.transform = `translate3d(0, -${scrollableHeight/pageTotal}px, 0)`
       fixedScroll.current.style.transform = `translate3d(0, -${
         data.rounded
       }px, 0)`;
     }
-    if (data.rounded > containerHeight/pageTotal) {
+    if (data.rounded > scrollableHeight/pageTotal) {
       
     }
-    if (data.rounded > containerHeight) {
-      fixedScroll.current.style.transform = `translate3d(0, -${containerHeight}px, 0) skewY(0deg)`;
+    if (data.rounded > scrollableHeight) {
+      fixedScroll.current.style.transform = `translate3d(0, -${scrollableHeight}px, 0) skewY(0deg)`;
     }
-    setScroll(data.rounded - containerHeight / pageTotal);
+    setScroll(data.rounded - (scrollableHeight / pageTotal));
+    setScrollFixed((data.rounded-(size.height * 3)) - (scrollableHeight / pageTotal));
   // }
 
 
 // MOBILE RESPONSIVE W/O INERTIA
 // if (size.width < 800) {
 //   scrollable.current.style.transform = `translate3d(0, -${window.scrollY}px, 0)`;
-//   if (window.scrollY > containerHeight/pageTotal ) {
-//     scrollable.current.style.transform = `translate3d(0, -${containerHeight/pageTotal}px, 0)`
+//   if (window.scrollY > scrollableHeight/pageTotal ) {
+//     scrollable.current.style.transform = `translate3d(0, -${scrollableHeight/pageTotal}px, 0)`
 //     fixedScroll.current.style.transform = `translate3d(0, -${
 //       window.scrollY
 //     }px, 0)`;
 //   }
-//   if (window.scrollY > containerHeight) {
-//     fixedScroll.current.style.transform = `translate3d(0, -${containerHeight}px, 0) skewY(0deg)`;
+//   if (window.scrollY > scrollableHeight) {
+//     fixedScroll.current.style.transform = `translate3d(0, -${scrollableHeight}px, 0) skewY(0deg)`;
 //   }
-//   setScroll(window.scrollY - containerHeight / pageTotal);
+//   setScroll(window.scrollY - scrollableHeight / pageTotal);
 // }
 
 
     // skewY(${skew}deg)
     // scrollable.current.style.borderRadius = `${round}%`;
     
+    
+  
+
     requestAnimationFrame(() => skewScrolling());
   };
+  // console.log(scroll)
+  // console.log(scrollFixed)
   return (
     <div ref={app} className="App">
       <Wrapper>
         <div ref={scrollContainer} className="scroll">
           <div id="scrollable" ref={scrollable}>
             <Landing size={size} />
-            <Projects scroll={scroll}/>
-            <div className="nothing"/>
-            <div className="nothing"/>
-            <div className="nothing"/>
+            <Projects size={size} scroll={scroll}/>
+            <div className="nothing" style={{height: size.height}}/>
+            <div className="nothing" style={{height: size.height}}/>
+            <div className="nothing" style={{height: size.height}}/>
             {/* <ProgressBar/> */}
             </div>
             <div id="fixed" ref={fixedScroll}>
               
-              <About scroll={scroll} />
-              <div className="nothing"/>
+              <About size={size} scroll={scrollFixed} />
+              
             </div>
-          
+            <div className="nothing" style={{height: size.height}}/>
         </div>
          {/* <div id="fixed" ref={fixedScroll}>
             {((scroll + (container/3) +1) > container/3) &&
@@ -144,29 +151,29 @@ export default App;
 //  // NORMAL W INERTIA
 //  if (size.width > 800) {
 //   scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
-//   if (data.rounded > containerHeight/pageTotal ) {
-//     scrollable.current.style.transform = `translate3d(0, -${containerHeight/pageTotal}px, 0)`
+//   if (data.rounded > scrollableHeight/pageTotal ) {
+//     scrollable.current.style.transform = `translate3d(0, -${scrollableHeight/pageTotal}px, 0)`
 //     fixedScroll.current.style.transform = `translate3d(0, -${
 //       data.rounded
 //     }px, 0)`;
 //   }
-//   if (data.rounded > containerHeight) {
-//     fixedScroll.current.style.transform = `translate3d(0, -${containerHeight}px, 0) skewY(0deg)`;
+//   if (data.rounded > scrollableHeight) {
+//     fixedScroll.current.style.transform = `translate3d(0, -${scrollableHeight}px, 0) skewY(0deg)`;
 //   }
-//   setScroll(data.rounded - containerHeight / pageTotal);
+//   setScroll(data.rounded - scrollableHeight / pageTotal);
 // }
 
 // // MOBILE RESPONSIVE W/O INERTIA
 // if (size.width < 800) {
 //   scrollable.current.style.transform = `translate3d(0, -${window.scrollY}px, 0)`;
-//   if (window.scrollY > containerHeight/pageTotal ) {
-//     scrollable.current.style.transform = `translate3d(0, -${containerHeight/pageTotal}px, 0)`
+//   if (window.scrollY > scrollableHeight/pageTotal ) {
+//     scrollable.current.style.transform = `translate3d(0, -${scrollableHeight/pageTotal}px, 0)`
 //     fixedScroll.current.style.transform = `translate3d(0, -${
 //       data.rounded
 //     }px, 0)`;
 //   }
-//   if (window.scrollY > containerHeight) {
-//     fixedScroll.current.style.transform = `translate3d(0, -${containerHeight}px, 0) skewY(0deg)`;
+//   if (window.scrollY > scrollableHeight) {
+//     fixedScroll.current.style.transform = `translate3d(0, -${scrollableHeight}px, 0) skewY(0deg)`;
 //   }
-//   setScroll(window.scrollY - containerHeight / pageTotal);
+//   setScroll(window.scrollY - scrollableHeight / pageTotal);
 // }

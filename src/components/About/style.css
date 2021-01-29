@@ -1,5 +1,4 @@
 #About {
-  height: 100vh;
   width: 100%;
   /* background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
   /* background: linear-gradient(180deg, #0a0a0a 50%, #00000000 100%); */
@@ -76,7 +75,7 @@
 #About .buttonC {
 width: 100%;
 min-width: 400px;
-margin-top: 10vh;
+margin-top: 10%;
 }
 
 #About .button {
@@ -100,7 +99,7 @@ margin-top: 10vh;
   top: 1.5px;
   left: 0%;
   max-width: 40%;
-  height: 100vh;
+  height: 100%;
   float: left;
   z-index: 0;
   /* transform: translate(-50%, -50%); */
@@ -116,7 +115,7 @@ margin-top: 10vh;
   
 }
 .card {
-  height: 100vh !important;
+  height: 100% !important;
   transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 400px, 70px);
   box-shadow: -80px 60px 15px 5px rgba(0, 0, 0, 0.662) !important;
   transition: all .5s;
@@ -130,12 +129,12 @@ margin-top: 10vh;
 } */
 
 .cardFace {
-
+  height: 100%;
   /* overflow: hidden; */
   }
 .cardFront, .cardBack {
   position: relative;
-  height: 100vh;
+  height: 100%;
     -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
@@ -240,7 +239,7 @@ margin-top: 10vh;
         height: auto;
         top: 0;
         left: 0;
-        margin-top: 40vh;
+        margin-top: 40%;
         z-index: -1;
         
       }
