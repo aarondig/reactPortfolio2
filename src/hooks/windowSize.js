@@ -1,15 +1,20 @@
 import { useState, useEffect } from "react";
 
 export default function useWindowSize() {
+  var width = 0;
+  var maxHeight = []
   function getSize() {
+    width = window.innerWidth
+    maxHeight.push(window.innerHeight)
+    
     return {
-      width: window.innerWidth,
-      height: window.innerHeight
+      width: width,
+      height: width > 800 ? maxHeight[maxHeight.length -1] : Math.max(...maxHeight)
     };
   }
-
+  
   const [windowSize, setWindowSize] = useState(getSize);
-
+  
   useEffect(() => {
     function handleResize() {
       setWindowSize(getSize());

@@ -19,7 +19,7 @@ function App() {
   const fixedScroll = useRef();
 
   const data = {
-    ease: size.width > 800 ? 0.1 : .2,
+    ease: size.width > 800 ? 0.1 : .4,
     current: 0,
     previous: 0,
     rounded: 0,
