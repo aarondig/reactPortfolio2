@@ -52,7 +52,7 @@ function App() {
     //Set Current to the scroll position amount
     data.current =  window.scrollY;
     // Set Previous to the scroll previous position
-    data.previous += size.width > 800 ? (data.current - data.previous) * data.ease : (data.current - data.previous);
+    data.previous += size.width > 800 ? (data.current - data.previous) * data.ease : (data.current - data.previous) * data.ease;
 
     // * data.ease
 
