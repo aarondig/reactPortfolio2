@@ -14,13 +14,13 @@ export default function useWindowSize() {
     function handleResize() {
       setWindowSize(getSize());
     }
-    if (windowSize.width > 800) {
+    // if (windowSize.width > 800) {
 
       
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-     }  
+    //  }  
   }, []);
   
   return windowSize;
