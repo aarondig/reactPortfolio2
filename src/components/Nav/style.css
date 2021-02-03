@@ -18,7 +18,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background: #e9322e;
+    background: #141414;
     
   }
   .navButton {
@@ -38,9 +38,7 @@ nav {
     
 
   }
-  #path {
-    background-blend-mode: difference;
-  }
+
   /* @media screen and (max-width: 800px)  {
     .leftNav {
       left: 18px;

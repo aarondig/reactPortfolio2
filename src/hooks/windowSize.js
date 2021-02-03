@@ -9,7 +9,7 @@ export default function useWindowSize() {
     
     return {
       width: width,
-      height: width > 800 ? maxHeight[maxHeight.length -1] : Math.max(...maxHeight)
+      height: width > 700 ? maxHeight[maxHeight.length -1] : Math.max(...maxHeight)
     };
   }
   
@@ -27,7 +27,6 @@ export default function useWindowSize() {
     return () => window.removeEventListener("resize", handleResize);
     //  }  
   }, []);
-  
   return windowSize;
   
 }

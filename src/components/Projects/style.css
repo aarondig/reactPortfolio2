@@ -23,17 +23,69 @@ overflow-wrap: unset;
 .nextSlide {
     float: left;
     height: 100%;
-    width: 45%;
     background: #0a0a0a;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: ; */
-    
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
 }
-.center {
+.nextSlideWrapper {
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    
+    padding-left: 5%;
+    /* margin-top: 50px; */
+    /* justify-content: center; */
+    background: #0a0a0af0;
+    backdrop-filter: blur(15px) !important;
+    z-index: 1;
+    transition: .4s all ease-in-out;
 }
+
+.techUsed {
+  position: absolute;
+  width: 50%;
+  height: 20%;
+  top: 10px;
+  color: #ebedee;
+}
+
+.vertCenter {
+  height: 100%;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 15%;
+}
+
+.mainLink {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(rgb(0, 191, 255), rgb(0, 119, 255));
+}
+
+.demoButton {
+  position: absolute;
+  width: 150px;
+  height: 8%;
+  right: 50px;
+  bottom: 40px;
+  border: solid 1px #ebedee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+}
+.demoButton:visited {
+  border: solid 1px #ebedee18;
+}
+.buttonContent {
+  margin-left: auto;
+  margin-right: auto;
+  color: #ebedee;
+}
+
 .projectsHead {
   width: 80%;
   height: 100%;
@@ -90,17 +142,84 @@ overflow-wrap: unset;
 
 .projectImgC {
     width: 100%;
-    margin-top: 5%;
-    display: flex;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 45%;
+    /* display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: center; */
+    /* margin-top: 5%; */
+    object-fit: contain;
+    z-index: 0;
 }
 .projectImg {
-    width: 70%;
-    object-fit: scale-down;
-    box-shadow: 0 0 20px rgb(15, 15, 15);
-    border-radius: 10px;
+    height: 100%;
+    box-shadow: 0 0px 100px rgba(127, 127, 127, 0.108);
+    /* border-radius: 10px; */
 }
+
+
+
+.arrowC {
+  width: 5%;
+  height: 100%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.arrow,
+.arrow:before {
+float: left;
+margin-left: auto;
+margin-right: auto;
+z-index: 5;
+}
+.arrow {
+width: 40px;
+height: 40px;
+/* top: 45%; */
+margin-left: 35px;
+/* -webkit-transform: rotate(135deg); */
+-webkit-transform: rotate(315deg);
+transform: rotate(315deg);
+border-left: none;
+border-top: none;
+border-right: 2px #0a0a0a solid;
+border-bottom: 2px #0a0a0a solid;
+transition: .3s all;
+  
+}
+
+.arrow:before {
+content: "";
+width: 20px;
+height: 20px;
+/* top: 55%; */
+margin: -10px 0 0 -10px;
+border-left: none;
+border-top: none;
+border-right: 1px #0a0a0a solid;
+border-bottom: 1px #0a0a0a solid;
+animation-duration: 2s;
+animation-iteration-count: infinite;
+animation-name: arrow;
+}
+
+@keyframes arrow {
+0% {
+  opacity: 1;
+}
+100% {
+  opacity: 0;
+  transform: translate(-10px, -10px);
+}
+}
+
+
+
 /* COVER PAGE */
 
 #cover {
@@ -162,60 +281,25 @@ overflow-wrap: unset;
     font-size: 24px;
     margin-top: -5px;
   }
-}
-.arrowC {
-    width: 5%;
-    height: 100%;
-    float: left;
-    /* margin-top: 20%; */
-    display: flex;
+  .nextSlide {
+  }
+  .nextSlideWrapper {
+    width: 100%;
+    margin-right: auto;
     flex-direction: column;
-    justify-content: center;
-}
-
-.arrow,
-.arrow:before {
-  position: relative;
-  float: left;
-  margin-left: auto;
-  margin-right: auto;
-}
-.arrow {
-  width: 40px;
-  height: 40px;
-  /* top: 45%; */
-  margin-left: 35px;
-  /* -webkit-transform: rotate(135deg); */
-  -webkit-transform: rotate(315deg);
-  transform: rotate(315deg);
-  border-left: none;
-  border-top: none;
-  border-right: 2px #0a0a0a solid;
-  border-bottom: 2px #0a0a0a solid;
-  transition: .3s all;
-}
-
-.arrow:before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  /* top: 55%; */
-  margin: -10px 0 0 -10px;
-  border-left: none;
-  border-top: none;
-  border-right: 1px #0a0a0a solid;
-  border-bottom: 1px #0a0a0a solid;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-name: arrow;
-}
-
-@keyframes arrow {
-  0% {
-    opacity: 1;
   }
-  100% {
-    opacity: 0;
-    transform: translate(-10px, -10px);
+  .projectImgC{
+    left: 50%;
   }
+  .projectImg {
+    object-position: -350px;
+  }
+ .nextSlideWrapper :nth-child(1) { order: 2; }
+ .nextSlideWrapper :nth-child(2) { order: 1; }
+ .techUsed {
+   width: 80%;
+   text-align: right;
+   top: 10px;
+   right: 30px;
+ }
 }

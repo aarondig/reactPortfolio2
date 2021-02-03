@@ -17,7 +17,6 @@ function Landing({ size }) {
   const blurValue = progress * 10 + "px";
   const num = progress * -6;
   const titlePosi = -6 + Math.pow(num, 3);
-  const [scroll, setScroll] = useState(false);
 
   
   return (
