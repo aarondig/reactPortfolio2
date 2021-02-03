@@ -12,7 +12,6 @@ function App() {
   const [scroll, setScroll] = useState();
   const [scrollFixed, setScrollFixed] = useState();
   const size = useWindowSize();
-
   const app = useRef();
   const scrollContainer = useRef();
   const scrollable = useRef();
@@ -33,9 +32,7 @@ function App() {
     document.body.style.height = `${
       scrollContainer.current.clientHeight
     }px`;
-  }, []);
-  // size.height
-
+  }, [size.height]);
 
   // console.log(scrollContainer.current.getBoundingClientRect().height)
 

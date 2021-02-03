@@ -88,6 +88,7 @@ overflow-wrap: unset;
 
 .projectsHead {
   width: 80%;
+  /* max-width: 650px; */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -150,7 +151,7 @@ overflow-wrap: unset;
     flex-direction: row;
     justify-content: center; */
     /* margin-top: 5%; */
-    object-fit: contain;
+    object-fit: cover;
     z-index: 0;
 }
 .projectImg {
@@ -230,7 +231,7 @@ animation-name: arrow;
 }
 
 #coverBack {
-  background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
+  background: linear-gradient(180deg, #0a0a0a 10%, #111111 150%);
 }
 
 #cover .projectsHead {

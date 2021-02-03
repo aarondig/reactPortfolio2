@@ -8,8 +8,8 @@ const sidebar = {
     clipPath: `circle(${height * 2 + 200}px at 110% -10%)`,
     transition: {
       type: "spring",
-      stiffness: 20,
-      restDelta: 2,
+      stiffness: 25,
+      restDelta: 1,
     },
   }),
   closed: {
@@ -89,15 +89,8 @@ function Nav({size}) {
           <div key={i} />
         ))} */}
         </div>
+        <motion.div id="navBackground" style={{height: size.height}} variants={sidebar} />
       </motion.nav>
-      
-      <motion.div
-        initial={false}
-        animate={isOpen ? "open" : "closed"}
-        ref={containerRef}
-      >
-      <motion.div id="navBackground" style={{minHeight: size.height}} variants={sidebar} />
-      </motion.div>
     </div>
   );
 }
