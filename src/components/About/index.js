@@ -24,7 +24,7 @@ function About({ scroll, size }) {
       display: containerWidth < -100 ? "none" : "block",
       maxWidth: containerWidth > 40 ? containerWidth + "%" : "40%",
       transform:
-        size.width > 700 ? `translateX(-${move}px)` : `translateY(${move + 10}px)`,
+        size.width > 700 ? `translateX(-${move}px)` : `translateY(${move + 40}px)`,
     },
     slideOut: {
       width: containerWidth > 40 ? negativeSpace + "%" : "60%",
