@@ -2,8 +2,20 @@ import React, { useState, useRef } from "react";
 import "./style.css";
 import { motion, useViewportScroll } from "framer-motion";
 
+import useScrollLock from "../../hooks/scrollLock";
+
 function FactCheck({ scroll, size }) {
   const [click, setClick] = useState(false);
+  const scrollLock = useScrollLock();
+
+  
+  
+
+  // click && scrollLock.lock();
+
+  click && scrollLock.lock();
+  !click && scrollLock.unlock();
+  
   const opacity = -Math.pow((scroll / size.height) * 2 - 2.5, 2) + 1;
   const style = {
     fade: {
