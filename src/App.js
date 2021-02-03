@@ -18,7 +18,7 @@ function App() {
   const fixedScroll = useRef();
 
   const data = {
-    ease: size.width > 800 ? 0.1 : .4,
+    ease: size.width > 700 ? 0.1 : .4,
     current: 0,
     previous: 0,
     rounded: 0,
@@ -49,7 +49,7 @@ function App() {
     //Set Current to the scroll position amount
     data.current =  window.scrollY;
     // Set Previous to the scroll previous position
-    data.previous += size.width > 800 ? (data.current - data.previous) * data.ease : (data.current - data.previous) * data.ease;
+    data.previous += size.width > 700 ? (data.current - data.previous) * data.ease : (data.current - data.previous) * data.ease;
 
     // * data.ease
 

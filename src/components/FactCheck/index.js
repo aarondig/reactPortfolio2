@@ -36,7 +36,8 @@ function FactCheck({ scroll, size }) {
       : {
           closed: {
             transform: `rotate(315deg)`,
-            marginLeft: `-20px`,
+            marginLeft: `-48vw`,
+            marginBottom: -(size.height * .65) + `px`,
           },
           opened: {
             transform: `rotate(135deg)`,
