@@ -27,10 +27,13 @@ function FactCheck({ scroll, size }) {
     closed: {
       width: size.width * 2,
       transform: `translateX(0)`,
+      // overflowY: `hidden`,
+      
     },
     opened: {
       width: size.width * 2,
       transform: size.width > 700 ? `translateX(-40%)` : `translateX(-50%)`,
+      // overflowY: `scroll`,
     },
   };
   const arrowStyle =
