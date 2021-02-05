@@ -61,8 +61,6 @@ function App() {
 
   // SCROLLING
   const skewScrolling = () => {
-    const containerHeight = scrollContainer.current.clientHeight;
-    app.current.style.minHeight = containerHeight + "px"
     const scrollableHeight = scrollable.current.clientHeight;
     const pageTotal = 5;
     
@@ -92,13 +90,13 @@ function App() {
         data.rounded
       }px, 0)`;
     }
-    if (data.rounded > scrollableHeight/pageTotal) {
+    // if (data.rounded > scrollableHeight/pageTotal) {
       
-    }
+    // }
     if (data.rounded > scrollableHeight) {
       fixedScroll.current.style.transform = `translate3d(0, -${scrollableHeight}px, 0) skewY(0deg)`;
     }
-    size.width > 800 ? setScroll(data.rounded - (scrollableHeight / pageTotal)) : setScroll(data.current - (scrollableHeight / pageTotal))
+   setScroll(data.rounded - (scrollableHeight / pageTotal))
     setScrollFixed((data.rounded-(size.height * 3)) - (scrollableHeight / pageTotal));
   // }
 
