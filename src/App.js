@@ -26,7 +26,7 @@ import Projects from "./components/Projects";
   
 //   }
 
-let requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame
+let requestAnimationFrame = window.webkitRequestAnimationFrame || window.requestAnimationFrame || window.mozRequestAnimationFrame  || window.msRequestAnimationFrame
 
 function App() {
   const [scroll, setScroll] = useState();
@@ -69,7 +69,7 @@ function App() {
     //Set Current to the scroll position amount
     data.current =  window.scrollY;
     // Set Previous to the scroll previous position
-    data.previous += size.width > 700 ? (data.current - data.previous) * data.ease : (data.current - data.previous) * data.ease;
+    data.previous += size.width > 700 ? (data.current - data.previous) * data.ease : (data.current - data.previous) ;
 
     // * data.ease
 
