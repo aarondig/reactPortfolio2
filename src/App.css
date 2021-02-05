@@ -8,7 +8,7 @@
   
 }
 html, body {
-  -webkit-overflow-scrolling: touch;
+  /* -webkit-overflow-scrolling: touch; */
   overscroll-behavior-y: none !important;
   background: #0a0a0a;
 }

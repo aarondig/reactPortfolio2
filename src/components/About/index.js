@@ -62,7 +62,7 @@ function About({ scroll, size }) {
   };
   
   return (
-    <div id="About" style={{height: size.height}}>
+    <div id="About">
       <div id="foreground" />
       {/* <div id="spotlight">
       <div id="spotlight-child"/>
