@@ -96,7 +96,7 @@ function App() {
     if (data.rounded > scrollableHeight) {
       fixedScroll.current.style.transform = `translate3d(0, -${scrollableHeight}px, 0) skewY(0deg)`;
     }
-   setScroll(data.rounded - (scrollableHeight / pageTotal))
+    size.width > 800 ? setScroll(data.rounded - (scrollableHeight / pageTotal)) : setScroll(data.current - (scrollableHeight / pageTotal))
     setScrollFixed((data.rounded-(size.height * 3)) - (scrollableHeight / pageTotal));
   // }
 
