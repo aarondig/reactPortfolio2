@@ -8,6 +8,26 @@ import ProgressBar from "./components/ProgressBar";
 import Nav from "./components/Nav";
 import Projects from "./components/Projects";
 
+//  if ( !window.requestAnimationFrame ) {
+
+//     window.requestAnimationFrame = ( function() {
+  
+//       return window.webkitRequestAnimationFrame ||
+//       window.mozRequestAnimationFrame ||
+//       window.oRequestAnimationFrame ||
+//       window.msRequestAnimationFrame ||
+//       function( /* function FrameRequestCallback */ callback, /* DOMElement Element */ element ) {
+  
+//         window.setTimeout( callback, 1000 / 60 );
+  
+//       };
+  
+//     } )();
+  
+//   }
+
+let requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame
+
 function App() {
   const [scroll, setScroll] = useState();
   const [scrollFixed, setScrollFixed] = useState();

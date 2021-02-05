@@ -7,10 +7,6 @@ import "./style.css";
 
 function Landing({ size }) {
   const { scrollYProgress } = useViewportScroll();
-  const pageH = useRef(0);
-  useEffect(() => {
-    pageH.current.style.height = window.visualViewport.height + "px";
-  })
  
   const [progress, setProgress] = useState(0);
   scrollYProgress.onChange((e) => setProgress(e));
@@ -20,7 +16,7 @@ function Landing({ size }) {
 
   
   return (
-    <div id="landing" ref={pageH}>
+    <div id="landing">
        <div className="center">
         <div className="outline" />
         </div>

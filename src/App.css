@@ -21,6 +21,7 @@ overflow-y: scroll;
 
 
 .nothing {
+  height: 100vh !important;
   width: 100%;
   margin-top: 0%;
   /* background: linear-gradient(180deg, #0b0b0b2d 0%, #060606 50%); */
