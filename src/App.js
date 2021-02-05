@@ -52,15 +52,17 @@ function App() {
     document.body.style.height = `${
       scrollContainer.current.clientHeight
     }px`;
+    
   }, [size.height]);
 
   // console.log(scrollContainer.current.getBoundingClientRect().height)
-
+  
 
 
 
   // SCROLLING
   const skewScrolling = () => {
+    app.current.style.minHeight = `${scrollContainer.current.clientHeight}px`;
     const scrollableHeight = scrollable.current.clientHeight;
     const pageTotal = 5;
     

@@ -1,20 +1,42 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./style.css";
 import { motion, useViewportScroll } from "framer-motion";
 
 import useScrollLock from "../../hooks/scrollLock";
 
 function FactCheck({ scroll, size }) {
-  const [click, setClick] = useState(false);
+  const [click, setClick] = useState();
   const scrollLock = useScrollLock();
-
-  
-  
+const slider = useRef()
 
   // click && scrollLock.lock();
 
-  click && scrollLock.lock();
-  !click && scrollLock.unlock();
+
+  let [originalStyle, setOriginalStyle] = useState()
+
+// useEffect(()=> {
+// setOriginalStyle(window.getComputedStyle(slider.current).overflowY)
+// },[])
+    
+
+    useEffect(()=>{
+      
+      if (click === true) {
+        // slider.current.style.overflowY = "scroll";
+        scrollLock.lock();
+        
+      } 
+      if (click === false) {
+        
+        // slider.current.style.overflowY = originalStyle;
+        scrollLock.unlock();
+      }
+      console.log(originalStyle)
+    },[click])
+
+
+
+  
   
   const opacity = -Math.pow((scroll / size.height) * 2 - 2.5, 2) + 1;
   const style = {
@@ -95,6 +117,7 @@ function FactCheck({ scroll, size }) {
         <div
           className="slider"
           style={click ? sliderStyle.opened : sliderStyle.closed}
+          ref={slider}
         >
           <div
             className="mainSlide"
@@ -128,8 +151,12 @@ function FactCheck({ scroll, size }) {
                 src="https://github.com/aarondig/factCheck/blob/main/assets/banner.png?raw=true"
               ></img>
             </div>
+            <div className="overflow">
             <div className="nextSlideWrapper" style={click ? wrapperStyle.opened : wrapperStyle.closed}>
               {/* <h1>hello</h1> */}
+              
+
+              
               <div className="techUsed">
                 {/* <h3>This Project Uses:</h3> */}
                 <p>JAVASCRIPT</p>
@@ -152,6 +179,7 @@ function FactCheck({ scroll, size }) {
                 <h3>NAH</h3>
                 <p>JAVPT</p>
               </div> */}
+              </div>
             </div>
           </div>
         </div>

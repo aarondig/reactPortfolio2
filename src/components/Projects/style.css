@@ -1,7 +1,7 @@
 #projects {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -15,6 +15,7 @@ max-height: 100%;
 transition: .4s all;
 display: inline-block;
 overflow-wrap: unset;
+overflow: hidden;
 }
 
 .mainSlide {
@@ -26,27 +27,33 @@ overflow-wrap: unset;
 }
 .nextSlide {
     float: left;
-    height: 2000px;
+    height: 100%;
     background: #0a0a0a;
     display: flex;
     justify-content: center;
-    /* overflow: hidden; */
-    isolation: isolate;
-    overflow: scroll !important;
+}
+
+.overflow {
+  position: absolute;
+  top: 0;
+  left: 45%;
+  width: 45%;
+  height: 100%;
+  overflow-y: scroll !important;
 }
 .nextSlideWrapper {
     display: flex;
     flex-direction: row;
-    width: 100%;height: 2000px;
-    padding-left: 5%;
-    /* margin-top: 50px; */
-    /* justify-content: center; */
+    width: 100%;
+    height: 1000px;
     background: #0a0a0af0;
     backdrop-filter: blur(15px) !important;
     z-index: 1;
     transition: .4s all ease-in-out;
-    overflow: scroll !important;
+    
 }
+
+
 
 .techUsed {
   position: absolute;
@@ -76,7 +83,7 @@ overflow-wrap: unset;
   position: absolute;
   width: 150px;
   height: 8%;
-  right: 50px;
+  right: 80px;
   bottom: 40px;
   border: solid 1px #ebedee;
   display: flex;
@@ -293,8 +300,17 @@ animation-name: arrow;
   }
   .nextSlide {
   }
+  .overflow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow-y: scroll !important;
+  }
+
   .nextSlideWrapper {
-    width: 100%;
+    width: 85%;
     margin-right: auto;
     flex-direction: column;
   }
