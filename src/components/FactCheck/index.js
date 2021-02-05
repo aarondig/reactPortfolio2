@@ -81,8 +81,8 @@ function FactCheck({ scroll, size }) {
       id="factCheck"
       style={
         scroll / size.height < 2
-          ? { display: "block", height: size.height }
-          : { display: "none", height: size.height }
+          ? { display: "block"}
+          : { display: "none"}
       }
     >
       <div

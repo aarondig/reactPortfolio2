@@ -60,7 +60,7 @@ function Scene({ size, blurValue }) {
     height: size.height
   };
   return (
-    <div id="scene" style={style}>
+    <div id="scene" >
       <Canvas concurrent shadowMap camera={{ position: [0, 0, 3], fov: 70 }}>
         {/* <color attach="background" args={["#0d0d0d"]} /> */}
         {/* <ambientLight intensity={0.2} /> */}
