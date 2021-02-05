@@ -38,7 +38,7 @@ function App() {
   const fixedScroll = useRef();
 
   const data = {
-    ease: size.width > 700 ? 0.1 : .4,
+    ease: size.width > 700 ? 0.1 : .1,
     current: 0,
     previous: 0,
     rounded: 0,
@@ -69,7 +69,7 @@ function App() {
     //Set Current to the scroll position amount
     data.current =  window.scrollY;
     // Set Previous to the scroll previous position
-    data.previous += size.width > 700 ? (data.current - data.previous) * data.ease : (data.current - data.previous) ;
+    data.previous += size.width > 700 ? (data.current - data.previous) * data.ease : (data.current - data.previous) * data.ease;
 
     // * data.ease
 
@@ -77,10 +77,10 @@ function App() {
     data.rounded = Math.round(data.previous * 100) / 100;
     //VARIABLES
 
-    const difference = data.current - data.rounded;
-    const acceleration = difference / size.width;
-    const velocity = +acceleration;
-    const skew = velocity * 7.5;
+    // const difference = data.current - data.rounded;
+    // const acceleration = difference / size.width;
+    // const velocity = +acceleration;
+    // const skew = velocity * 7.5;
     //Assign skew and smooth scrolling to the scroll container based on certain scroll amounts
     
      // NORMAL W INERTIA
