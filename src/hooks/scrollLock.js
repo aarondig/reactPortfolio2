@@ -3,13 +3,14 @@ import { useEffect, useLayoutEffect, useState } from "react";
 export default function useScrollLock() {
 
 function status() {
+  
   function unlocked() {
-    document.body.style.overflowY = "scroll";
-    // document.documentElement.style.overflowY = "scroll";
+    document.body.style.overflow = "scroll";
+
   }
   function locked() {
-    document.body.style.overflowY = "hidden";
-    // document.documentElement.style.overflowY = "hidden";
+    document.body.style.overflow = "hidden";
+
   }
   return {
     lock: () => locked(),
