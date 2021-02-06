@@ -20,6 +20,11 @@ overflow-y: scroll;
 }
 
 
+.hidden {
+  overflow: hidden;
+}
+
+
 .nothing {
   height: 100vh !important;
   width: 100%;

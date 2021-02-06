@@ -12,7 +12,7 @@ const slider = useRef()
   // click && scrollLock.lock();
 
 
-  let [originalStyle, setOriginalStyle] = useState()
+  // let [originalStyle, setOriginalStyle] = useState();
 
 // useEffect(()=> {
 // setOriginalStyle(window.getComputedStyle(slider.current).overflowY)
@@ -31,7 +31,7 @@ const slider = useRef()
         // slider.current.style.overflowY = originalStyle;
         scrollLock.unlock();
       }
-      console.log(originalStyle)
+      console.log("remount")
     },[click])
 
 
