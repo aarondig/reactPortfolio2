@@ -31,7 +31,7 @@ const slider = useRef()
         // slider.current.style.overflowY = originalStyle;
         scrollLock.unlock();
       }
-      console.log("remount")
+      console.log(document.body)
     },[click])
 
 
