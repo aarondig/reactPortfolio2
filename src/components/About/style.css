@@ -9,6 +9,7 @@
   border-color: #ebedee;
   border-width: 2px;
   box-shadow: 0 10px 50px rgb(18, 18, 18);
+  position:relative;
 }
 
 .pageWrap {

@@ -13,13 +13,10 @@ html, body {
   overscroll-behavior-y: none !important;
   background: #0a0a0a;
 }
-body {
+/* body {
 position: relative;
 overflow-y: scroll;
-}
-#scrollable {
-  overflow: hidden;
-}
+} */
 
 
 .nothing {
