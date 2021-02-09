@@ -66,7 +66,7 @@ function App() {
     
      // NORMAL W INERTIA
 //  if (size.width > 800) {
-    scrollable.current.style.transform = `translate3d(0, -${window.scrollY}px, 0)`;
+    // scrollable.current.style.transform = `translate3d(0, -${window.scrollY}px, 0)`;
     // if (data.rounded> scrollableHeight/pageTotal ) {
     //   scrollable.current.style.transform = `translate3d(0, -${scrollableHeight/pageTotal}px, 0)`
     //   fixedScroll.current.style.transform = `translate3d(0, -${
