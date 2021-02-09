@@ -5,11 +5,11 @@ export default function useWindowSize() {
   var maxHeight = []
   function getSize() {
     width = window.innerWidth
-    maxHeight.push(window.innerHeight)
+    // maxHeight.push(window.innerHeight)
     
     return {
       width: width,
-      height: width > 700 ? maxHeight[maxHeight.length -1] : Math.max(...maxHeight)
+      height: window.innerHeight
     };
   }
   

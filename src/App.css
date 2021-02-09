@@ -13,14 +13,10 @@ html, body {
   background: #0a0a0a;
 }
 body {
+position: relative;
 overflow-y: scroll;
 }
 #scrollable {
-  overflow: hidden;
-}
-
-
-.hidden {
   overflow: hidden;
 }
 
