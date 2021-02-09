@@ -44,18 +44,18 @@ function App() {
 
   // SCROLLING
   const skewScrolling = () => {
-    const scrollableHeight = scrollable.current.clientHeight;
-    const pageTotal = 5;
+    // const scrollableHeight = scrollable.current.clientHeight;
+    // const pageTotal = 5;
     
-    //Set Current to the scroll position amount
-    data.current =  window.scrollY;
-    // Set Previous to the scroll previous position
-    data.previous += size.width > 700 ? (data.current - data.previous) * data.ease : (data.current - data.previous) * data.ease;
+    // //Set Current to the scroll position amount
+    // data.current =  window.scrollY;
+    // // Set Previous to the scroll previous position
+    // data.previous += size.width > 700 ? (data.current - data.previous) * data.ease : (data.current - data.previous) * data.ease;
 
-    // * data.ease
+    // // * data.ease
 
-    // Set rounded to
-    data.rounded = Math.round(data.previous * 100) / 100;
+    // // Set rounded to
+    // data.rounded = Math.round(data.previous * 100) / 100;
     //VARIABLES
 
     // const difference = data.current - data.rounded;
@@ -66,7 +66,7 @@ function App() {
     
      // NORMAL W INERTIA
 //  if (size.width > 800) {
-    scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
+    scrollable.current.style.transform = `translate3d(0, -${window.scrollY}px, 0)`;
     // if (data.rounded> scrollableHeight/pageTotal ) {
     //   scrollable.current.style.transform = `translate3d(0, -${scrollableHeight/pageTotal}px, 0)`
     //   fixedScroll.current.style.transform = `translate3d(0, -${
