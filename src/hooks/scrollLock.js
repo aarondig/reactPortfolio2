@@ -5,11 +5,11 @@ export default function useScrollLock() {
 function status() {
   
   function unlocked() {
-    document.body.classList.remove("hidden") ;
+    document.body.style.overflow = "scroll";
 
   }
   function locked() {
-    document.body.classList.add("hidden");
+    document.body.style.overflow = "hidden";
 
   }
   return {

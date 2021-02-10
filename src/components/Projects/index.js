@@ -5,6 +5,9 @@ import FactCheck from "../FactCheck";
 import BurgerEater from "../BurgerEater";
 import MemoryGame from "../MemoryGame";
 import useWindowSize from "../../hooks/windowSize";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Store from "../Card/index.js";
+
 
 function Projects({ scroll }) {
   const size = useWindowSize();
@@ -16,7 +19,7 @@ function Projects({ scroll }) {
   };
 
   return (
-    <div id="projects" style={{height: size.height}}>
+    <div id="projects" >
       <div
         id="cover"
         style={
@@ -44,9 +47,14 @@ function Projects({ scroll }) {
         </div>
       </div>
 
-      <FactCheck scroll={scroll} size={size} />
+      {/* <FactCheck scroll={scroll} size={size} />
       <BurgerEater scroll={scroll} size={size} />
-      <MemoryGame scroll={scroll} size={size} />
+      <MemoryGame scroll={scroll} size={size} /> */}
+      <div className="c">
+      <Router>
+        <Route path={["/:id", "/"]} component={Store} />
+      </Router>
+    </div>
       <div className="leftNav">
         <a className="githubLink" href="https://github.com/aarondig" target="_blank">
           <svg

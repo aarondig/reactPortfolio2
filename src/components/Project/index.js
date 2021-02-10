@@ -3,20 +3,14 @@ import "./style.css";
 import { motion, useViewportScroll } from "framer-motion";
 
 import useScrollLock from "../../hooks/scrollLock";
+import useWindowSize from "../../hooks/windowSize";
 
-function FactCheck({ scroll, size }) {
+function FactCheck({  }) {
   const [click, setClick] = useState();
   const scrollLock = useScrollLock();
+  const size = useWindowSize();
 const slider = useRef()
 
-  // click && scrollLock.lock();
-
-
-  // let [originalStyle, setOriginalStyle] = useState();
-
-// useEffect(()=> {
-// setOriginalStyle(window.getComputedStyle(slider.current).overflowY)
-// },[])
     
 
     useEffect(()=>{
@@ -31,28 +25,22 @@ const slider = useRef()
         // slider.current.style.overflowY = originalStyle;
         scrollLock.unlock();
       }
+      console.log(document.body)
     },[click])
 
 
 
   
   
-  const opacity = -Math.pow((scroll / size.height) * 2 - 2.5, 2) + 1;
-  const style = {
-    fade: {
-      opacity: opacity,
-    },
-  };
 
   const sliderStyle = {
     closed: {
-      width: size.width * 2,
+      width: "200%",
       transform: `translateX(0)`,
       // overflowY: `hidden`,
       
     },
     opened: {
-      width: size.width * 2,
       transform: size.width > 700 ? `translateX(-40%)` : `translateX(-50%)`,
       // overflowY: `scroll`,
     },
@@ -99,20 +87,8 @@ const slider = useRef()
         };
   return (
     <div
-      id="factCheck"
-      style={
-        scroll / size.height < 2
-          ? { display: "block"}
-          : { display: "none"}
-      }
+      id="project"
     >
-      <div
-        className="background"
-        id="factCheckBack"
-        style={
-          scroll / size.height < 1.5 ? { opacity: 1 } : { opacity: opacity + 1 }
-        }
-      >
         <div
           className="slider"
           style={click ? sliderStyle.opened : sliderStyle.closed}
@@ -122,7 +98,7 @@ const slider = useRef()
             className="mainSlide"
             style={size.width > 700 ? { width: `40%` } : { width: `45%` }}
           >
-            <div className="projectsHead" style={style.fade}>
+            <div className="projectsHead">
               <h1 className="header">Google Fact Checker</h1>
               <h2 className="subHeader">
                 Using Google's Fact Check API, this application ruturns fact
@@ -157,7 +133,7 @@ const slider = useRef()
 
               
               <div className="techUsed">
-                {/* <h3>This Project Uses:</h3> */}
+                <h3>This Project Uses:</h3>
                 <p>JAVASCRIPT</p>
                 <p>EXPRESS.JS</p>
                 <p>JQUERY.JS</p>
@@ -174,15 +150,11 @@ const slider = useRef()
               <a className="demoButton" href="https://googlefactchecker.herokuapp.com">
               <div className="buttonContent">DEMO</div>
               </a>
-              {/* <div className="description">
-                <h3>NAH</h3>
-                <p>JAVPT</p>
-              </div> */}
               </div>
             </div>
           </div>
         </div>
-      </div>
+
     </div>
   );
 }

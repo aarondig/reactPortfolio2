@@ -1,7 +1,8 @@
 #projects {
   position: relative;
-  width: 100%;
-  min-height: 100vh;
+  width: 100vw;
+  height: auto;
+  background: linear-gradient(180deg, #dbdbdb 0%, #ebedee 50%);
 }
 
 .background {
