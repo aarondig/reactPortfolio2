@@ -45,7 +45,7 @@ export function Item({ id, handleClick }) {
           <motion.div className="content-container" animate>
            
            
-          {/* <Component/> */}
+          <Component/>
           </motion.div>
         </motion.div>
       </div>

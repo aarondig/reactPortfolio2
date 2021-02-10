@@ -13,7 +13,9 @@ function Store({ match }) {
 
 const scrollLock = useScrollLock();
 
-const [click, setClick] = useState(false)
+const [click, setClick] = useState()
+
+
 
 const handleClick = () => {
     setClick(!click)
