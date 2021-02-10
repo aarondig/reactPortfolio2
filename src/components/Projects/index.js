@@ -6,7 +6,7 @@ import BurgerEater from "../BurgerEater";
 import MemoryGame from "../MemoryGame";
 import useWindowSize from "../../hooks/windowSize";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Store from "../Card/index.js";
+import Store from "../Card/index";
 
 
 function Projects({ scroll }) {
