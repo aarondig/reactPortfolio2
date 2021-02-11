@@ -33,7 +33,7 @@ export function Item({ id, handleClick }) {
             className="project-image-container"
             layoutId={`project-image-container-${id}`}
           >
-            <img className="project-image" src={`../../img/me.jpg`} alt="" />
+            <img className="project-image" src={`https://github.com/aarondig/factCheck/blob/main/assets/banner.png?raw=true`} alt="" />
           </motion.div>
           <motion.div
             className="title-container"

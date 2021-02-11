@@ -3,9 +3,11 @@ import Project from "../Project";
 export const items = [
   {
     id: "FactCheck",
-    category: "Pizza",
+    category: "Journalism",
     title: "Google Fact Checker",
+    banner: "https://github.com/aarondig/factCheck/blob/main/assets/banner.png?raw=true",
     component: Project,
+
     backgroundColor: "#814A0E"
   },
   {
@@ -22,46 +24,6 @@ export const items = [
     title: "Map Apps for the Superior Mode of Transport",
     component: 260,
     backgroundColor: "#5DBCD2"
-  },
-  // Photo by Taneli Lahtinen on Unsplash
-  {
-    id: "g",
-    category: "Holidays",
-    title: "Our Pick of Apps to Help You Escape From Apps",
-    component: 200,
-    backgroundColor: "#8F986D"
-  },
-  // Photo by Simone Hutsch on Unsplash
-  {
-    id: "d",
-    category: "Photography",
-    title: "The Latest Ultra-Specific Photography Editing Apps",
-    component: 150,
-    backgroundColor: "#FA6779"
-  },
-  // Photo by Siora Photography on Unsplash
-  {
-    id: "h",
-    category: "They're all the same",
-    title: "100 Cupcake Apps for the Cupcake Connoisseur",
-    component: 60,
-    backgroundColor: "#282F49"
-  },
-  // Photo by Yerlin Matu on Unsplash
-  {
-    id: "e",
-    category: "Cats",
-    title: "Yes, They Are Sociopaths",
-    component: 200,
-    backgroundColor: "#AC7441"
-  },
-  // Photo by Ali Abdul Rahman on Unsplash
-  {
-    id: "b",
-    category: "Holidays",
-    title: "Seriously the Only Escape is the Stratosphere",
-    component: 260,
-    backgroundColor: "#CC555B"
   }
 ];
 

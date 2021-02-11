@@ -1,9 +1,91 @@
 #projects {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: auto;
   background: linear-gradient(180deg, #dbdbdb 0%, #ebedee 50%);
+  
 }
+.projectWrap {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.labelC {
+  width: 100%;
+  /* display: flex;
+  justify-content: center; */
+  
+}
+.label {
+  /* font-size: 40px; */
+  text-align: left;
+  color:rgb(28, 28, 28);
+}
+
+.textC {
+  width: 100%;
+}
+.techUsed {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* color: #ebedee; */
+}
+.techUsedHead {
+  color:rgb(28, 28, 28);
+  white-space: nowrap;
+}
+.icon {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+.navicon {
+  text-align: right;
+  font-size: 80px;
+  background: linear-gradient(100deg, #00c6ff, #0073ffc3);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.listCol{
+  width: 80%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.listRow {
+  
+}
+.listName {
+  width: 60%;
+  line-height: 2.5em;
+  text-align: left;
+  color: black;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 800px) {
+
+  .techUsed {
+    flex-direction: column;
+  }
+
+}
+
+
+
+
 
 .background {
   height: 100%;
@@ -55,13 +137,7 @@ overflow-wrap: unset;
 
 
 
-.techUsed {
-  position: absolute;
-  width: 50%;
-  height: 20%;
-  top: 10px;
-  color: #ebedee;
-}
+
 
 .vertCenter {
   height: 100%;
@@ -146,11 +222,7 @@ overflow-wrap: unset;
       
   }
 
-  .icon {
-    margin-left: auto;
-    margin-right: auto;
-    
-  }
+
   .githubLink:hover .iconColor{
       fill: rgb(0, 242, 255);
   }
@@ -320,10 +392,5 @@ animation-name: arrow;
   }
  .nextSlideWrapper :nth-child(1) { order: 2; }
  .nextSlideWrapper :nth-child(2) { order: 1; }
- .techUsed {
-   width: 80%;
-   text-align: right;
-   top: 10px;
-   right: 30px;
- }
+ 
 }

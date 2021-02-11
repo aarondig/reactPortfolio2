@@ -3,16 +3,16 @@ import { items } from "./data";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./style.css";
-function Card({ id, title, category, theme, handleClick }) {
+function Card({ id, title, category, banner, handleClick }) {
   return (
-    <li className={`project ${theme}`} >
+    <li className={`project`} id={`project${id}`} >
       <div className="project-content-container">
         <motion.div className="project-content" layoutId={`project-container-${id}`}>
           <motion.div
             className="project-image-container"
             layoutId={`project-image-container-${id}`}
           >
-            <img className="project-image" src={`../../img/me.jpg`} alt="" />
+            <img className="project-image" src={banner} alt="" />
           </motion.div>
           <motion.div
             className="title-container"
