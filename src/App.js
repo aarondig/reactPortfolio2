@@ -48,11 +48,11 @@ function App() {
   //   requestAnimationFrame(() => skewScrolling());
   // }, []);
 
-  useEffect(() => {
-    document.body.style.height = `${
-      scrollContainer.current.clientHeight
-    }px`;
-  }, [size.height]);
+  // useEffect(() => {
+  //   document.body.style.height = `${
+  //     scrollContainer.current.clientHeight
+  //   }px`;
+  // }, [size.height]);
 
   
 

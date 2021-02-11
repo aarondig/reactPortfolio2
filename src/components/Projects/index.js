@@ -51,7 +51,7 @@ function Projects({ scroll }) {
       <BurgerEater scroll={scroll} size={size} />
       <MemoryGame scroll={scroll} size={size} /> */}
       <div className="c">
-      <Router>
+      <Router basename="/aaronDiggdon">
         <Route path={["/:id", "/"]} component={Store} />
       </Router>
     </div>
