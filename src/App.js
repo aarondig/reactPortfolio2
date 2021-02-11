@@ -97,7 +97,7 @@ function App() {
   // };
 
   return (
-    <div ref={app} className="App" >
+    <div ref={app} className="App">
       <Wrapper>
         <div ref={scrollContainer} className="scroll">
           <div id="scrollable" ref={scrollable}>
