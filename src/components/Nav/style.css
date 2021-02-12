@@ -30,9 +30,11 @@
       z-index: 11;
   }
 
-  /* @media screen and (max-width: 800px)  {
-    .leftNav {
-      left: 18px;
+  @media screen and (max-width: 800px)  {
+    nav {
+      z-index: 1;
     }
-
-  } */
+    .navButton {
+      z-index: 2;
+    }
+  }

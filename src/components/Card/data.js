@@ -11,9 +11,9 @@ export const items = [
     backgroundColor: "#814A0E"
   },
   {
-    id: "f",
-    category: "How to",
-    title: "Arrange Your Apple Devices for the Gram",
+    id: "TravelPins",
+    category: "Travel",
+    title: "TravelPins",
     component: 120,
     backgroundColor: "#959684"
   },

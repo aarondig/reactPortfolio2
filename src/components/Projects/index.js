@@ -51,8 +51,8 @@ function Projects({ scroll }) {
       <BurgerEater scroll={scroll} size={size} />
       <MemoryGame scroll={scroll} size={size} /> */}
       <div className="c">
-      <Router basename="/aaronDiggdon">
-        <Route path={["/:id", "/"]} component={Store} />
+      <Router basename={process.env.PUBLIC_URL}>
+        <Route exact path={["/:id", "/"]} component={Store} />
       </Router>
     </div>
       <div className="leftNav">

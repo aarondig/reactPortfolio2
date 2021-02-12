@@ -61,7 +61,9 @@
     position: relative;
     display: block;
     pointer-events: none;
-    will-change: position, max-height;
+    /* border-radius: 10px; */
+    will-change: position, max-height, border-radius;
+   overflow: hidden;
   }
   
   .project-content-container.open {
@@ -73,13 +75,12 @@
     position: fixed;
     z-index: 1;
     padding: 40px 0;
-    
+    border-radius: 0px;
   }
   
   .project-content {
     pointer-events: auto;
     position: relative;
-    border-radius: 10px;
     /* background: #1c1c1e; */
     background: linear-gradient(#D9D9D9, #F6F2F2);
     width: 100%;
@@ -93,9 +94,9 @@
     height: 100%;
     max-width: 700px;
     overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
     overflow-y: scroll !important;
     pointer-events: auto;
+    -webkit-overflow-scrolling: touch !important;
   }
   
   .project-open-link {
@@ -113,9 +114,30 @@
     overflow: hidden ;
     height: 400px;
     width: 100%;
-    border-radius: 10px;
-    will-change: border-radius;
   }
+.project-thumbnail{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.bubble {
+  width:200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
+
+.bubble-FactCheck {
+  background: linear-gradient(40deg, #00c6ff, #0073ffc3);
+}
+.thumbnail-FactCheck {
+  background: linear-gradient(220deg, #00c6ff, #0073ffc3);
+}
+
+
   .project-image {
     width: 100%;
     height: 100%;
@@ -125,7 +147,6 @@
   .open .project-image-container,
   .open .title-container {
     z-index: 1;
-    border-radius: 10px 10px 0px 0px;
   }
   
   .title-container {
@@ -142,8 +163,10 @@
     top: 30px;
     left: 30px;
   }
-  
-  h2 {
+
+
+ 
+  .projectTitle {
     color: #fff;
     margin: 8px 0;
   }
@@ -185,12 +208,6 @@
     
   }
   
-  p {
-    color: #9d9ca1;
-    font-size: 20px;
-    line-height: 28px;
-  }
-  
   @media only screen and (max-width: 800px) {
     .project-list {
      margin-left:auto;
@@ -207,8 +224,8 @@
       flex: 0 0 50%;
       max-width: 50%;
     }
-    .open .project-content {
-      height: 100vh;
+    .project-content-container.open  {
+      max-height: 100vh;
       border-radius: 0;
       
     }

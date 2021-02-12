@@ -12,14 +12,17 @@ function Card({ id, title, category, banner, handleClick }) {
             className="project-image-container"
             layoutId={`project-image-container-${id}`}
           >
-            <img className="project-image" src={banner} alt="" />
+            <div className={`project-thumbnail thumbnail-${id}`}>
+              <div className={`bubble bubble-${id}`}></div>
+            </div>
+            {/* <img className="project-image" src={banner} alt="" /> */}
           </motion.div>
           <motion.div
             className="title-container"
             layoutId={`title-container-${id}`}
           >
             <span className="category">{category}</span>
-            <h2>{title}</h2>
+            <h2 className="projectTitle">{title}</h2>
           </motion.div>
         </motion.div>
       </div>

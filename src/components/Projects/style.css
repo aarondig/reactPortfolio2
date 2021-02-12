@@ -2,9 +2,12 @@
   position: relative;
   width: 100%;
   height: auto;
-  background: linear-gradient(180deg, #dbdbdb 0%, #ebedee 50%);
+  /* background: linear-gradient(180deg, #dbdbdb 0%, #ebedee 50%); */
+  background: #0a0a0a;
   
 }
+
+
 .projectWrap {
   width: 80%;
   margin-left: auto;
@@ -33,46 +36,147 @@
 }
 .techUsed {
   width: 100%;
+  height: auto;
   display: flex;
   flex-direction: row;
   /* color: #ebedee; */
+  /* margin-left: -15%;
+  padding-left: 15%;
+  padding-right: 15%; */
 }
 .techUsedHead {
   color:rgb(28, 28, 28);
   white-space: nowrap;
 }
 .icon {
-  width: 40%;
+  width: 100px;
   display: flex;
   justify-content: center;
+  margin-right: 25px;
 }
 .navicon {
   text-align: right;
-  font-size: 80px;
+  font-size: 60px;
   background: linear-gradient(100deg, #00c6ff, #0073ffc3);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.fa-html5 {
+  background: linear-gradient(100deg, #EE9617, #FE5858 );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fa-js {
+  background: linear-gradient(100deg, #FFDD00, #FBB034 );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .listCol{
-  width: 80%;
-  height: 200px;
+  width: 40%;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  border-right: solid 1px rgba(0, 0, 0, 0.34);
 }
 .listRow {
-  
+  padding-right: -10px !important;
 }
 .listName {
-  width: 60%;
-  line-height: 2.5em;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
   text-align: left;
   color: black;
 }
+.listExplain {
+  float: left;
+  width: 60%;
+  padding-left: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 
+.description {
+  color: #9d9ca1;
+  font-size: 20px;
+  line-height: 28px;
+}
+.imgsContainer {
+ width: 100%;
 
+}
+.imgContainer {
+  /* position: absolute; */
+  width: 100%;
+  object-fit: scale-down;
+  margin-left: auto;
+  margin-right: auto;
+}
+.descriptionImg {
+  width: 100%;
+}
 
-
+/* BUTTONS */
+.demoButton {
+  position: absolute;
+  width: 190px;
+  height: 80px;
+  right: 0px;
+  top: -90px;
+  border-radius: 0px 0 0 0;
+  box-shadow: -15px 15px 15px rgba(0, 0, 0, 0.272);
+  background: #ebedee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient( 100deg, #FF416C,#FF4B2B);
+  z-index: 500;
+  overflow: hidden;
+  transition: box-shadow .2s, transform .2s ease-in-out;
+}
+.demoButton:hover{
+  box-shadow: -15px 20px 20px rgba(0, 0, 0, 0.272);
+  transform: translateY(-10px)
+}
+.demoButton:visited {
+  border: solid 1px #ebedee18;
+}
+.buttonContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ebedee;
+  opacity: 1;
+  transition: opacity .2s ease-in-out;
+}
+.demoButton:hover .buttonContent{
+  opacity: 0;
+}
+.buttonText {
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+  
+}
+.buttonTextHidden {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+  z-index: 0;
+}
 
 
 @media only screen and (max-width: 800px) {
@@ -81,6 +185,18 @@
     flex-direction: column;
   }
 
+  .listCol {
+    width: 100%;
+    border-right: none;
+  }
+  .listName {
+    text-align: left;
+    padding-left: 8%;
+  }
+  .listExplain {
+    width: 100%;
+    padding: 0;
+  }
 }
 
 
@@ -155,26 +271,7 @@ overflow-wrap: unset;
   background: linear-gradient(rgb(0, 191, 255), rgb(0, 119, 255));
 }
 
-.demoButton {
-  position: absolute;
-  width: 150px;
-  height: 8%;
-  right: 80px;
-  bottom: 40px;
-  border: solid 1px #ebedee;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-decoration: none;
-}
-.demoButton:visited {
-  border: solid 1px #ebedee18;
-}
-.buttonContent {
-  margin-left: auto;
-  margin-right: auto;
-  color: #ebedee;
-}
+
 
 .projectsHead {
   width: 80%;

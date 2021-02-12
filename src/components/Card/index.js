@@ -9,17 +9,12 @@ import useScrollLock from "../../hooks/scrollLock";
 
 
 function Store({ match }) {
-
-
 const scrollLock = useScrollLock();
 
 const [click, setClick] = useState()
 
-
-
 const handleClick = () => {
     setClick(!click)
-    console.log(click)
 }
 
 useEffect(()=>{
@@ -29,9 +24,17 @@ useEffect(()=>{
     
   },[click])
 
-
+  
   let { id } = match.params;
   const imageHasLoaded = true;
+
+  useEffect(()=> {
+      if ("#/aaronDiggdon/" + id === window.location.hash) {
+        
+          setClick(true);
+      }
+  },[])
+
   return (
     <AnimateSharedLayout type="crossfade">
       <List selectedId={id} handleClick={handleClick}/>
