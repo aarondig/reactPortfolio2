@@ -1,24 +1,26 @@
 {
   "files": {
-    "main.css": "/aaronDiggdon/static/css/main.5bf91ad6.chunk.css",
-    "main.js": "/aaronDiggdon/static/js/main.857ecee7.chunk.js",
-    "main.js.map": "/aaronDiggdon/static/js/main.857ecee7.chunk.js.map",
-    "runtime-main.js": "/aaronDiggdon/static/js/runtime-main.046368df.js",
-    "runtime-main.js.map": "/aaronDiggdon/static/js/runtime-main.046368df.js.map",
-    "static/js/2.3a3568d1.chunk.js": "/aaronDiggdon/static/js/2.3a3568d1.chunk.js",
-    "static/js/2.3a3568d1.chunk.js.map": "/aaronDiggdon/static/js/2.3a3568d1.chunk.js.map",
-    "static/js/3.42a0a7fe.chunk.js": "/aaronDiggdon/static/js/3.42a0a7fe.chunk.js",
-    "static/js/3.42a0a7fe.chunk.js.map": "/aaronDiggdon/static/js/3.42a0a7fe.chunk.js.map",
+    "main.css": "/aaronDiggdon/static/css/main.e4bd8c0c.chunk.css",
+    "main.js": "/aaronDiggdon/static/js/main.6468c3c8.chunk.js",
+    "main.js.map": "/aaronDiggdon/static/js/main.6468c3c8.chunk.js.map",
+    "runtime-main.js": "/aaronDiggdon/static/js/runtime-main.2eafa630.js",
+    "runtime-main.js.map": "/aaronDiggdon/static/js/runtime-main.2eafa630.js.map",
+    "static/js/2.f266be32.chunk.js": "/aaronDiggdon/static/js/2.f266be32.chunk.js",
+    "static/js/2.f266be32.chunk.js.map": "/aaronDiggdon/static/js/2.f266be32.chunk.js.map",
+    "static/js/3.1c989ea3.chunk.js": "/aaronDiggdon/static/js/3.1c989ea3.chunk.js",
+    "static/js/3.1c989ea3.chunk.js.map": "/aaronDiggdon/static/js/3.1c989ea3.chunk.js.map",
     "index.html": "/aaronDiggdon/index.html",
-    "static/css/main.5bf91ad6.chunk.css.map": "/aaronDiggdon/static/css/main.5bf91ad6.chunk.css.map",
-    "static/js/2.3a3568d1.chunk.js.LICENSE.txt": "/aaronDiggdon/static/js/2.3a3568d1.chunk.js.LICENSE.txt",
+    "static/css/main.e4bd8c0c.chunk.css.map": "/aaronDiggdon/static/css/main.e4bd8c0c.chunk.css.map",
+    "static/js/2.f266be32.chunk.js.LICENSE.txt": "/aaronDiggdon/static/js/2.f266be32.chunk.js.LICENSE.txt",
+    "static/media/getStarted.f92bf014.gif": "/aaronDiggdon/static/media/getStarted.f92bf014.gif",
     "static/media/me.120f84ea.jpg": "/aaronDiggdon/static/media/me.120f84ea.jpg",
+    "static/media/newLogin.c676edcf.gif": "/aaronDiggdon/static/media/newLogin.c676edcf.gif",
     "static/media/venus.3df63535.gltf": "/aaronDiggdon/static/media/venus.3df63535.gltf"
   },
   "entrypoints": [
-    "static/js/runtime-main.046368df.js",
-    "static/js/2.3a3568d1.chunk.js",
-    "static/css/main.5bf91ad6.chunk.css",
-    "static/js/main.857ecee7.chunk.js"
+    "static/js/runtime-main.2eafa630.js",
+    "static/js/2.f266be32.chunk.js",
+    "static/css/main.e4bd8c0c.chunk.css",
+    "static/js/main.6468c3c8.chunk.js"
   ]
 }
