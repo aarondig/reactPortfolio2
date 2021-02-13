@@ -2,8 +2,8 @@
   position: relative;
   width: 100%;
   height: auto;
-  /* background: linear-gradient(180deg, #dbdbdb 0%, #ebedee 50%); */
-  background: #0a0a0a;
+  background: linear-gradient(180deg, #fdfdfd 0%, #eff1f3 50%);
+  /* background: #141414; */
   
 }
 
@@ -36,7 +36,7 @@
 }
 .techUsed {
   width: 100%;
-  height: auto;
+  min-height: 300px;
   display: flex;
   flex-direction: row;
   /* color: #ebedee; */
@@ -73,11 +73,13 @@
 }
 .listCol{
   width: 40%;
-  height: 250px;
+  min-height: 300px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   border-right: solid 1px rgba(0, 0, 0, 0.34);
+  padding-bottom: 10px;
 }
 .listRow {
   padding-right: -10px !important;
@@ -103,6 +105,9 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  /* background: white;
+  margin-right: -15%;
+  padding-right: 15%; */
 }
 
 .description {
@@ -187,6 +192,7 @@
 
   .listCol {
     width: 100%;
+    min-height: 280px;
     border-right: none;
   }
   .listName {

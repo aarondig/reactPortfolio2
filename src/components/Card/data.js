@@ -1,4 +1,5 @@
 import Project from "../Project";
+import TravelPins from "../TravelPins";
 
 export const items = [
   {
@@ -8,14 +9,16 @@ export const items = [
     banner: "https://github.com/aarondig/factCheck/blob/main/assets/banner.png?raw=true",
     component: Project,
 
-    backgroundColor: "#814A0E"
+    icon: "fa-search",
+    shadow: "#0073ff",
   },
   {
     id: "TravelPins",
     category: "Travel",
-    title: "TravelPins",
-    component: 120,
-    backgroundColor: "#959684"
+    title: "Travel Pins",
+    component: TravelPins,
+    icon: "fa-map-marker-alt",
+    shadow: "#FBB034",
   },
   // Photo by Alessandra Caretto on Unsplash
   {
@@ -23,7 +26,8 @@ export const items = [
     category: "Pedal Power",
     title: "Map Apps for the Superior Mode of Transport",
     component: 260,
-    backgroundColor: "#5DBCD2"
+    icon: "#5DBCD2",
+    shadow: "#0073ffc3",
   }
 ];
 

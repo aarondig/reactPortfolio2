@@ -1,9 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./style.css";
-import { motion, useViewportScroll } from "framer-motion";
-import Recieved from "../../img/me.jpg";
 
-function Project({}) {
+function Project() {
   return (
     <div id="project">
        <a

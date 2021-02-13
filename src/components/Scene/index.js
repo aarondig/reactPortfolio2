@@ -25,7 +25,6 @@ function Char({size}) {
     scale: active ? [1.5, 1.5, 1.5] : [1, 1, 1],
     color: hovered ? "red" : "white",
   });
-
   useFrame((state) => {
     // ref.current.rotation.set(0, state.mouse.x * state.viewport.width /80, 0)
     ref.current.rotation.set(
@@ -44,11 +43,10 @@ function Char({size}) {
         // onPointerOut={() => setHovered(false)}
         onClick={() => setActive(!active)}
         scale={props.scale}
+        geometry={scene.nodes["venus_mmGroup0-reduced1008"].geometry}
       >
-        {/* {load ? ( */}
-        <primitive attach="map" object={scene.scene} dispose={null} />
-        {/* ) : null} */}
-        <a.meshStandardMaterial attach="material" color={props.color} />
+        {/* <primitive attach="map" object={scene.scene} dispose={null} /> */}
+        <a.meshStandardMaterial attach="material" color="#141414" />
       </a.mesh>
     </group>
   );
@@ -63,8 +61,8 @@ function Scene({ size, blurValue }) {
     <div id="scene" >
       <Canvas concurrent shadowMap camera={{ position: [0, 0, 3], fov: 70 }}>
         {/* <color attach="background" args={["#0d0d0d"]} /> */}
-        {/* <ambientLight intensity={0.2} /> */}
-        <pointLight position={[size.width > 600 ? 20 : 3, -4, -40]} intensity={size.width > 600 ? .4 : .13} />
+        <ambientLight intensity={1} />
+        <pointLight position={[size.width > 600 ? 20 : 3, -4, -40]} intensity={size.width > 600 ? 1.5 : .13} />
         {/* <OrbitControls /> */}
         <Physics>
           <Char size={size.width}/>

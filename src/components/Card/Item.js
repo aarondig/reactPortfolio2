@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { items } from "./data";
 import "./style.css";
-import FactCheck from "../FactCheck";
+import FactCheck from "../Project";
 
 export function Item({ id, handleClick }) {
-  const { category, title, component } = items.find((item) => item.id === id);
+  const { category, title, component, icon } = items.find((item) => item.id === id);
 
   // console.log(component)
 
@@ -36,7 +36,8 @@ export function Item({ id, handleClick }) {
           >
             <Link to="/" onClick={() => handleClick()}>
             <div className={`project-thumbnail thumbnail-${id}`}>
-              <div className={`bubble bubble-${id}`}></div>
+              <i class={`fas ${icon} coverIcon open`}></i>
+              {/* <div className={`bubble bubble-${id}`}></div> */}
             </div>
               {/* <img
                 className="project-image"

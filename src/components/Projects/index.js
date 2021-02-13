@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
 import { motion, useViewportScroll } from "framer-motion";
-import FactCheck from "../FactCheck";
-import BurgerEater from "../BurgerEater";
-import MemoryGame from "../MemoryGame";
 import useWindowSize from "../../hooks/windowSize";
 import { HashRouter as Router, Route } from "react-router-dom";
 import Store from "../Card/index";
