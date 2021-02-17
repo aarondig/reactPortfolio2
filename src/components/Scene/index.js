@@ -263,7 +263,7 @@ function Scene({ size, scroll, blurValue }) {
     // filter: "blur(" + blurValue + ")",
     height: size.height,
 
-    transform: `translate3d(0, ${scroll*2}px, 0)`
+    // transform: `translate3d(0, ${scroll*2}px, 0)`
   };
   return (
     <div id="scene" style={style} >

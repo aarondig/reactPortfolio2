@@ -87,16 +87,17 @@ useEffect(()=> {
   const scrollableHeight = scrollable.current.clientHeight;
 
 
+  app.current.style.position = `relative`
+    scrollable.current.style.transform = `translate3d(0, -${scroll}px, 0)`;
 
-    // scrollable.current.style.transform = `translate3d(0, -${scroll}px, 0)`;
-
-    // if (scroll> scrollableHeight/2) {
-    //   scrollable.current.style.transform = `translate3d(0, -${scrollableHeight/2}px, 0)`
-      // scrollable.current.style.position = `fixed`
-      // fixedScroll.current.style.transform = `translate3d(0, -${
-      //   scroll
-      // }px, 0)`;
-    // }
+    if (scroll> scrollableHeight/4) {
+      app.current.style.position = `fixed`
+      scrollable.current.style.transform = `translate3d(0, -${scrollableHeight/2}px, 0)`
+      
+      fixedScroll.current.style.transform = `translate3d(0, -${
+        scroll
+      }px, 0)`;
+    }
     // if (scroll > scrollableHeight) {
     //   fixedScroll.current.style.transform = `translate3d(0, -${scrollableHeight}px, 0) skewY(0deg)`;
     // }
