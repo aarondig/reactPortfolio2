@@ -4,5 +4,6 @@
     /* background: #0018a1; */
     position: fixed;
     overflow: visible;
+    transition: .4s all ease-in-out;
 }
 /* #001275 */

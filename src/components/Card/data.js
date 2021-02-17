@@ -1,4 +1,4 @@
-import Project from "../Project";
+import FactCheck from "../FactCheck";
 import TravelPins from "../TravelPins";
 
 export const items = [
@@ -7,7 +7,7 @@ export const items = [
     category: "Journalism",
     title: "Google Fact Checker",
     banner: "https://github.com/aarondig/factCheck/blob/main/assets/banner.png?raw=true",
-    component: Project,
+    component: FactCheck,
 
     icon: "fa-search",
     shadow: "#0073ff",
@@ -20,15 +20,14 @@ export const items = [
     icon: "fa-map-marker-alt",
     shadow: "#FBB034",
   },
-  // Photo by Alessandra Caretto on Unsplash
-  {
-    id: "a",
-    category: "Pedal Power",
-    title: "Map Apps for the Superior Mode of Transport",
-    component: 260,
-    icon: "#5DBCD2",
-    shadow: "#0073ffc3",
-  }
+  // {
+  //   id: "a",
+  //   category: "Pedal Power",
+  //   title: "Map Apps for the Superior Mode of Transport",
+  //   component: 260,
+  //   icon: "#5DBCD2",
+  //   shadow: "#0073ffc3",
+  // }
 ];
 
 export const openSpring = { type: "spring", stiffness: 200, damping: 30 };

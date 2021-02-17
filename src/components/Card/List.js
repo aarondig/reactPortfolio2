@@ -10,7 +10,6 @@ function Card({ id, title, category, banner, icon, shadow, handleClick, click })
   } : {
     boxShadow: `none`
   }
-console.log(click)
   return (
     <li className={`project`} id={`project${id}`} >
       <div className="project-content-container" style={style}>

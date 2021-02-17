@@ -258,13 +258,15 @@ function Char({size}) {
   );
 }
 
-function Scene({ size, blurValue }) {
+function Scene({ size, scroll, blurValue }) {
   const style = {
     // filter: "blur(" + blurValue + ")",
-    height: size.height
+    height: size.height,
+
+    transform: `translate3d(0, ${scroll*2}px, 0)`
   };
   return (
-    <div id="scene" >
+    <div id="scene" style={style} >
       <Canvas concurrent shadowMap camera={{ position: [0, 0, 3], fov: 70 }}>
         {/* <color attach="background" args={["#0d0d0d"]} /> */}
         <ambientLight intensity={.15} />

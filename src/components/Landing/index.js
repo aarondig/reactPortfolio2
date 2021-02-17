@@ -5,7 +5,7 @@ import ProgressBar from "../ProgressBar";
 import { motion, useViewportScroll } from "framer-motion";
 import "./style.css";
 
-function Landing({ size }) {
+function Landing({ size, scroll}) {
   const { scrollYProgress } = useViewportScroll();
 
   const [progress, setProgress] = useState(0);
@@ -15,12 +15,12 @@ function Landing({ size }) {
   const titlePosi = -6 + Math.pow(num, 3);
 
   return (
-    <div id="landing">
+    <div id="landing" >
       <div className="center">
         {/* <div className="outlineLine" /> */}
         <div className="outline" />
       </div>
-      <Scene blurValue={blurValue} size={size} />
+      <Scene blurValue={blurValue} size={size} scroll={scroll}/>
 
       <div className="topHeader">
         <h1 id="topHead">aaron diggdon</h1>

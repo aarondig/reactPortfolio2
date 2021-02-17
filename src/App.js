@@ -7,6 +7,8 @@ import Landing from "./components/Landing";
 import ProgressBar from "./components/ProgressBar";
 import Nav from "./components/Nav";
 import Projects from "./components/Projects";
+import Banner from "./components/Banner";
+import useScroll from "./hooks/scroll";
 
 //  if ( !window.requestAnimationFrame ) {
 
@@ -26,10 +28,10 @@ import Projects from "./components/Projects";
   
 //   }
 
-let requestAnimationFrame = window.webkitRequestAnimationFrame || window.requestAnimationFrame || window.mozRequestAnimationFrame  || window.msRequestAnimationFrame
+
 
 function App() {
-  const [scroll, setScroll] = useState();
+  // const [scroll, setScroll] = useState();
   const [scrollFixed, setScrollFixed] = useState();
   const size = useWindowSize();
   const app = useRef();
@@ -44,19 +46,17 @@ function App() {
     rounded: 0,
   };
 
-  // useEffect(() => {
-  //   requestAnimationFrame(() => skewScrolling());
-  // }, []);
 
-  // useEffect(() => {
-  //   document.body.style.height = `${
-  //     scrollContainer.current.clientHeight
-  //   }px`;
-  // }, [size.height]);
+  useEffect(() => {
+    document.body.style.height = `${
+      scrollContainer.current.clientHeight
+    }px`;
+  }, [size.height]);
 
   
 
 
+  
 
   // SCROLLING
   // const skewScrolling = () => {
@@ -70,39 +70,46 @@ function App() {
   //   // data.previous +=  (data.current - data.previous) * data.ease;
 
   //   // // Set rounded to
-  //   // data.rounded = Math.round(data.previous * 100) / 100;
+  //   // scroll = Math.round(data.previous * 100) / 100;
   //   //VARIABLES
 
-  //   // scrollable.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
-  //   // if (data.rounded> scrollableHeight/pageTotal ) {
-  //   //   scrollable.current.style.transform = `translate3d(0, -${scrollableHeight/pageTotal}px, 0)`
-  //   //   fixedScroll.current.style.transform = `translate3d(0, -${
-  //   //     data.rounded
-  //   //   }px, 0)`;
-  //   // }
-  //   // if (data.rounded > scrollableHeight/pageTotal) {
-      
-  //   // }
-  //   // if (data.rounded > scrollableHeight) {
-  //   //   fixedScroll.current.style.transform = `translate3d(0, -${scrollableHeight}px, 0) skewY(0deg)`;
-  //   // }
-  //   // app.current.style.position = `relative`;
-  //   // setScroll(data.rounded - (scrollableHeight / pageTotal))
-   
-  //   setScroll(data.current - (scrollableHeight / pageTotal))
-  //   // setScrollFixed((data.rounded-(size.height)) - (scrollableHeight / pageTotal));
+
     
 
   //   requestAnimationFrame(() => skewScrolling());
   // };
 
+
+const scroll = useScroll();
+console.log(scroll)
+
+useEffect(()=> {
+  const scrollableHeight = scrollable.current.clientHeight;
+
+
+
+
+    scrollable.current.style.transform = `translate3d(0, -${scroll}px, 0)`;
+    if (scroll> scrollableHeight ) {
+      scrollable.current.style.transform = `translate3d(0, -${scrollableHeight}px, 0)`
+      fixedScroll.current.style.transform = `translate3d(0, -${
+        scroll
+      }px, 0)`;
+    }
+    if (scroll > scrollableHeight) {
+      fixedScroll.current.style.transform = `translate3d(0, -${scrollableHeight}px, 0) skewY(0deg)`;
+    }
+
+    setScrollFixed((scroll-(size.height)) - (scrollableHeight));
+
+  },[scroll])
   return (
     <div ref={app} className="App">
       <Wrapper>
         <div ref={scrollContainer} className="scroll">
           <div id="scrollable" ref={scrollable}>
-            <Landing size={size} />
-            
+            <Landing size={size} scroll={scroll}/>
+            <Banner/>
             <Projects size={size} scroll={scroll}  />
             {/* <ProgressBar/> */}
             
@@ -110,7 +117,7 @@ function App() {
             
             <div className="nothing"/>
             <div id="fixed" ref={fixedScroll}>
-              {/* <About size={size} scroll={scroll} /> */}
+            <About size={size} scroll={scroll} />
               </div>
             
         </div>

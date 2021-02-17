@@ -3,8 +3,7 @@ import "./style.css";
 import { motion, useViewportScroll } from "framer-motion";
 import profilePic from "../../img/me.jpg";
 
-function About({ scroll, size }) {
-
+function About({scroll, size }) {
   const opacity = -Math.pow((scroll / size.height) * 1.2 - 1.4, 2) + 1;
   // const containerWidth = (scroll / size.height - 1.1) * 100;
   const containerWidth = (scroll / size.height - 1.1) * 100;

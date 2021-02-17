@@ -17,7 +17,7 @@ function Projects({ scroll }) {
 
   return (
     <div id="projects" >
-      <div
+      {/* <div
         id="cover"
         style={
           scroll / size.height < 1 ? { display: "block" } : { display: "none" }
@@ -42,7 +42,7 @@ function Projects({ scroll }) {
             <p className="text">Keep Scrolling...</p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* <FactCheck scroll={scroll} size={size} />
       <BurgerEater scroll={scroll} size={size} />

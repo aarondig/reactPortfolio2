@@ -1,0 +1,18 @@
+#banner {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: rgb(234, 234, 234);
+}
+
+.vertLine {
+    height: 20vh;
+    width: 0px;
+    border-left: solid 2px black;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bannerTitle {
+    text-align: center;
+}

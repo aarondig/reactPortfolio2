@@ -4,12 +4,14 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { items } from "./data";
 import "./style.css";
-import FactCheck from "../Project";
+import FactCheck from "../FactCheck";
 
-export function Item({ id, handleClick }) {
+export function Item({ id, handleClick, scroll }) {
   const { category, title, component, icon } = items.find((item) => item.id === id);
 
-  // console.log(component)
+  const style = {
+    transform: `translate3d(0, ${scroll*2}px, 0)`
+  }
 
   const Component = component;
 
@@ -25,7 +27,7 @@ export function Item({ id, handleClick }) {
       >
         <Link to="/" onClick={() => handleClick()} />
       </motion.div>
-      <div className="project-content-container open">
+      <div className="project-content-container open" style={style}>
         <motion.div
           className="project-content"
           layoutId={`project-container-${id}`}

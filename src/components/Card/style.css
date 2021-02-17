@@ -36,17 +36,17 @@
   
   .project {
     position: relative;
-    /* padding: 25px; */
+    padding: 25px;
     height: 400px;
-    flex: 0 0 45%;
-    max-width: 45%;
+    flex: 0 0 40%;
+    max-width: 40%;
     
   }
   
   .project:nth-child(4n + 1),
   .project:nth-child(4n + 4) {
-    flex: 0 0 55%;
-    max-width: 55%;
+    flex: 0 0 50%;
+    max-width: 50%;
   }
   
   .project:nth-child(odd) {
@@ -63,7 +63,7 @@
     position: relative;
     display: block;
     pointer-events: none;
-    /* border-radius: 10px; */
+    border-radius: 10px;
     will-change: position, max-height, border-radius;
    overflow: hidden;
    transition: box-shadow .04s ease-in-out;
