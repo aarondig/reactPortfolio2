@@ -89,8 +89,14 @@ function Nav({size}) {
           <div key={i} />
         ))} */}
         </div>
-        <motion.div id="navBackground" style={{height: size.height}} variants={sidebar} />
+        
       </motion.nav>
+
+      <motion.nav
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+        ref={containerRef}
+      ><motion.div id="navBackground" style={{height: size.height}} variants={sidebar} /></motion.nav>
     </div>
   );
 }

@@ -291,7 +291,6 @@ overflow-wrap: unset;
 }
 
 .header {
-    font-family: "MADE TOMMY";
     font-weight: 100;
     font-size: 80px;
     color: #ebedee;
@@ -300,7 +299,6 @@ overflow-wrap: unset;
 
 .subHeader {
     text-align: left;
-    font-family: "MADE TOMMY";
     font-weight: 100;
     font-size: 35px;
     color: #ebedee;
@@ -434,7 +432,6 @@ animation-name: arrow;
 }
 
 #cover .header {
-    font-family: "MADE TOMMY";
     font-weight: 100;
     font-size: 80px;
     color: #ebedee;
@@ -443,7 +440,6 @@ animation-name: arrow;
   }
   #cover .subHeader {
     text-align: left;
-    font-family: "MADE TOMMY";
     font-weight: 100;
     font-size: 35px;
     color: #ebedee;
@@ -452,7 +448,6 @@ animation-name: arrow;
   }
 
 .text {
-  font-family: "MADE TOMMY";
   font-weight: 400;
   /* font-size: 25px; */
   color: #e9322e;

@@ -5,7 +5,17 @@
     /* background: linear-gradient(360deg, #fdfdfd 0%, #eff1f3 50%); */
     overflow: hidden;
 }
+.topHeader {
+position: absolute;
+top: 5%;
+right: 40px;
+color: white;
 
+}
+#topHead {
+    font-weight: 300;
+    margin: 0;
+}
 .mainHeader {
     height:100%;
     top: 0%;
@@ -20,30 +30,38 @@
        pointer-events: none;
 }
 #outlineHead {
-    font-family: 'MADE TOMMY OUTLINE';
-    font-weight: 400;
+    font-weight: 500;
     /* color: #e9322e; */
     color: rgba(255, 255, 255, 0.731);
     margin: 0;
 }
 #fillHead {
-    font-family: 'MADE TOMMY';
     font-weight: 500;
     color: rgba(255, 255, 255, 0.895);
     margin: 0;
 }
 
-/* .outline {
+.outline {
     position: absolute;
-    width: 90%;
-    height: 80%;
-    background: red;
+    width: 100vh;
+    height: 100vh;
     border-style: solid;
-    border-width: 1px;
-    border-left: 5px;
-    border-right: 5px;
+    border-width: 2px;
+    border-radius: 50%;
     border-color: white;
-    margin-top: 10%;
+    bottom: -50%;
+    /* background: red; */
+}
+/* .outlineLine {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 50%;
+    border-color: white;
+    top: -60px;
+    right: -60px;
 } */
 #subText {
     font-size: 15px;

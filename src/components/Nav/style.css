@@ -1,16 +1,19 @@
 #nav {
     width: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
-    z-index: 10;
+    /* z-index: 10; */
 }
 
+
+
  #navBackground {
-    position: absolute;
+    position:fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(100deg, #121212, #1c1c1c);
+    /* background: linear-gradient(100deg, #121212, #1c1c1c); */
+    background: white;
     
   }
   .navButton {
@@ -20,9 +23,8 @@
     -moz-user-select: none;
     -ms-user-select: none;
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     top: 10%;
-    /* left: 18px; */
     width: 50px;
     height: 50px;
     background: transparent;
