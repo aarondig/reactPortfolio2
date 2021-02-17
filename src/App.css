@@ -21,6 +21,9 @@ body {
 #scrollable {
   width: 100%;
   height: auto;
+  overflow: hidden;
+  overscroll-behavior-y: none !important;
+  will-change: position, scroll-position;
 }
 .nothing {
   height: 100vh !important;

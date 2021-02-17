@@ -87,21 +87,25 @@ useEffect(()=> {
   const scrollableHeight = scrollable.current.clientHeight;
 
 
-  app.current.style.position = `relative`
-    scrollable.current.style.transform = `translate3d(0, -${scroll}px, 0)`;
+  scrollable.current.style.position = `relative`;
 
-    if (scroll> scrollableHeight/4) {
-      app.current.style.position = `fixed`
-      scrollable.current.style.transform = `translate3d(0, -${scrollableHeight/2}px, 0)`
+    scrollable.current.style.transform = `translate3d(0, 0px, 0)`;
+    if (scroll > scrollableHeight/1.5) {
       
-      fixedScroll.current.style.transform = `translate3d(0, -${
-        scroll
-      }px, 0)`;
+      
+      scrollable.current.style.transform = `translate3d(0, -${scrollableHeight/1.5}px, 0)`
+      scrollable.current.style.position = `fixed`
+
+
+      
+      // fixedScroll.current.style.transform = `translate3d(0, -${
+      //   scroll
+      // }px, 0)`;
     }
     // if (scroll > scrollableHeight) {
     //   fixedScroll.current.style.transform = `translate3d(0, -${scrollableHeight}px, 0) skewY(0deg)`;
     // }
-    console.log(scroll> scrollableHeight/2)
+    // console.log(scroll> scrollableHeight/2)
     // setScrollFixed((scroll-(size.height)) - (scrollableHeight));
 
   },[scroll])
@@ -120,8 +124,7 @@ useEffect(()=> {
             <div className="nothing"/>
             <div id="fixed" ref={fixedScroll}>
             <About size={size} scroll={scroll} />
-              </div>
-            
+            </div>
         </div>
         <Nav size={size}/>
       </Wrapper>
