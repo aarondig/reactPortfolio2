@@ -81,26 +81,27 @@ function App() {
 
 
 const scroll = useScroll();
-console.log(scroll)
+
 
 useEffect(()=> {
   const scrollableHeight = scrollable.current.clientHeight;
 
 
 
-
     scrollable.current.style.transform = `translate3d(0, -${scroll}px, 0)`;
-    if (scroll> scrollableHeight ) {
-      scrollable.current.style.transform = `translate3d(0, -${scrollableHeight}px, 0)`
-      fixedScroll.current.style.transform = `translate3d(0, -${
-        scroll
-      }px, 0)`;
-    }
-    if (scroll > scrollableHeight) {
-      fixedScroll.current.style.transform = `translate3d(0, -${scrollableHeight}px, 0) skewY(0deg)`;
-    }
 
-    setScrollFixed((scroll-(size.height)) - (scrollableHeight));
+    if (scroll> scrollableHeight/2) {
+      scrollable.current.style.transform = `translate3d(0, -${scrollableHeight/2}px, 0)`
+      // scrollable.current.style.position = `fixed`
+      // fixedScroll.current.style.transform = `translate3d(0, -${
+      //   scroll
+      // }px, 0)`;
+    }
+    // if (scroll > scrollableHeight) {
+    //   fixedScroll.current.style.transform = `translate3d(0, -${scrollableHeight}px, 0) skewY(0deg)`;
+    // }
+    console.log(scroll> scrollableHeight/2)
+    // setScrollFixed((scroll-(size.height)) - (scrollableHeight));
 
   },[scroll])
   return (
@@ -110,7 +111,7 @@ useEffect(()=> {
           <div id="scrollable" ref={scrollable}>
             <Landing size={size} scroll={scroll}/>
             <Banner/>
-            <Projects size={size} scroll={scroll}  />
+            {/* <Projects size={size} scroll={scroll}  /> */}
             {/* <ProgressBar/> */}
             
             </div>

@@ -10,9 +10,9 @@ export function Item({ id, handleClick, scroll }) {
   const { category, title, component, icon } = items.find((item) => item.id === id);
 
   const style = {
-    transform: `translate3d(0, ${scroll*2}px, 0)`
+    transform: `translate3d(0, ${scroll*2}px, 0)`,
+    left: 0,
   }
-
   const Component = component;
 
   return (
@@ -24,7 +24,7 @@ export function Item({ id, handleClick, scroll }) {
         transition={{ duration: 0.2, delay: 0.1 }}
         style={{ pointerEvents: "auto" }}
         className="overlay"
-      >
+      style={style}>
         <Link to="/" onClick={() => handleClick()} />
       </motion.div>
       <div className="project-content-container open" style={style}>
