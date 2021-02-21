@@ -250,9 +250,10 @@ function Char({size}) {
         geometry={scene.nodes["venus_mmGroup0-reduced1008"].geometry}
       >
         {/* <primitive attach="map" object={scene.scene} dispose={null} /> */}
-        <a.meshStandardMaterial attach="material" color="#fdfdfd" />
+        <a.meshStandardMaterial attach="material" color="#0018a1" />
         {/* color="#141414" */}
         {/* color="#0018a1" */}
+        {/* color="#fdfdfd" */}
       </a.mesh>
     </group>
   );
@@ -269,8 +270,8 @@ function Scene({ size, scroll, blurValue }) {
     <div id="scene" style={style} >
       <Canvas concurrent shadowMap camera={{ position: [0, 0, 3], fov: 70 }}>
         {/* <color attach="background" args={["#0d0d0d"]} /> */}
-        <ambientLight intensity={.15} />
-        <pointLight position={[3, -4, -25]} intensity={size.width > 600 ? .4 : .05} />
+        <ambientLight intensity={.3} />
+        <pointLight position={[3, -4, -25]} intensity={size.width > 600 ? .5 : .5} />
         {/* <OrbitControls /> */}
         <Physics>
           <Char size={size.width}/>

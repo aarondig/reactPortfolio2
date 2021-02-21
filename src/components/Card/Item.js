@@ -27,7 +27,7 @@ export function Item({ id, handleClick, scroll }) {
       style={style}>
         <Link to="/" onClick={() => handleClick()} />
       </motion.div>
-      <div className="project-content-container open" style={style}>
+      <div className="project-content-container open">
         <motion.div
           className="project-content"
           layoutId={`project-container-${id}`}

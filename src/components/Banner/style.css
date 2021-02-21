@@ -1,18 +1,58 @@
 #banner {
     position: relative;
-    height: 50vh;
+    height: 90vh;
     width: 100%;
     overflow: hidden;
-    background: rgb(234, 234, 234);
+    background: #0018a1;
+    z-index: 2;
 }
 
 .vertLine {
+    /* min-height: 5vh;
+    max-height: 20vh; */
     height: 20vh;
     width: 0px;
-    border-left: solid 2px black;
+    border-left: solid 2px rgb(255, 255, 255);
     margin-left: auto;
     margin-right: auto;
+    padding-left: 0;
+    transition: width .4s, padding-left .4s, margin-right .4s ease-in-out;
+    overflow: visible;
+}
+.vertLineB {
+    width: 0px;
+    border-left: solid 1.6px black;
+    margin-left: auto;
+    margin-right: auto;
+    background: black;
+    transition: width .2s, margin-right .4s ease-in;
+}
+.bannerC {
+    /* mix-blend-mode: difference; */
+    background: transparent;
+}
+.bannerBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20%;
+    height: 30vh;
 }
 .bannerTitle {
     text-align: center;
+    color: white;
+}
+.arrowDown {
+    /* box-sizing: border-box; */
+  margin: 0;
+  height: 20px;
+  width: 20px;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  border-width: 0px 2px 2px 0px;
+  transform: rotate(45deg);
+  margin-left: auto;
+    margin-right: auto;
+    margin-top: -0px;
+    background: transparent;
 }

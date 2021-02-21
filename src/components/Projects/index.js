@@ -14,9 +14,12 @@ function Projects({ scroll }) {
       opacity: opacity,
     },
   };
+  const layer = {
+    zIndex: scroll > size.height*.8 ? `1` : `0`
+  }
 
   return (
-    <div id="projects" >
+    <div id="projects" style={layer}>
       {/* <div
         id="cover"
         style={
