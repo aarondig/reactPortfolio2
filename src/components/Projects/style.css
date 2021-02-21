@@ -1,11 +1,28 @@
 #projects {
-  position: fixed;
+  position: relative;
   width: 100%;
   height: auto;
   background: linear-gradient(180deg, #fdfdfd 0%, #eff1f3 50%);
   /* background: #141414; */
-  z-index: 0;
-  top: 0;
+  margin-top: 90vh;
+}
+.projectIntro {
+  height: 80vh;
+}
+
+.blueboxLeft {
+  position: relative;
+  float: left;
+  width: 5%;
+  height: 30vh;
+  background: #0018a1;
+}
+.blueboxRight {
+  position: relative;
+  float: left;
+  width: 20%;
+  height: 30vh;
+  background: #0018a1;
 }
 
 
@@ -294,16 +311,20 @@ overflow-wrap: unset;
 .header {
     font-weight: 100;
     font-size: 80px;
-    color: #ebedee;
+    color: #000000;
     margin-bottom: 5%;
+    transition: .4s all;
+    
   }
 
 .subHeader {
     text-align: left;
     font-weight: 100;
     font-size: 35px;
-    color: #ebedee;
+    color: #000000;
     margin-top: 0px;
+    transition: .4s all;
+    transition-delay: .1s;
   }
 
   .githubLink {
@@ -328,87 +349,6 @@ overflow-wrap: unset;
   .githubLink:hover .iconColor{
       fill: rgb(0, 242, 255);
   }
-
-.projectImgC {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 45%;
-    /* display: flex;
-    flex-direction: row;
-    justify-content: center; */
-    /* margin-top: 5%; */
-    object-fit: cover;
-    z-index: 0;
-}
-.projectImg {
-    height: 100%;
-    box-shadow: 0 0px 100px rgba(127, 127, 127, 0.108);
-    /* border-radius: 10px; */
-}
-
-
-
-.arrowC {
-  width: 5%;
-  height: 100%;
-  float: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  
-}
-
-.arrow,
-.arrow:before {
-
-float: left;
-margin-left: auto;
-margin-right: auto;
-z-index: 5;
-}
-.arrow {
-width: 40px;
-height: 40px;
-/* top: 45%; */
-margin-left: 35px;
-/* -webkit-transform: rotate(135deg); */
--webkit-transform: rotate(315deg);
-transform: rotate(315deg);
-border-left: none;
-border-top: none;
-border-right: 2px #0a0a0a solid;
-border-bottom: 2px #0a0a0a solid;
-transition: .4s all;
-  
-}
-
-.arrow:before {
-content: "";
-width: 20px;
-height: 20px;
-/* top: 55%; */
-margin: -10px 0 0 -10px;
-border-left: none;
-border-top: none;
-border-right: 1px #0a0a0a solid;
-border-bottom: 1px #0a0a0a solid;
-animation-duration: 2s;
-animation-iteration-count: infinite;
-animation-name: arrow;
-}
-
-@keyframes arrow {
-0% {
-  opacity: 1;
-}
-100% {
-  opacity: 0;
-  transform: translate(-10px, -10px);
-}
-}
-
 
 
 /* COVER PAGE */

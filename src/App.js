@@ -118,7 +118,7 @@ useEffect(()=> {
             <Landing size={size} scroll={scroll}/>
             <Banner  size={size} scroll={scroll} />
             <ImgBanner size={size} scroll={scroll}/>
-            {/* <Projects size={size} scroll={scroll}  /> */}
+            <Projects size={size} scroll={scroll}  />
             {/* <ProgressBar/> */}
             
             </div>

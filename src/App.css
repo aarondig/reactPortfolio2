@@ -52,6 +52,13 @@ body {
   display: flex;
   justify-content: center;
 }
+.vertical {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .column {
   width: 100%;
   display: flex;
@@ -65,23 +72,7 @@ body {
   flex-direction: row;
 }
 
-.height {
-  height: 100%;
-}
-.header {
-  font-family: "MADE TOMMY";
-  font-size: 80px;
-  color: #ebedee;
-  /* mix-blend-mode: difference; */
-}
-.subHeader {
-  text-align: left;
-  font-family: "MADE TOMMY";
-  font-weight: 100;
-  font-size: 35px;
-  color: #ebedee;
-}
-
+/* color: #ebedee; */
 .leftNav {
   width: 10%;
   height: 100%;

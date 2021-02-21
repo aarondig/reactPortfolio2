@@ -6,9 +6,10 @@ import { HashRouter as Router, Route } from "react-router-dom";
 import Store from "../Card/index";
 
 
-function Projects({ scroll }) {
-  const size = useWindowSize();
-  const opacity = -Math.pow((scroll / size.height) * 2 - 0.2, 2) + 1;
+function Projects({ scroll, size }) {
+  // const opacity = -Math.pow((scroll / size.height) * 2 - 0.2, 2) + 1;
+
+  const opacity = scroll > (size.height * .9) * 2.5 ? 1 : 0;
   const style = {
     fade: {
       opacity: opacity,
@@ -20,22 +21,8 @@ function Projects({ scroll }) {
 
   return (
     <div id="projects" style={layer}>
-      {/* <div
-        id="cover"
-        style={
-          scroll / size.height < 1 ? { display: "block" } : { display: "none" }
-        }
-      >
-        <div
-          className="background"
-          id="coverBack"
-          style={
-            scroll / size.height < 0.5
-              ? { opacity: 1 }
-              : { opacity: opacity + 1 }
-          }
-        >
-          <div className="projectsHead">
+
+      {/* <div className="projectsHead">
             <h1 className="header" style={style.fade}>
               Projects
             </h1>
@@ -43,13 +30,16 @@ function Projects({ scroll }) {
               These were completed while studying web development and design.
             </h2>
             <p className="text">Keep Scrolling...</p>
-          </div>
-        </div>
-      </div> */}
-
-      {/* <FactCheck scroll={scroll} size={size} />
-      <BurgerEater scroll={scroll} size={size} />
-      <MemoryGame scroll={scroll} size={size} /> */}
+          </div> */}
+    <div className="projectIntro">
+    <div className="vertical">
+      <div className="row">
+      <div className="blueboxLeft"></div>
+      <p>Blahc hafgsgsag s sadf sda gag ag sd sd gsd saf sda sf as </p>
+      <div className="blueboxRight"></div>
+      </div>
+      </div>
+      </div>
       <div className="c">
       <Router basename={process.env.PUBLIC_URL}>
         <Route exact path={["/:id", "/"]} component={Store} />
