@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { items } from "./data";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./style.css";
-function Card({ id, title, category, banner, icon, shadow, handleClick, click }) {
+
+const num = items.length;
+const even = num/2
+const odd = (num + 1) /2
+
+
+function Card({ id, i, title, category, banner, icon, shadow, handleClick, click }) {
 
   const style = !click ? {
     boxShadow: `0 10px 25px ${shadow}5e`
   } : {
     boxShadow: `none`
   }
+const [state, setState] = useState();
+console.log(i)
   return (
-    <li className={`project`} id={`project${id}`} >
+    <li className={`project ${state}`} id={`project${id}`} >
       <div className="project-content-container" style={style}>
         <motion.div className="project-content" layoutId={`project-container-${id}`}>
           <motion.div
@@ -40,11 +48,20 @@ function Card({ id, title, category, banner, icon, shadow, handleClick, click })
 }
 
 export function List({ selectedId, handleClick, click }) {
+  useEffect(()=>{
+
+  })
+
+  
   return (
     <ul className="project-list" >
-      {items.map(card => (
-        <Card key={card.id} {...card} isSelected={card.id === selectedId} handleClick={handleClick} click={click}/>
-      ))}
+      {/* <div className="cardContainer"> */}
+      {items.map(function (card, index) {
+      
+
+        return <Card key={card.id} i={index} {...card} isSelected={card.id === selectedId} handleClick={handleClick} click={click}/>
+      })}
+      {/* </div> */}
     </ul>
   );
 }

@@ -21,21 +21,19 @@ function Projects({ scroll, size }) {
 
   return (
     <div id="projects" style={layer}>
-
-      {/* <div className="projectsHead">
+    <div className="projectIntro">
+    <div className="vertical">
+      <div className="row">
+      <div className="blueboxLeft"></div>
+      <div className="projectsHead">
             <h1 className="header" style={style.fade}>
               Projects
             </h1>
             <h2 className="subHeader" style={style.fade}>
               These were completed while studying web development and design.
             </h2>
-            <p className="text">Keep Scrolling...</p>
-          </div> */}
-    <div className="projectIntro">
-    <div className="vertical">
-      <div className="row">
-      <div className="blueboxLeft"></div>
-      <p>Blahc hafgsgsag s sadf sda gag ag sd sd gsd saf sda sf as </p>
+            {/* <p className="text">Keep Scrolling...</p> */}
+          </div>
       <div className="blueboxRight"></div>
       </div>
       </div>

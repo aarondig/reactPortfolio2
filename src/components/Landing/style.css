@@ -5,18 +5,19 @@
     /* background: #0a0a0a; */
     background: linear-gradient(360deg, #fdfdfd 0%, #eff1f3 50%);
     overflow: hidden;
-    z-index: 1;
+    opacity: 1;
+    transition: opacity .4s ease-in-out;
 }
 .topHeader {
-position: absolute;
+position: fixed;
 top: 5%;
 right: 40px;
 color: #0018a1;
-
 }
 #topHead {
     font-weight: 300;
     margin: 0;
+    
 }
 .mainHeader {
     height:100%;
@@ -67,7 +68,6 @@ color: #0018a1;
 } */
 #subText {
     font-size: 15px;
-    font-family: 'MADE TOMMY';
     font-weight: 200;
     color: rgba(255, 255, 255, 0.895);
     line-height: 1em;

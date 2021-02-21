@@ -14,7 +14,7 @@
     width: 100%;
     /* background: linear-gradient(100deg, #121212, #1c1c1c); */
     background: white;
-    
+    z-index: 10;
   }
   .navButton {
     outline: none;
@@ -28,7 +28,7 @@
     width: 50px;
     height: 50px;
     background: transparent;
-      mix-blend-mode: difference;
+      /* mix-blend-mode: difference; */
       z-index: 11;
   }
 

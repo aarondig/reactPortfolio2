@@ -1,20 +1,36 @@
 #ImgBanner {
-    position: fixed;
-    height: 100vh;
+    position: relative;
+    height: 80vh;
     width: 100%;
     overflow: hidden;
-    top: 0;
+    
 }
 .bannerImgC {
+    position: fixed;
+    top: 0;
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
 }
 .bannerImg {
     object-fit: cover;
+    /* object-position: left; */
     min-height: 100%;
     min-width: 100%;
-    
+}
+.overlayBox {
+    height: 25%;
+    width: 35%;
+    position: relative;
+    backdrop-filter: blur(20px);
+    /* margin-left: 5%; */
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.06);
+    border-right: 2px solid #0018a1;
+    z-index: 2;
+    background: white;
+}
+.overlayBox h1 {
+    margin: 0;
 }

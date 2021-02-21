@@ -23,9 +23,10 @@ const container = {
         <div className="bannerC">
       
       <div className="bannerBox">
-      <h1 className="bannerTitle">FRONTEND WEB DEVELOPER</h1>
+      <h1 className="bannerTitle"> FULL STACK WEB DEVELOPER</h1>
+      <p className="bannerSub">Certified by UC Berkeley Extension</p>
       <div className="vertLine" />
-      <p className="bannerTitle">My name is Aaron. I'm a Freelance Web Developer</p>
+      <p className="bannerTitle">Specializing in Front-End Development and Design. Knowladgeable in the MERN stack, React is my tool of choice.</p>
       </div>
       {/* <div className="vertLineB"></div> */}
       {/* <div className="vertLineB" style={scroll/2 > size.height*.4 ? container : lineB}></div> */}

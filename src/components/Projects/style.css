@@ -4,7 +4,6 @@
   height: auto;
   background: linear-gradient(180deg, #fdfdfd 0%, #eff1f3 50%);
   /* background: #141414; */
-  margin-top: 90vh;
 }
 .projectIntro {
   height: 80vh;
@@ -13,18 +12,30 @@
 .blueboxLeft {
   position: relative;
   float: left;
-  width: 5%;
-  height: 30vh;
+  width: 2%;
+  height: 25vh;
   background: #0018a1;
 }
 .blueboxRight {
   position: relative;
   float: left;
-  width: 20%;
-  height: 30vh;
+  width: 15%;
+  height: 25vh;
   background: #0018a1;
 }
-
+.header {
+  font-size: 80px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  transition: .4s all;
+}
+.subHeader {
+  font-size: 30px;
+  font-weight: 100;
+  margin-top: 0px;
+  transition: .4s all;
+  transition-delay: .2s;
+}
 
 .projectWrap {
   width: 80%;
@@ -298,34 +309,15 @@ overflow-wrap: unset;
 
 
 .projectsHead {
-  width: 80%;
-  /* max-width: 650px; */
+  width: 50%;
+  max-width: 650px;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 15%;
+  margin-left: auto;
   margin-right: auto;
 }
-
-.header {
-    font-weight: 100;
-    font-size: 80px;
-    color: #000000;
-    margin-bottom: 5%;
-    transition: .4s all;
-    
-  }
-
-.subHeader {
-    text-align: left;
-    font-weight: 100;
-    font-size: 35px;
-    color: #000000;
-    margin-top: 0px;
-    transition: .4s all;
-    transition-delay: .1s;
-  }
 
   .githubLink {
     width: 45px;
@@ -349,51 +341,6 @@ overflow-wrap: unset;
   .githubLink:hover .iconColor{
       fill: rgb(0, 242, 255);
   }
-
-
-/* COVER PAGE */
-
-#cover {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 5;
-}
-
-#coverBack {
-  background: linear-gradient(180deg, #0a0a0a 10%, #111111 150%);
-}
-
-#cover .projectsHead {
-  width: 50%;
-  height: 100%;  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-#cover .header {
-    font-weight: 100;
-    font-size: 80px;
-    color: #ebedee;
-    margin-bottom: 5%;
-    mix-blend-mode: difference;
-  }
-  #cover .subHeader {
-    text-align: left;
-    font-weight: 100;
-    font-size: 35px;
-    color: #ebedee;
-    margin-top: 0px;
-    mix-blend-mode: difference;
-  }
-
-.text {
-  font-weight: 400;
-  /* font-size: 25px; */
-  color: #e9322e;
-  margin-top: 0px;
-}
 
 @media screen and (max-width: 700px) {
   #projects {

@@ -3,6 +3,69 @@
 } */
 
 
+
+
+
+/* CARD INDEX */
+
+.cardContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: calc(50% - 53vw);
+  margin-bottom: 200px;
+  margin-top: 50px;
+}
+
+.cardContainer .project {
+  z-index: 1;
+  -webkit-transform: scale(0.6) translateY(-2rem);
+  transform: scale(0.6) translateY(-2rem);
+  opacity: 0;
+  cursor: pointer;
+  pointer-events: none;
+  transition: 1s;
+}
+
+.cardContainer .project:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  bottom: -5rem;
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
+}
+.cardContainer .project.active {
+  z-index: 3;
+  -webkit-transform: scale(1) translateY(0) translateX(0);
+  transform: scale(1) translateY(0) translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+  transition: 1s;
+}
+
+.cardContainer .project.prev,
+.cardContainer .project.next {
+  z-index: 2;
+  -webkit-transform: scale(0.8) translateY(-1rem) translateX(0);
+  transform: scale(0.8) translateY(-1rem) translateX(0);
+  opacity: 100;
+  pointer-events: auto;
+  transition: 1s;
+}
+
+
+.project.prev .project-front,
+.project.next .project-front {
+  filter: blur(0.5px);
+  opacity: 0.8;
+}
+
 .c {
   max-width: 990px;
     /* max-width: 990px; */
@@ -25,7 +88,7 @@
   }
   
   .project-list {
-    width: 100%;
+    width: 60%;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -42,6 +105,8 @@
     max-width: 40%;
     
   }
+
+  
   
   .project:nth-child(4n + 1),
   .project:nth-child(4n + 4) {
@@ -63,7 +128,7 @@
     position: relative;
     display: block;
     pointer-events: none;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     will-change: position, max-height, border-radius;
    overflow: hidden;
    transition: box-shadow .04s ease-in-out;

@@ -8,9 +8,8 @@
 }
 
 .vertLine {
-    /* min-height: 5vh;
-    max-height: 20vh; */
-    height: 20vh;
+    min-height: 10vh;
+    max-height: 20vh;
     width: 0px;
     border-left: solid 2px rgb(255, 255, 255);
     margin-left: auto;
@@ -28,17 +27,27 @@
     transition: width .2s, margin-right .4s ease-in;
 }
 .bannerC {
-    /* mix-blend-mode: difference; */
-    background: transparent;
+    height: 100%;
+    width: 100%;
 }
 .bannerBox {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 20%;
-    height: 30vh;
+    height: 100%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .bannerTitle {
+    text-align: center;
+    color: white;
+}
+.bannerSub {
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 200;
     text-align: center;
     color: white;
 }

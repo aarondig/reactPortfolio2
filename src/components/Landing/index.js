@@ -14,6 +14,13 @@ function Landing({ size, scroll}) {
   const num = progress * -6;
   const titlePosi = -6 + Math.pow(num, 3);
 
+  const pageSize = size.height*.8;
+  // const opacity = {
+  //   opacity: scroll > pageSize && scroll < pageSize * 3.5 ? `0` : `1`,
+  //   transition: `opacity .4s ease-in-out`
+  // }
+  
+  
   return (
     <div id="landing" >
       <div className="center">
@@ -23,7 +30,7 @@ function Landing({ size, scroll}) {
       <Scene blurValue={blurValue} size={size} scroll={scroll}/>
 
       <div className="topHeader">
-        <h1 id="topHead">aaron diggdon</h1>
+        <h1 id="topHead">AARON DIGGDON</h1>
       </div>
       <div
         className="mainHeader"
