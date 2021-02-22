@@ -10,7 +10,7 @@ export function Item({ id, handleClick, scroll }) {
   const { category, title, component, icon } = items.find((item) => item.id === id);
 
   const style = {
-    transform: `translate3d(0, ${scroll*2}px, 0)`,
+    transform: `translate3d(0, 00%, 0)`,
     left: 0,
   }
   const Component = component;

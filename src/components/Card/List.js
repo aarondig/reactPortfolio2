@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import { items } from "./data";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+
+
+import { animated } from 'react-spring'
+import InfiniteSlider from './Slider.js'
 import "./style.css";
-
-const num = items.length;
-const even = num/2
-const odd = (num + 1) /2
-
 
 function Card({ id, i, title, category, banner, icon, shadow, handleClick, click }) {
 
@@ -47,21 +46,30 @@ console.log(i)
   );
 }
 
-export function List({ selectedId, handleClick, click }) {
-  useEffect(()=>{
 
-  })
+
+
+export function List({ selectedId, handleClick, click }) {
+
+
+const AnimatedCard = animated(Card)
 
   
   return (
-    <ul className="project-list" >
-      {/* <div className="cardContainer"> */}
-      {items.map(function (card, index) {
-      
-
-        return <Card key={card.id} i={index} {...card} isSelected={card.id === selectedId} handleClick={handleClick} click={click}/>
-      })}
-      {/* </div> */}
+    <ul className="project-list">
+      <div className="main">
+      <InfiniteSlider items={items} itemWidth={'full'} showButtons={true} showCounter={true}>
+       
+      {(card, i) => (
+          <div className="content">
+          <Card key={card.id} {...card} isSelected={card.id === selectedId} handleClick={handleClick} click={click}/>
+          </div>
+          )}
+        
+        
+        
+      </InfiniteSlider>
+    </div>
     </ul>
   );
 }
