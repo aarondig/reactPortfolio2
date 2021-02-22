@@ -3,12 +3,14 @@
 } */
 .main {
 height: 450px;
-  width: 50%;
+  width: 50vw;
+  min-width: 350px;
   margin-left: auto;
-    margin-right: auto;
-    touch-action: pan-x;
+  margin-right: auto;
+  
     display: flex;
     justify-content: center;
+    touch-action: pan-x;
 }
 .content {
   max-width: 80%;

@@ -12,13 +12,13 @@ import debounce from "lodash.debounce";
 const styles = {
   container: {
     display: "flex",
-    alignItems: "center",
+    justifyContent: "center",
     position: "relative",
-    overflow: "hidden",
     height: "100%",
     width: "100%",
+    touchAction: "pan-x",
   },
-  item: { position: "absolute", height: "100%", willChange: "transform" },
+  item: { position: "absolute", height: "100%", willChange: "transform", touchAction: "pan-x" },
   navigation: {
     position: "absolute",
     width: "100%",
@@ -69,7 +69,6 @@ const styles = {
 
 export default function SliderContainer(props) {
   const [width, setWidth] = useState(0);
-
   const measuredRef = useCallback((node) => {
     if (node !== null) {
       setWidth(node.getBoundingClientRect().width);
@@ -78,7 +77,7 @@ export default function SliderContainer(props) {
 
   return (
     <>
-      <div ref={measuredRef} style={{ height: "100%", position: "relative" }}>
+      <div ref={measuredRef} style={{ height: "100%", width: "100%", position: "relative" }}>
         {width !== 0 ? (
           <Slider {...props} itemWidth={width}>
             {props.children}

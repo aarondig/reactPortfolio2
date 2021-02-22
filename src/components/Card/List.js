@@ -15,10 +15,8 @@ function Card({ id, i, title, category, banner, icon, shadow, handleClick, click
   } : {
     boxShadow: `none`
   }
-const [state, setState] = useState();
-console.log(i)
   return (
-    <li className={`project ${state}`} id={`project${id}`} >
+    <li className={`project`} id={`project${id}`} >
       <div className="project-content-container" style={style}>
         <motion.div className="project-content" layoutId={`project-container-${id}`}>
           <motion.div
