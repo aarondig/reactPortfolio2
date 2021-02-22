@@ -123,7 +123,7 @@ useEffect(()=> {
             
             </div>
             
-            <div className="nothing"/>
+            {/* <div className="nothing"/> */}
             <div id="fixed" ref={fixedScroll}>
             {/* <About size={size} scroll={scroll} /> */}
             </div>
