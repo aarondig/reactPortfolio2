@@ -8,6 +8,8 @@ import React, {
 import { useDrag } from "react-use-gesture";
 import { useSprings, a, useSpring } from "react-spring";
 import debounce from "lodash.debounce";
+import { act } from "react-dom/test-utils";
+import useWindowSize from "../../hooks/windowSize";
 
 const styles = {
   container: {
@@ -109,6 +111,8 @@ function Slider({
   children,
   showButtons = true,
   showCounter = true,
+  setFreeze,
+  link
 }) {
   if (items.length <= 2)
     console.warn(
@@ -181,6 +185,7 @@ function Slider({
     [idx, getPos, width, visible, set, items.length]
   );
 
+
   const bind = useDrag(
     ({
       offset: [x],
@@ -189,10 +194,29 @@ function Slider({
       direction: [xDir],
       cancel,
       movement: [xMove],
+      tap,
+      swipe,
+      active
     }) => {
-      vx && runSprings(-x, -vx, down, xDir, cancel, xMove);
+    //    if (tap) {
+    //     setFreeze(false)
+    //    } else {
+    //        setFreeze(true)
+    //    }
+     
+        vx && runSprings(-x, -vx, down, xDir, cancel, xMove);
+       
+      
+    if (!active) {
+        setInterval(()=>{
+            setFreeze(false)
+        }, 1)
+        
     }
+    }
+    
   );
+
 
   const buttons = (next) => {
     index.current += next;
@@ -242,13 +266,23 @@ function Slider({
         </div>
       ) : null}
       <div {...bind()} style={{ ...style, ...styles.container }}>
-        {springs.map(({ x, vel }, i) => (
-          <a.div
+        {springs.map(function ({ x, vel }, i) {
+
+// let left = x.getValue()
+
+// const props = {
+    
+//     transform: left < 0 ? `scale(0)` : `scale(1)` || left == 0 ? `scale(1)` : `scale(.5)` || left == 0 ? `scale(1)` : `scale(.5)`,
+//     transition: `transform .4s, opacity .4s ease-in-out`
+// }
+          return <a.div
             key={i}
             style={{ ...styles.item, width, left: x }}
             children={children(items[i], i)}
+            setFreeze={setFreeze}
+            x={x}
           />
-        ))}
+        })}
       </div>
       {showCounter ? <InstaCounter currentIndex={active} data={items} /> : null}
     </>

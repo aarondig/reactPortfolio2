@@ -9,11 +9,15 @@ import useScroll from "../../hooks/scroll";
 
 function Store({ match }) {
   const scrollLock = useScrollLock();
-
+  const [freeze, setFreeze] = useState(false);
   const [click, setClick] = useState();
-
-  const handleClick = () => {
-    setClick(!click);
+  console.log(freeze)
+  const handleClick = (e) => {
+    if (freeze) {
+      e.preventDefault();
+    } else {
+      setClick(!click);
+    }
   };
 
   useEffect(() => {
@@ -34,7 +38,7 @@ function Store({ match }) {
 
   return (
     <AnimateSharedLayout type="crossfade">
-      <List selectedId={id} handleClick={handleClick} click={click}/>
+      <List selectedId={id} handleClick={handleClick} click={click} freeze={freeze} setFreeze={setFreeze}/>
       <AnimatePresence>
         {id && imageHasLoaded && (
           <Item id={id} key="item" handleClick={handleClick} scroll={scroll} />
