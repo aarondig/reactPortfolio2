@@ -11,7 +11,6 @@ function Store({ match }) {
   const scrollLock = useScrollLock();
   const [freeze, setFreeze] = useState(false);
   const [click, setClick] = useState();
-  console.log(freeze)
   const handleClick = (e) => {
     if (freeze) {
       e.preventDefault();
@@ -35,7 +34,6 @@ function Store({ match }) {
   }, []);
 
   const scroll = useScroll();
-
   return (
     <AnimateSharedLayout type="crossfade">
       <List selectedId={id} handleClick={handleClick} click={click} freeze={freeze} setFreeze={setFreeze}/>

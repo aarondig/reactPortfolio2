@@ -1,6 +1,27 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import { NavItem } from "./navItem";
+import { HashRouter as Router } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
+
+const items = [
+    {
+      title: "Home",
+      link: "#landing",
+    },
+    {
+      title: "Projects",
+      link: "#projects",
+    },
+   {
+      title: "About",
+      link: "#banner",
+    },
+    {
+      title: "Contact",
+      link: "",
+    },
+  ];
 
 const variants = {
   open: {
@@ -12,28 +33,16 @@ const variants = {
 };
 
 export const Navigation = () => (
+
+<Router>
   <motion.ul variants={variants} id="navList">
     {items.map(i => (
-      <NavItem i={i} key={i} />
+    <HashLink to={`${i.link}`} onClick={console.log("clicky")}>
+      <NavItem i={i} key={i}/>
+      </HashLink>
     ))}
   </motion.ul>
+</Router>
 );
 
-const items = [
-    {
-      title: "Home",
-      link: "#landing",
-    },
-    {
-      title: "Projects",
-      link: "",
-    },
-   {
-      title: "About",
-      link: "",
-    },
-    {
-      title: "Contact",
-      link: "",
-    },
-  ];
+

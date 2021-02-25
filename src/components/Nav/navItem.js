@@ -28,6 +28,8 @@ export const NavItem = ({ i }) => {
       whileTap={{ scale: 0.95 }}
       id="navItem"
     >
+        
+      <HashLink to={process.env.PUBLIC_URL}></HashLink>
       <div className="icon-placeholder" style={style} />
       <h1 className="navItemName">{i.title}</h1>
       {/* <div className="text-placeholder" style={style} ></div> */}

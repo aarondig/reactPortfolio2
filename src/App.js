@@ -9,8 +9,8 @@ import Nav from "./components/Nav";
 import Projects from "./components/Projects";
 import Banner from "./components/Banner";
 import ImgBanner from "./components/ImgBanner";
-
 import useScroll from "./hooks/scroll";
+import { HashRouter as Router, Route } from "react-router-dom";
 
 //  if ( !window.requestAnimationFrame ) {
 
@@ -113,9 +113,14 @@ useEffect(()=> {
   return (
     <div ref={app} className="App">
       <Wrapper>
+    
         <div ref={scrollContainer} className="scroll">
+        <Router basename={process.env.PUBLIC_URL}> 
+          
           <div id="scrollable" ref={scrollable}>
+          
             <Landing size={size} scroll={scroll}/>
+            
             <Banner  size={size} scroll={scroll} />
             <ImgBanner size={size} scroll={scroll}/>
             <Projects size={size} scroll={scroll}  />
@@ -127,6 +132,7 @@ useEffect(()=> {
             <div id="fixed" ref={fixedScroll}>
             {/* <About size={size} scroll={scroll} /> */}
             </div>
+            </Router>
         </div>
         <Nav size={size}/>
       </Wrapper>
