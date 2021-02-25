@@ -1,5 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
+import { HashLink } from 'react-router-hash-link';
 
 const variants = {
   open: {
@@ -28,7 +29,9 @@ export const NavItem = ({ i }) => {
       id="navItem"
     >
       <div className="icon-placeholder" style={style} />
-      <div className="text-placeholder" style={style} />
+      <h1 className="navItemName">{i.title}</h1>
+      {/* <div className="text-placeholder" style={style} ></div> */}
+    
     </motion.li>
   );
 };

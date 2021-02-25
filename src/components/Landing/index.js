@@ -22,7 +22,7 @@ function Landing({ size, scroll}) {
   
   
   return (
-    <div id="landing" >
+    <div id="landing" name="landing">
       <div className="center">
         {/* <div className="outlineLine" /> */}
         <div className="outline" />

@@ -41,15 +41,6 @@
   padding: 0;
   
 }
-
-#navList {
-  padding: 25px;
-  position: relative;
-  width: 230px;
- 
-  margin-left: auto;
-  margin-right: auto;
-}
 .navListCol {
   width: 100%;
   position: fixed;
@@ -57,8 +48,19 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 z-index: 11;
-
 }
+#navList {
+  padding: 25px;
+  position: relative;
+  width: 230px;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #navItem {
   list-style: none;
   margin-bottom: 20px;
@@ -81,17 +83,4 @@ z-index: 11;
   height: 20px;
   flex: 1;
 }
-.refresh {
-  padding: 10px;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  width: 20px;
-  height: 20px;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
+

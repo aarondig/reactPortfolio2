@@ -13,10 +13,27 @@ const variants = {
 
 export const Navigation = () => (
   <motion.ul variants={variants} id="navList">
-    {itemIds.map(i => (
+    {items.map(i => (
       <NavItem i={i} key={i} />
     ))}
   </motion.ul>
 );
 
-const itemIds = [0, 1, 2, 3, 4];
+const items = [
+    {
+      title: "Home",
+      link: "#landing",
+    },
+    {
+      title: "Projects",
+      link: "",
+    },
+   {
+      title: "About",
+      link: "",
+    },
+    {
+      title: "Contact",
+      link: "",
+    },
+  ];
