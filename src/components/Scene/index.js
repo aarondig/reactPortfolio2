@@ -267,7 +267,7 @@ function Scene({ size, scroll, blurValue }) {
     // transform: `translate3d(0, ${scroll*2}px, 0)`
   };
   return (
-    <div id="scene" style={style} >
+    <div id="scene" style={style}>
       <Canvas concurrent shadowMap camera={{ position: [0, 0, 3], fov: 70 }}>
         {/* <color attach="background" args={["#0d0d0d"]} /> */}
         <ambientLight intensity={.3} />

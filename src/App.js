@@ -10,6 +10,8 @@ import Projects from "./components/Projects";
 import Banner from "./components/Banner";
 import ImgBanner from "./components/ImgBanner";
 import useScroll from "./hooks/scroll";
+
+import Scene from "./components/Scene";
 import { HashRouter as Router, Route } from "react-router-dom";
 
 //  if ( !window.requestAnimationFrame ) {
@@ -118,9 +120,11 @@ useEffect(()=> {
         <Router basename={process.env.PUBLIC_URL}> 
           
           <div id="scrollable" ref={scrollable}>
-          
-            <Landing size={size} scroll={scroll}/>
             
+            <Landing size={size} scroll={scroll}/>
+            {/* <Scene  size={size} scroll={scroll}/> */}
+
+
             <Banner  size={size} scroll={scroll} />
             <ImgBanner size={size} scroll={scroll}/>
             <Projects size={size} scroll={scroll}  />

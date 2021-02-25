@@ -22,16 +22,18 @@ function Landing({ size, scroll}) {
   
   
   return (
-    <div id="landing" name="landing">
+    <div id="landing">
       <div className="center">
         {/* <div className="outlineLine" /> */}
         <div className="outline" />
       </div>
+      {/* <div className="parallax-layer parallax-layer-back"> */}
       <Scene blurValue={blurValue} size={size} scroll={scroll}/>
-
+      {/* </div> */}
       <div className="topHeader">
         <h1 id="topHead">AARON DIGGDON</h1>
       </div>
+      
       <div
         className="mainHeader"
         style={{ fontSize: size.width > 700 ? "50px" : "30px" }}
