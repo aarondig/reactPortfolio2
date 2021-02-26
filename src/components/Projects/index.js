@@ -11,7 +11,7 @@ function Projects({ scroll, size }) {
   const opacity = scroll > size.height * 0.9 * 2.5 ? 1 : 0;
   const style = {
     fade: {
-      opacity: opacity,
+      opacity: 1,
     },
   };
   const layer = {

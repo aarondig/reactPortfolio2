@@ -32,13 +32,13 @@ const variants = {
   }
 };
 
-export const Navigation = () => (
+export const Navigation = ({toggleOpen}) => (
 
 <Router>
   <motion.ul variants={variants} id="navList">
     {items.map(i => (
-    <HashLink to={`${i.link}`} onClick={console.log("clicky")}>
-      <NavItem i={i} key={i}/>
+    <HashLink to={`${i.link}`}>
+      <NavItem i={i} key={i} toggleOpen={toggleOpen}/>
       </HashLink>
     ))}
   </motion.ul>

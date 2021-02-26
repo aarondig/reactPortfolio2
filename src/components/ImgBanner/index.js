@@ -8,7 +8,6 @@ function ImgBanner({ size, scroll }) {
   const layer = {
     zIndex: scroll > pageSize && scroll < pageSize * 3.5 ? `1` : `-1`,
   };
-console.log(window.scrollY)
   return (
     <div id="ImgBanner" className="parallax-layer parallax-layer-back">
       

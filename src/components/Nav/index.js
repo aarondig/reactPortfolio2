@@ -5,7 +5,6 @@ import { Navigation } from "./navigation";
 import useScrollLock from "../../hooks/scrollLock";
 import "./style.css";
 
-
 const sidebar = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 110% -10%)`,
@@ -27,21 +26,21 @@ const sidebar = {
 };
 
 const dropDown = {
-  open: {height: `100vh`},
+  open: { height: `100vh`, zIndex: 11 },
   transition: {
     delay: 1,
     type: "spring",
     stiffness: 300,
     damping: 40,
   },
-  closed: {marginTop: `-100vh`, height: 0},
+  closed: { marginTop: `-100vh`, zIndex: -1 },
   transition: {
     delay: 5,
     type: "spring",
     stiffness: 300,
     damping: 40,
   },
-}
+};
 
 const Path = (props) => (
   <motion.path
@@ -52,7 +51,6 @@ const Path = (props) => (
     {...props}
   />
 );
-
 
 function Nav({ size }) {
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -106,8 +104,13 @@ function Nav({ size }) {
         animate={isOpen ? "open" : "closed"}
         ref={containerRef}
       >
-        <motion.div className="navListCol" animate={isOpen ? "open" : "closed"} variants={dropDown} transition={{ duration: .5 }}>
-          <Navigation />
+        <motion.div
+          className="navListCol"
+          animate={isOpen ? "open" : "closed"}
+          variants={dropDown}
+          transition={{ duration: 0.5 }}
+        >
+          <Navigation toggleOpen={toggleOpen}/>
         </motion.div>
         <motion.div
           id="navBackground"

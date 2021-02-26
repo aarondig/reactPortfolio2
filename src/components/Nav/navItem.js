@@ -19,7 +19,7 @@ const variants = {
   }
 };
 
-export const NavItem = ({ i }) => {
+export const NavItem = ({ i, toggleOpen }) => {
   const style = { border: `2px solid #0018a1` };
   return (
     <motion.li
@@ -27,9 +27,10 @@ export const NavItem = ({ i }) => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       id="navItem"
+      onClick={() => toggleOpen()}
     >
-        
-      <HashLink to={process.env.PUBLIC_URL}></HashLink>
+
+      
       <div className="icon-placeholder" style={style} />
       <h1 className="navItemName">{i.title}</h1>
       {/* <div className="text-placeholder" style={style} ></div> */}
