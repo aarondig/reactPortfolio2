@@ -18,7 +18,7 @@ body {
   will-change: overflow-y;
 }
 
-#scrollable {
+#scroller {
   width: 100%;
   perspective: 1px;
   -webkit-perspective: 1px;
@@ -112,9 +112,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
 }
-/* #fixed {
-  position: relative;
-} */
+
 @media (max-width: 700px) {
   .header {
     font-size: 50px;

@@ -9,53 +9,17 @@ import Nav from "./components/Nav";
 import Projects from "./components/Projects";
 import Banner from "./components/Banner";
 import ImgBanner from "./components/ImgBanner";
-import useScroll from "./hooks/scroll";
 
 import Scene from "./components/Scene";
 import { HashRouter as Router, Route } from "react-router-dom";
 
-//  if ( !window.requestAnimationFrame ) {
-
-//     window.requestAnimationFrame = ( function() {
-  
-//       return window.webkitRequestAnimationFrame ||
-//       window.mozRequestAnimationFrame ||
-//       window.oRequestAnimationFrame ||
-//       window.msRequestAnimationFrame ||
-//       function( /* function FrameRequestCallback */ callback, /* DOMElement Element */ element ) {
-  
-//         window.setTimeout( callback, 1000 / 60 );
-  
-//       };
-  
-//     } )();
-  
-//   }
-
-
 
 function App() {
-  // const [scroll, setScroll] = useState();
-  const [scrollFixed, setScrollFixed] = useState();
   const size = useWindowSize();
   const app = useRef();
   const scrollContainer = useRef();
-  const scrollable = useRef();
+  const scroller = useRef();
   const fixedScroll = useRef();
-
-  const data = {
-    ease: size.width > 700 ? 0.1 : .2,
-    current: 0,
-    previous: 0,
-    rounded: 0,
-  };
-
-
-  useEffect(() => {
-    document.body.style.height = `${
-      scrollContainer.current.clientHeight
-    }px`;
-  }, [size.height]);
 
   
 
@@ -84,10 +48,12 @@ function App() {
   // };
 
 
-const scroll = useScroll();
+// const scroll = useScroll();
 
 
-useEffect(()=> {
+
+
+// useEffect(()=> {
   // const scrollableHeight = scrollable.current.clientHeight;
 
     // scrollable.current.style.position = `relative`;
@@ -111,7 +77,16 @@ useEffect(()=> {
     // console.log(scroll> scrollableHeight/2)
     // setScrollFixed((scroll-(size.height)) - (scrollableHeight));
 
-  },[scroll])
+  // },[scroll])
+const [scroll, setScroll] = useState(0)
+
+  const onScroll = () => {
+    const scrollTop = scroller.current.scrollTop
+    setScroll(scrollTop)
+   
+  }
+
+
   return (
     <div ref={app} className="App">
       <Wrapper>
@@ -119,7 +94,7 @@ useEffect(()=> {
         <div ref={scrollContainer} className="scroll">
         <Router basename={process.env.PUBLIC_URL}> 
           
-          <div id="scrollable" ref={scrollable}>
+          <div id="scroller" ref={scroller} onScroll={()=> onScroll()}>
             
             <Landing size={size} scroll={scroll}/>
             {/* <Scene  size={size} scroll={scroll}/> */}

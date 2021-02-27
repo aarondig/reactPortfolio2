@@ -5,9 +5,9 @@
     /* background: #0a0a0a; */
     background: linear-gradient(360deg, #fdfdfd 0%, #eff1f3 50%);
     overflow: hidden;
-    opacity: 1;
     transition: opacity .4s ease-in-out;
     transform-style: preserve-3d;
+    z-index: 1;
 }
 #relative {
     height: 100%;

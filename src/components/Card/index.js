@@ -5,7 +5,7 @@ import { Item } from "./Item";
 import { List } from "./List";
 import "./style.css";
 import useScrollLock from "../../hooks/scrollLock";
-import useScroll from "../../hooks/scroll";
+
 
 function Store({ match }) {
   const scrollLock = useScrollLock();
@@ -32,14 +32,13 @@ function Store({ match }) {
       setClick(true);
     }
   }, []);
-
-  const scroll = useScroll();
+  
   return (
     <AnimateSharedLayout type="crossfade">
       <List selectedId={id} handleClick={handleClick} click={click} freeze={freeze} setFreeze={setFreeze}/>
       <AnimatePresence>
         {id && imageHasLoaded && (
-          <Item id={id} key="item" handleClick={handleClick} scroll={scroll} />
+          <Item id={id} key="item" handleClick={handleClick} />
         )}
       </AnimatePresence>
     </AnimateSharedLayout>
