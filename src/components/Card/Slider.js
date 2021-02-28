@@ -66,7 +66,12 @@ const styles = {
     border: "none",
     marginLeft: "-30px",
     right: 0,
-  },
+  }, 
+  card: {
+    height: `100%`,
+    width: `100%`
+  }
+  
 };
 
 export default function SliderContainer(props) {
@@ -132,12 +137,14 @@ function Slider({
   );
   // Important only if specifyng width, centers the element in the slider
   const offset = 0;
-  const [springs, set] = useSprings(items.length, (i) => ({
-    x: (i < items.length - 1 ? i : -1) * width + offset,
-  }));
+
   const prev = useRef([0, 1]);
   const index = useRef(0);
   const [active, setActive] = useState(1);
+  const [springs, set] = useSprings(items.length, (i) => ({
+    x: (i < items.length - 1 ? i : -1) * width + offset,
+
+  }));
   const runSprings = useCallback(
     (y, vy, down, xDir, cancel, xMove) => {
       // This decides if we move over to the next slide or back to the initial
@@ -167,13 +174,16 @@ function Slider({
           position -
           firstVisIdx +
           (finalY < 0 && firstVis === 0 ? items.length : 0);
+        const x = (-finalY % (width * items.length)) +
+        width * rank +
+        (down ? xMove : 0) +
+        offset
+
         return {
           // x is the position of each of our slides
-          x:
-            (-finalY % (width * items.length)) +
-            width * rank +
-            (down ? xMove : 0) +
-            offset,
+          x: x,
+
+          // transform: active - 1 === i ? `scale(1.2)` : `scale(1.0)`,
           // this defines if the movement is immediate
           // So when an item is moved from one end to the other we don't
           // see it moving
@@ -207,12 +217,21 @@ function Slider({
         vx && runSprings(-x, -vx, down, xDir, cancel, xMove);
        
       
-    if (!active) {
-        setInterval(()=>{
-            setFreeze(false)
-        }, 1)
+
+      if (tap) {
+
+        // console.log(tap)
+      }
+      if (swipe) {
+        // console.log(swipe)
+      }
+
+    // if (!active) {
+    //     setInterval(()=>{
+    //         setFreeze(false)
+    //     }, 1)
         
-    }
+    // }
     }
     
   );
@@ -266,21 +285,18 @@ function Slider({
         </div>
       ) : null}
       <div {...bind()} style={{ ...style, ...styles.container }}>
-        {springs.map(function ({ x, vel }, i) {
+        {springs.map(function ({ x, vel, transform }, i) {
+          let current = active - 1 === i;
+          let order = ((active - 1) > (i + 1 > (items.length - 1) ? -1 : i) ? ((((active - 1) - 1 < 0 ? (active - 1) + (items.length - 1) : (active - 1) - 1) <= i ? "prev" :  "next")) : (((active - 1) + 1 > items.length - 1 ? (active - 1) - (items.length - 1) : (active - 1) + 1)) <= i ? "next" : "prev");
 
-// let left = x.getValue()
 
-// const props = {
-    
-//     transform: left < 0 ? `scale(0)` : `scale(1)` || left == 0 ? `scale(1)` : `scale(.5)` || left == 0 ? `scale(1)` : `scale(.5)`,
-//     transition: `transform .4s, opacity .4s ease-in-out`
-// }
           return <a.div
             key={i}
-            style={{ ...styles.item, width, left: x }}
+            style={{ ...styles.item, width, left: x, transform}}
             children={children(items[i], i)}
             setFreeze={setFreeze}
-            x={x}
+            id={"item"}
+            class={current ? "active" : order}
           />
         })}
       </div>
@@ -291,7 +307,6 @@ function Slider({
 
 function InstaCounter({ currentIndex, data }) {
   const dots = [];
-
   for (const [index] of data.entries()) {
     dots.push(<Dot key={index} active={currentIndex - 1 === index} />);
   }
@@ -308,6 +323,7 @@ function Dot({ active }) {
     transform: active ? `scale(1.5)` : `scale(1)`,
     config: { mass: 5, tension: 500, friction: 80 },
   });
+  
   return (
     <a.div
       style={{

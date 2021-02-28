@@ -1,6 +1,8 @@
 /* *{
   box-sizing: border-box;
 } */
+
+
 .main {
 height: 500px;
   width: 50vw;
@@ -11,6 +13,7 @@ height: 500px;
     display: flex;
     justify-content: center;
     touch-action: pan-x;
+  
 }
 .content {
   max-width: 80%;
@@ -18,17 +21,31 @@ height: 500px;
   margin-left: auto;
     margin-right: auto;
 }
+#item {
+  
+  transition: transform .4s, opacity .4s ease-in-out;
+}
+.active {
+  transform: scale(1.2);
+  
+}
+.next {
+  transform: scale(.8);
+  opacity: .8;
+}
 
-
-
-
+.prev {
+  transform: scale(.8);
+  opacity: .8;
+  
+}
 
 .c {
   max-width: 990px;
     flex: 1 1 100%;
     display: inline;
     padding: 45px 25px;
-
+user-select: none;
   }
   
   .project h1 {
@@ -87,8 +104,8 @@ height: 500px;
     position: relative;
     display: block;
     pointer-events: none;
-    border-radius: 10px;
     will-change: position, max-height, border-radius;
+    /* border-radius: 5px; */
    overflow: hidden;
    transition: box-shadow .04s ease-in-out;
   }
@@ -286,6 +303,11 @@ height: 500px;
     .project:nth-child(4n + 4) {
       flex: 0 0 50%;
       max-width: 50%;
+    }
+    .project-content-container  {
+      max-height: 100vh;
+      border-radius: 10px;
+      
     }
     .project-content-container.open  {
       max-height: 100vh;

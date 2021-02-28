@@ -5,13 +5,14 @@ import useWindowSize from "../../hooks/windowSize";
 import { HashRouter as Router, Route } from "react-router-dom";
 import Store from "../Card/index";
 
-function Projects({ scroll, size }) {
+function Projects({ scroll, size, scroller }) {
   // const opacity = -Math.pow((scroll / size.height) * 2 - 0.2, 2) + 1;
 
   const opacity = scroll > size.height * 0.9 * 2.5 ? 1 : 0;
+  
   const style = {
     fade: {
-      opacity: 1,
+      opacity: opacity,
     },
   };
   const layer = {
@@ -38,7 +39,10 @@ function Projects({ scroll, size }) {
         </div>
       </div>
       <div className="c">
-        <Route exact path={["/:id", "/"]} component={Store} />
+        <Router basename={process.env.PUBLIC_URL}>
+        <Route exact path={["/:id", "/"]} render={props => <Store scroll={scroll} scroller={scroller} {...props}/>}/>
+        </Router>
+        
       </div>
       <div className="leftNav">
         <a

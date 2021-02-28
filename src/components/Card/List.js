@@ -15,10 +15,9 @@ function Card({ id, i, title, category, banner, icon, shadow, handleClick, click
   } : {
     boxShadow: `none`
   }
-  // const frozen = freeze ? 
-  //   {pointerEvents: `none`}
-  //  : {pointerEvents: `auto`}
   
+
+
   return (
     <li className={`project`} id={`project${id}`} >
       <div className="project-content-container" style={style}>
@@ -43,7 +42,7 @@ function Card({ id, i, title, category, banner, icon, shadow, handleClick, click
           </motion.div>
         </motion.div>
       </div>
-      <Link to={id} ref={link} className={`project-open-link`} onClick={(e) => handleClick(e)}/>
+      <Link to={id} className={`project-open-link`} onClick={(e) => handleClick(e)}/>
     </li>
   );
 }
@@ -54,7 +53,7 @@ function Card({ id, i, title, category, banner, icon, shadow, handleClick, click
 export function List({ selectedId, handleClick, click, freeze, setFreeze }) {
   const link = useRef()
 
-
+console.log(link.current)
   return (
     <ul className="project-list">
       <div className="main">

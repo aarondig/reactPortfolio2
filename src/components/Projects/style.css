@@ -5,6 +5,7 @@
   background: linear-gradient(180deg, #fdfdfd 0%, #eff1f3 50%);
   /* background: #141414; */
   padding-bottom: 10vh;
+  overflow: hidden;
 }
 .projectIntro {
   height: 80vh;

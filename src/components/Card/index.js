@@ -7,7 +7,7 @@ import "./style.css";
 import useScrollLock from "../../hooks/scrollLock";
 
 
-function Store({ match }) {
+function Store({ match, scroll, scroller }) {
   const scrollLock = useScrollLock();
   const [freeze, setFreeze] = useState(false);
   const [click, setClick] = useState();
@@ -16,6 +16,12 @@ function Store({ match }) {
       e.preventDefault();
     } else {
       setClick(!click);
+      // if (click) {
+      //   scroller.current.style.perspective = 'none'
+      // } if (!click) {
+      //   scroller.current.style.perspective = '1px'
+      // }
+      
     }
   };
 
@@ -32,13 +38,13 @@ function Store({ match }) {
       setClick(true);
     }
   }, []);
-  
+
   return (
     <AnimateSharedLayout type="crossfade">
       <List selectedId={id} handleClick={handleClick} click={click} freeze={freeze} setFreeze={setFreeze}/>
       <AnimatePresence>
         {id && imageHasLoaded && (
-          <Item id={id} key="item" handleClick={handleClick} />
+          <Item id={id} key="item" handleClick={handleClick} scroll={scroll}/>
         )}
       </AnimatePresence>
     </AnimateSharedLayout>

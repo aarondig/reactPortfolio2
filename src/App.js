@@ -9,10 +9,9 @@ import Nav from "./components/Nav";
 import Projects from "./components/Projects";
 import Banner from "./components/Banner";
 import ImgBanner from "./components/ImgBanner";
-
+import useScroll from "./hooks/scroll"
 import Scene from "./components/Scene";
 import { HashRouter as Router, Route } from "react-router-dom";
-
 
 function App() {
   const size = useWindowSize();
@@ -21,17 +20,12 @@ function App() {
   const scroller = useRef();
   const fixedScroll = useRef();
 
-  
-
-
-  
-
   // SCROLLING
   // const skewScrolling = () => {
 
-  //   const scrollableHeight = scrollable.current.clientHeight;
+  //   const scrollerHeight = scroller.current.clientHeight;
   //   const pageTotal = 2;
-    
+
   //   //Set Current to the scroll position amount
   //   data.current =  window.scrollY;
   //   // Set Previous to the scroll previous position
@@ -41,79 +35,52 @@ function App() {
   //   // scroll = Math.round(data.previous * 100) / 100;
   //   //VARIABLES
 
-
-    
-
   //   requestAnimationFrame(() => skewScrolling());
   // };
 
+  const {scroll} = useScroll();
 
-// const scroll = useScroll();
+  // const [scrollerSize, setScrollerSize] = useState();
 
+  // useEffect(() => {
+  //   setScrollerSize(scrollContainer.current.getBoundingClientRect().height);
+  // }, [size.height]);
 
+  // const [scroll, setScroll] = useState(0);
 
-
-// useEffect(()=> {
-  // const scrollableHeight = scrollable.current.clientHeight;
-
-    // scrollable.current.style.position = `relative`;
-    // scrollable.current.style.transform = `translate3d(0, 0px, 0)`;
-    // scrollable.current.style.transform = `translate3d(0, -${scroll}px, 0)`
-    // if (scroll >= scrollableHeight/4) {
-      
-      
-    //   scrollable.current.style.transform = `translate3d(0, -${scrollableHeight/2}px, 0)`
-    //   scrollable.current.style.position = `fixed`
-
-
-      
-    //   // fixedScroll.current.style.transform = `translate3d(0, -${
-    //   //   scroll
-    //   // }px, 0)`;
-    // }
-    // if (scroll > scrollableHeight) {
-    //   fixedScroll.current.style.transform = `translate3d(0, -${scrollableHeight}px, 0) skewY(0deg)`;
-    // }
-    // console.log(scroll> scrollableHeight/2)
-    // setScrollFixed((scroll-(size.height)) - (scrollableHeight));
-
-  // },[scroll])
-const [scroll, setScroll] = useState(0)
-
-  const onScroll = () => {
-    const scrollTop = scroller.current.scrollTop
-    setScroll(scrollTop)
-   
-  }
-
+  // const onScroll = () => {
+  //   const scrollTop = scroller.current.scrollTop;
+  //   setScroll(scrollTop);
+  // };
 
   return (
     <div ref={app} className="App">
       <Wrapper>
-    
-        <div ref={scrollContainer} className="scroll">
-        <Router basename={process.env.PUBLIC_URL}> 
-          
-          <div id="scroller" ref={scroller} onScroll={()=> onScroll()}>
-            
-            <Landing size={size} scroll={scroll}/>
-            {/* <Scene  size={size} scroll={scroll}/> */}
+        
+          <div id="scroller" ref={scroller} >
+          {/* onScroll={() => onScroll()} */}
+            <div ref={scrollContainer} className="scroll">
+              <Landing size={size} scroll={scroll} />
+              {/* <Scene  size={size} scroll={scroll}/> */}
 
-
-            <Banner  size={size} scroll={scroll} />
-            <ImgBanner size={size} scroll={scroll}/>
-            <Projects size={size} scroll={scroll}  />
-            {/* <ProgressBar/> */}
-            
+              <Banner size={size} scroll={scroll} />
+              <ImgBanner size={size} scroll={scroll} />
+              <Projects size={size} scroll={scroll} scroller={scroller}/>
+              {/* <About size={size} scroll={scroll+size.height - scrollerSize} /> */}
+              {/* <ProgressBar/> */}
             </div>
-            
-            {/* <div className="nothing"/> */}
             <div id="fixed" ref={fixedScroll}>
-            {/* <About size={size} scroll={scroll} /> */}
+            
             </div>
-            </Router>
-        </div>
-        <Nav size={size}/>
+            {/* <div className="nothing" />
+            <div className="nothing" /> */}
+            </div>
+          
+
+          {/* -(scrollerSize+(size.height*2)) */}
+        
+
+        <Nav size={size} />
       </Wrapper>
     </div>
   );
