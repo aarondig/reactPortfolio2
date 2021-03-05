@@ -6,13 +6,15 @@ import { items } from "./data";
 import "./style.css";
 import FactCheck from "../FactCheck";
 
-export function Item({ id, scroll, handleClick }) {
+export function Item({ id, scroll, handleClick, slider }) {
   const { category, title, component, icon } = items.find((item) => item.id === id);
 
   const style = {
     transform: `translate3d(0, 0, 0)`,
     left: 0,
   }
+
+
   const Component = component;
 
   return (

@@ -19,11 +19,16 @@ function Projects({ scroll, size, scroller }) {
     zIndex: scroll > size.height * 0.8 ? `1` : `0`,
   };
 
+
+
+
   return (
     <div id="projects" style={layer}>
       <div className="projectIntro">
+        {/* <div className="bigBlueBox"></div> */}
         <div className="vertical">
           <div className="row">
+
             <div className="blueboxLeft"></div>
             <div className="projectsHead">
               <h1 className="header" style={style.fade}>
@@ -34,16 +39,16 @@ function Projects({ scroll, size, scroller }) {
               </h2>
               {/* <p className="text">Keep Scrolling...</p> */}
             </div>
-            <div className="blueboxRight"></div>
+            {/* <div className="blueboxRight"></div> */}
           </div>
         </div>
       </div>
-      <div className="c">
+    
         <Router basename={process.env.PUBLIC_URL}>
-        <Route exact path={["/:id", "/"]} render={props => <Store scroll={scroll} scroller={scroller} {...props}/>}/>
+        <Route exact path={["/:id", "/"]} render={props => <Store scroll={scroll} size={size} scroller={scroller} {...props}/>}/>
         </Router>
-        
-      </div>
+    <div className="bottomLine" />
+
       <div className="leftNav">
         <a
           className="githubLink"

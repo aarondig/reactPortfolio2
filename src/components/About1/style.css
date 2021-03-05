@@ -1,0 +1,248 @@
+#about {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    perspective: 1000000 !important;
+}
+
+.leftContainer {
+    position: relative;
+    height: 100%;
+    width: 35%;
+    background: white;
+    float: left;
+}
+.rightContainer {
+    position: relative;
+    height: 100%;
+    width: 65%;
+    background: #e8e8e8;
+    float: left;
+}
+.rightInner {
+    position: absolute;
+    width: 220px;
+    height: 80px;
+    border-radius: 50px;
+    background: #0018a1;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 3;
+    transition: .3s all ease-in-out;
+  
+}
+.innerTxt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0;
+    color: rgb(217, 217, 217);
+}
+.nameC {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30%;
+
+}
+.name {
+    font-size: 60px;
+    font-weight: 800;
+    font-family: "Helvetica Neue";
+    margin-bottom: 0;
+}
+.subName {
+    font-size: 39px;
+    font-weight: 100;
+    font-family: "Helvetica Neue";
+}
+
+.bottomTextC {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    bottom: 30px;
+}
+
+.cardContainer {
+    position: relative;
+    left: 0%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    float: left;
+    z-index: 0;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    /* background: #0000004b; */
+    transform: scale(1);
+  }
+
+  #profilePic {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    
+  }
+
+.card {
+    max-width: 60%;
+    min-width: 400px;
+    height: 100% !important;
+    transform: rotateX(70deg) rotateZ(-60deg) translate3d(-150px, 340px, 70px);
+    box-shadow: -80px 60px 15px 5px rgba(0, 0, 0, 0.662) !important;
+    transition: all .5s;
+    transform-style: preserve-3d;
+    
+  }
+  
+  .cardFace {
+    /* overflow: hidden; */
+    }
+  .cardFront, .cardBack {
+    position: absolute;
+    height: 100%;
+      -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  /* .cardFront {
+    width: 100%;
+    
+  } */
+  .cardBack {
+    width: 100%;
+    max-height: 100%;
+    max-height: inherit;
+    background: linear-gradient(rgb(18, 18, 18), rgb(20, 20, 20));
+    transform: rotateX(180deg) rotateZ(180deg);
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+  }
+  .contactList {
+    height: 99.90%;
+    width: 30%;
+    
+    position: relative;
+    bottom: 0;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: rgb(33, 33, 33);
+  z-index: 1;
+}
+.coverLink {
+width: 100%;
+height: 25%;
+margin: 0;
+}
+
+.contactItem {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  border-top:rgb(255, 255, 255) solid 1px;
+  border-bottom: rgb(0, 0, 0) solid 1px;
+    /* border-radius: 50%; */
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+
+}
+.contactItem:hover {
+background: white;
+  /* border-radius: 50%; */
+  
+
+}
+
+.contactIcon {
+  font-size: 50px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  mix-blend-mode: difference;
+}
+
+  .contactHead {
+    position: relative;
+    width: 70%;
+    height: 100% - 10px;
+    max-width: 100px;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 10px;
+  
+  }
+  .contactItemHead {  
+    position: relative;
+    border-bottom: white 1px solid;
+    color: rgba(255, 255, 255, 0.094);
+    transform: rotate(90deg);
+    font-size: 110px; 
+    white-space: nowrap;
+   
+    text-transform: lowercase;
+    margin: 0 !important;
+    z-index: 1;
+  
+}
+.contactBottom {
+    position: absolute;
+    top: 35%;
+    left: 0%;
+}
+.contactText {
+    position: relative;
+    color:rgba(255, 255, 255, 0.642);
+    transform: rotate(90deg);
+    top: -16%;
+    left: -130%;
+font-size: 24px;
+}
+@media screen and (max-width: 800px)  {
+
+    .leftContainer {
+        display: none;
+    }
+    .rightContainer {
+        width: 100%;
+    }
+   .rightInner {
+    box-shadow: 0px 20px  40px rgba(0, 0, 0, 0.299);
+   }
+   .nameC {
+       position: relative;
+       width: 60%;
+       margin-bottom: -220px;
+       margin-top: 50px;
+       margin-left: auto;
+       margin-right: auto;
+   }
+   .name {
+       font-size: 50px;
+       font-weight: 800;
+       text-align: left;
+       text-transform: uppercase;
+   }
+   .subName {
+       font-size: 24px;
+       text-align: left;
+       /* margin-right: -50px; */
+       /* transform: rotate(330deg); */
+   }
+}

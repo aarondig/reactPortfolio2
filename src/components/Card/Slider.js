@@ -183,7 +183,7 @@ function Slider({
           // x is the position of each of our slides
           x: x,
 
-          // transform: active - 1 === i ? `scale(1.2)` : `scale(1.0)`,
+
           // this defines if the movement is immediate
           // So when an item is moved from one end to the other we don't
           // see it moving

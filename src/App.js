@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import useWindowSize from "./hooks/windowSize";
 import "./App.css";
-import About from "./components/About";
+import About from "./components/About1";
 import Wrapper from "./components/Wrapper";
 import Landing from "./components/Landing";
 import ProgressBar from "./components/ProgressBar";
@@ -20,24 +20,6 @@ function App() {
   const scroller = useRef();
   const fixedScroll = useRef();
 
-  // SCROLLING
-  // const skewScrolling = () => {
-
-  //   const scrollerHeight = scroller.current.clientHeight;
-  //   const pageTotal = 2;
-
-  //   //Set Current to the scroll position amount
-  //   data.current =  window.scrollY;
-  //   // Set Previous to the scroll previous position
-  //   // data.previous +=  (data.current - data.previous) * data.ease;
-
-  //   // // Set rounded to
-  //   // scroll = Math.round(data.previous * 100) / 100;
-  //   //VARIABLES
-
-  //   requestAnimationFrame(() => skewScrolling());
-  // };
-
   const {scroll} = useScroll();
 
   // const [scrollerSize, setScrollerSize] = useState();
@@ -53,6 +35,17 @@ function App() {
   //   setScroll(scrollTop);
   // };
 
+  const [containerHeight, setContainerHeight] = useState()
+  useEffect(()=>{
+    setContainerHeight(scrollContainer.current.getBoundingClientRect().height)
+  },[size.height])
+  // useEffect(()=>{
+  //   fixedScroll.current.style.position = 'relative'
+  //   if (scroll > containerHeight) {
+  //     fixedScroll.current.style.position = 'fixed'
+
+  //   }
+  // },[scroll])
   return (
     <div ref={app} className="App">
       <Wrapper>
@@ -60,20 +53,25 @@ function App() {
           <div id="scroller" ref={scroller} >
           {/* onScroll={() => onScroll()} */}
             <div ref={scrollContainer} className="scroll">
+              {size.width > 800 ? <>
               <Landing size={size} scroll={scroll} />
               {/* <Scene  size={size} scroll={scroll}/> */}
 
               <Banner size={size} scroll={scroll} />
               <ImgBanner size={size} scroll={scroll} />
               <Projects size={size} scroll={scroll} scroller={scroller}/>
-              {/* <About size={size} scroll={scroll+size.height - scrollerSize} /> */}
+              <About size={size} scroll={scroll}/>
+              </> : <About size={size} scroll={scroll}/>}
+
               {/* <ProgressBar/> */}
             </div>
-            <div id="fixed" ref={fixedScroll}>
+            {/* <div id="fixed" ref={fixedScroll}>
+            <About size={size} scroll={scroll - (containerHeight - size.height)} />
+            </div> */}
+            {/* {Math.round(scroll) >= Math.round(containerHeight) ? 
+            <div className="nothing" /> : <div/>
+          } */}
             
-            </div>
-            {/* <div className="nothing" />
-            <div className="nothing" /> */}
             </div>
           
 

@@ -67,12 +67,12 @@ function About({scroll, size }) {
       <div id="spotlight-child"/>
       </div> */}
       <div className="pageWrap">
-        <div className="cardContainer" style={style.reveal}>
+        <div className="cardContainer" >
           <div className="card" style={style.cardWidth} ref={hoverRef} >
             <div className="cardFace">
               <div className="cardFront" style={{position: containerWidth < 40 ? size.width > 700 && "absolute" : "relative"}}>
                 <img id="profilePic" src={profilePic} />
-                <div className="picOverlay"  style={style.reveal}/>
+                <div className="picOverlay"  å/>
               </div>
               <div className="cardBack" style={{position: containerWidth < 40 ? size.width > 700 && "absolute" : "relative"}}>
                 <h1> hello</h1>
@@ -130,42 +130,13 @@ function About({scroll, size }) {
           </div>
         ) : (
           <div className="headerC center">
-            {scroll > size.height ? (
+            {/* {scroll > size.height ? (
               <h1 className="header">Let's stay in touch.</h1>
             ) : (
               <div />
-            )}
+            )} */}
           </div>
         )}
-
-        {/* <div className="flex-grid">
-        <div className="col">
-          <ul>
-            <li className="item">HTML</li>
-            <li className="item">CSS</li>
-            <li className="item">JAVASCRIPT</li>
-          </ul>
-        </div>
-        <div className="col">
-       
-        </div>
-        
-      </div> */}
-
-        {/* <div className="grid">
-        <div className="gridBanner">
-          <div className="aboutBackground" id="who1">WHO AM I</div>
-            <div className="container">
-            <h1 className="header">A Freelance Web Designer.</h1>
-          </div>
-        </div>
-        <div className="gridLeft">
-          <div className="blah">hello</div>
-        </div>
-        <div className="gridRight">
-          <div className="blah">hello</div>
-        </div>
-      </div> */}
       </div>
     </div>
   );
