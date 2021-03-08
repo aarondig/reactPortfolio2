@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/aaronDiggdon/static/css/main.5987246b.chunk.css",
+    "main.css": "/aaronDiggdon/static/css/main.53fdd9af.chunk.css",
     "main.js": "/aaronDiggdon/static/js/main.7cda38c6.chunk.js",
     "main.js.map": "/aaronDiggdon/static/js/main.7cda38c6.chunk.js.map",
     "runtime-main.js": "/aaronDiggdon/static/js/runtime-main.5b659550.js",
@@ -10,7 +10,7 @@
     "static/js/3.6fa1a149.chunk.js": "/aaronDiggdon/static/js/3.6fa1a149.chunk.js",
     "static/js/3.6fa1a149.chunk.js.map": "/aaronDiggdon/static/js/3.6fa1a149.chunk.js.map",
     "index.html": "/aaronDiggdon/index.html",
-    "static/css/main.5987246b.chunk.css.map": "/aaronDiggdon/static/css/main.5987246b.chunk.css.map",
+    "static/css/main.53fdd9af.chunk.css.map": "/aaronDiggdon/static/css/main.53fdd9af.chunk.css.map",
     "static/js/2.35dfeb2b.chunk.js.LICENSE.txt": "/aaronDiggdon/static/js/2.35dfeb2b.chunk.js.LICENSE.txt",
     "static/media/bannerImg.a04846b0.jpg": "/aaronDiggdon/static/media/bannerImg.a04846b0.jpg",
     "static/media/getStarted.f92bf014.gif": "/aaronDiggdon/static/media/getStarted.f92bf014.gif",
@@ -22,7 +22,7 @@
   "entrypoints": [
     "static/js/runtime-main.5b659550.js",
     "static/js/2.35dfeb2b.chunk.js",
-    "static/css/main.5987246b.chunk.css",
+    "static/css/main.53fdd9af.chunk.css",
     "static/js/main.7cda38c6.chunk.js"
   ]
 }
