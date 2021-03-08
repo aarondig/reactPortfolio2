@@ -19,26 +19,35 @@ function App() {
   const scrollContainer = useRef();
   const scroller = useRef();
   const fixedScroll = useRef();
+  const [mobile, setMobile] = useState();
 
-  const {scroll} = useScroll();
+  useEffect(()=> {
+    size.width < 800 ? setMobile(true) : setMobile(false);
+  },[size.width])
 
-  // const [scrollerSize, setScrollerSize] = useState();
+  // const {scroll} = useScroll();
+
+
+  const [scrollerSize, setScrollerSize] = useState();
 
   // useEffect(() => {
   //   setScrollerSize(scrollContainer.current.getBoundingClientRect().height);
   // }, [size.height]);
 
-  // const [scroll, setScroll] = useState(0);
 
-  // const onScroll = () => {
-  //   const scrollTop = scroller.current.scrollTop;
-  //   setScroll(scrollTop);
-  // };
+ 
+
+  const [scroll, setScroll] = useState(0);
+
+  const onScroll = () => {
+    const scrollTop = scroller.current.scrollTop;
+    setScroll(scrollTop);
+  };
 
   const [containerHeight, setContainerHeight] = useState()
-  useEffect(()=>{
-    setContainerHeight(scrollContainer.current.getBoundingClientRect().height)
-  },[size.height])
+  // useEffect(()=>{
+  //   setContainerHeight(scrollContainer.current.getBoundingClientRect().height)
+  // },[size.height])
   // useEffect(()=>{
   //   fixedScroll.current.style.position = 'relative'
   //   if (scroll > containerHeight) {
@@ -46,25 +55,29 @@ function App() {
 
   //   }
   // },[scroll])
+
+ 
+
   return (
     <div ref={app} className="App">
       <Wrapper>
         
-          <div id="scroller" ref={scroller} >
+          <div id="scroller" ref={scroller} onScroll={() => onScroll()}>
           {/* onScroll={() => onScroll()} */}
-            <div ref={scrollContainer} className="scroll">
+            {/* <div ref={scrollContainer} className="scroll"> */}
               {size.width > 800 ? <>
               <Landing size={size} scroll={scroll} />
               {/* <Scene  size={size} scroll={scroll}/> */}
 
               <Banner size={size} scroll={scroll} />
-              <ImgBanner size={size} scroll={scroll} />
-              <Projects size={size} scroll={scroll} scroller={scroller}/>
               <About size={size} scroll={scroll}/>
+             
+              <Projects size={size} scroll={scroll} scroller={scroller} mobile={mobile}/>
+              {/* <ImgBanner size={size} scroll={scroll} /> */}
               </> : <About size={size} scroll={scroll}/>}
 
               {/* <ProgressBar/> */}
-            </div>
+            {/* </div> */}
             {/* <div id="fixed" ref={fixedScroll}>
             <About size={size} scroll={scroll - (containerHeight - size.height)} />
             </div> */}

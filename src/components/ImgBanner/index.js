@@ -6,11 +6,14 @@ function ImgBanner({ size, scroll }) {
   const pageSize = size.height * 0.8;
 
   const layer = {
-    zIndex: scroll > pageSize && scroll < pageSize * 3.5 ? `1` : `-1`,
+    zIndex: scroll > pageSize && scroll < pageSize * 3.5 ? `1` : `-10`,
+    opacity: scroll > pageSize && scroll < pageSize * 3.5 ? `1` : `0`
   };
+
+  
   return (
-    <div id="ImgBanner" >
-      {/* className="parallax-layer parallax-layer-back" */}
+    <div id="ImgBanner" className="parallax-layer parallax-layer-back">
+    
       {/* <div className="vertical">
         <div className="overlayBox">
           <h1>Explore</h1>

@@ -4,6 +4,7 @@
   height: auto;
   background: linear-gradient(180deg, #fdfdfd 0%, #eff1f3 50%);
   /* background: #141414; */
+  transform-style: flat !important;
   overflow: hidden;
 }
 .projectIntro {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 // import { LoremIpsum } from "react-lorem-ipsum";
 import { Link } from "react-router-dom";
@@ -6,14 +6,19 @@ import { items } from "./data";
 import "./style.css";
 import FactCheck from "../FactCheck";
 
-export function Item({ id, scroll, handleClick, slider }) {
+
+export function Item({ id, scroll, handleClick, mobile, browser }) {
   const { category, title, component, icon } = items.find((item) => item.id === id);
 
-  const style = {
-    transform: `translate3d(0, 0, 0)`,
-    left: 0,
-  }
 
+
+  console.log(browser)
+  const style = browser !== "safari" ? {
+    transform: `translate3d(0, ${scroll}px, 0)`,
+    left: 0,
+  } : {
+    
+  }
 
   const Component = component;
 
@@ -29,7 +34,7 @@ export function Item({ id, scroll, handleClick, slider }) {
       style={style}>
         <Link to="/" onClick={() => handleClick()} />
       </motion.div>
-      <div className="project-content-container open">
+      <div className="project-content-container open" style={style}>
         <motion.div
           className="project-content"
           layoutId={`project-container-${id}`}

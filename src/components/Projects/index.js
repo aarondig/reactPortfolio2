@@ -5,11 +5,11 @@ import useWindowSize from "../../hooks/windowSize";
 import { HashRouter as Router, Route } from "react-router-dom";
 import Store from "../Card/index";
 
-function Projects({ scroll, size, scroller }) {
+function Projects({ scroll, size, scroller, mobile }) {
   // const opacity = -Math.pow((scroll / size.height) * 2 - 0.2, 2) + 1;
 
   const opacity = scroll > size.height * 0.9 * 2.5 ? 1 : 0;
-  
+
   const style = {
     fade: {
       opacity: opacity,
@@ -19,16 +19,12 @@ function Projects({ scroll, size, scroller }) {
     zIndex: scroll > size.height * 0.8 ? `1` : `0`,
   };
 
-
-
-
   return (
     <div id="projects" style={layer}>
-      <div className="projectIntro">
-        {/* <div className="bigBlueBox"></div> */}
+      {/* <div className="projectIntro">
+        <div className="bigBlueBox"></div>
         <div className="vertical">
           <div className="row">
-
             <div className="blueboxLeft"></div>
             <div className="projectsHead">
               <h1 className="header" style={style.fade}>
@@ -37,17 +33,29 @@ function Projects({ scroll, size, scroller }) {
               <h2 className="subHeader" style={style.fade}>
                 These were completed while studying web development and design.
               </h2>
-              {/* <p className="text">Keep Scrolling...</p> */}
+            
             </div>
-            {/* <div className="blueboxRight"></div> */}
+            <div className="blueboxRight"></div>
           </div>
         </div>
-      </div>
-    
-        <Router basename={process.env.PUBLIC_URL}>
-        <Route exact path={["/:id", "/"]} render={props => <Store scroll={scroll} size={size} scroller={scroller} {...props}/>}/>
-        </Router>
-    <div className="bottomLine" />
+      </div> */}
+
+      <Router basename={process.env.PUBLIC_URL}>
+        <Route
+          exact
+          path={["/:id", "/"]}
+          render={(props) => (
+            <Store
+              scroll={scroll}
+              size={size}
+              scroller={scroller}
+              mobile={mobile}
+              {...props}
+            />
+          )}
+        />
+      </Router>
+      <div className="bottomLine" />
 
       <div className="leftNav">
         <a

@@ -8,6 +8,7 @@ import "./style.css";
 function About({ size, scroll }) {
   const clickRef = useRef();
   const moveRef = useRef();
+  const nameC = useRef();
   const [card, setCard] = useState("aaron d.");
   const [click, setClick] = useState();
   const toggleClick = () => {
@@ -40,22 +41,24 @@ function About({ size, scroll }) {
       if (click) {
         clickRef.current.style.transform = `rotateX(0deg) rotateY(180deg) rotateZ(0deg) scale(.6) translate3d(0px, -150px, 0px)`;
         moveRef.current.style.bottom = `0px`;
-        moveRef.current.style.left = `0`;
         moveRef.current.style.width = `100%`;
         moveRef.current.style.borderRadius = `0`;
+        nameC.current.style.opacity = `0`
       }
       if (!click) {
         clickRef.current.style.transform = `rotateX(70deg) rotateZ(-60deg) translate3d(-150px, 320px, 70px)`;
         moveRef.current.style.bottom = `25px`;
-        moveRef.current.style.left = `24%`;
         moveRef.current.style.width = `220px`;
         moveRef.current.style.borderRadius = `50px`;
+        nameC.current.style.opacity = `1`
       }
     }
   
   }, [click, size.width]);
+
   return (
-    <div id="about">
+    <div id="about" style={{height: size.height}}>
+      <div className="background"/>
       <div className="leftContainer">
         <div className="nameC">
           <h1 className="name">Aaron Diggdon</h1>
@@ -68,7 +71,7 @@ function About({ size, scroll }) {
 
       <div className="rightContainer">
         {size.width < 800 && 
-        <div className="nameC">
+        <div className="nameC" ref={nameC}>
           <h1 className="name">Aaron Diggdon</h1>
           <h1 className="subName">Web Developer</h1>
         </div>

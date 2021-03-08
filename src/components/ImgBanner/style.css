@@ -1,11 +1,9 @@
 #ImgBanner {
     position: relative;
     height: 80vh;
-    max-width: 100vw;
+    width: 100vw;
     margin-top: -10%;
-    overflow: hidden;
-    perspective: 1px;
-  -webkit-perspective: 1px;
+    overflow-x: hidden;
 }
 .bannerImgC {
     height: 110%;
@@ -14,13 +12,14 @@
     flex-direction: row;
     justify-content: center;
     position: absolute;
-    transform: translateZ(-1px) scale(2);
 }
 .bannerImg {
     object-fit: cover;
     min-height: 100%;
     min-width: 100%;
     -webkit-user-drag: none;
+    overflow: hidden;
+    transition: opacity .2s ease-in-out;
 }
 .overlayBox {
     height: 25%;

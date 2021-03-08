@@ -23,13 +23,15 @@ function Landing({ size, scroll}) {
   
   return (
     <div id="landing">
+      <Scene blurValue={blurValue} size={size} scroll={scroll}/>
+      <div className="landingWrap">
       <div className="center">
         {/* <div className="outlineLine" /> */}
         <div className="outline" />
       </div>
-      {/* <div className="parallax-layer parallax-layer-back"> */}
-      <Scene blurValue={blurValue} size={size} scroll={scroll}/>
-      {/* </div> */}
+  
+      
+    
       <div className="topHeader">
         <h1 id="topHead">AARON DIGGDON</h1>
       </div>
@@ -41,6 +43,7 @@ function Landing({ size, scroll}) {
         {/* <h1 id="outlineHead">Aaron</h1>
         <h1 id="fillHead">Diggdon</h1>
         <p id="subText">Scroll to Explore</p> */}
+      </div>
       </div>
       {/* {progress > .2 ? <About progress={progress}/> : <div id="prompt"></div> } */}
       {/* <ProgressBar progress={progress}/> */}
