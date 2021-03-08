@@ -19,7 +19,7 @@ function About({ size, scroll }) {
 
   const reset = () => {
     setCard("aaron d.");
-  };
+  }
   useEffect(() => {
     if (size.width > 800) {
     if (click) {
