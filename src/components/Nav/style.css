@@ -68,6 +68,14 @@ z-index: 11;
   align-items: center;
   cursor: pointer;
 }
+.navItemName {
+  width: 100%;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #0018a1;
+}
 
 .icon-placeholder {
   width: 40px;

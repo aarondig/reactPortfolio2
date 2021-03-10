@@ -31,7 +31,7 @@ export const NavItem = ({ i, toggleOpen }) => {
     >
 
       
-      <div className="icon-placeholder" style={style} />
+      {/* <div className="icon-placeholder" style={style} /> */}
       <h1 className="navItemName">{i.title}</h1>
       {/* <div className="text-placeholder" style={style} ></div> */}
     

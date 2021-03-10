@@ -15,11 +15,11 @@ const items = [
     },
    {
       title: "About",
-      link: "#banner",
+      link: "#about",
     },
     {
       title: "Contact",
-      link: "",
+      link: "#about",
     },
   ];
 
