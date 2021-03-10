@@ -81,7 +81,7 @@ export default function SliderContainer(props) {
       setWidth(node.getBoundingClientRect().width);
     }
   }, []);
-
+console.log(props)
   return (
     <>
       <div ref={measuredRef} style={{ height: "100%", width: "100%", position: "relative" }}>
@@ -289,13 +289,12 @@ function Slider({
           let current = active - 1 === i;
           let order = ((active - 1) > (i + 1 > (items.length - 1) ? -1 : i) ? ((((active - 1) - 1 < 0 ? (active - 1) + (items.length - 1) : (active - 1) - 1) <= i ? "prev" :  "next")) : (((active - 1) + 1 > items.length - 1 ? (active - 1) - (items.length - 1) : (active - 1) + 1)) <= i ? "next" : "prev");
 
-
           return <a.div
             key={i}
             style={{ ...styles.item, width, left: x, transform}}
             children={children(items[i], i)}
-            setFreeze={setFreeze}
             id={"item"}
+            active={current}
             class={current ? "active" : order}
           />
         })}

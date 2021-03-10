@@ -30,8 +30,10 @@ position: fixed;
 top: 5%;
 right: 40px;
 color: #0018a1;
+
 }
 #topHead {
+    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     margin: 0;
     

@@ -28,7 +28,7 @@ function Card({
         boxShadow: `none`,
       };
   const projectS = {
-    height: slider ? `35vh` : `auto`,
+    height: slider ? `35vh` : `26%`,
     minHeight: slider ? null : `26%`,
     minWidth: slider ? null : `100px`,
     padding: slider ? `0` : `2%`,
@@ -90,8 +90,8 @@ export function List({ selectedId, handleClick, click, size }) {
   };
   const listS = {
     width: `90%`,
-    height: `auto`,
-    minHeight: `80%`,
+    height: `80vh`,
+   
     
     display: `flex`,
     flexWrap: `wrap`,
@@ -122,8 +122,6 @@ export function List({ selectedId, handleClick, click, size }) {
               showCounter={true}
               link={link}
             >
-              {/* {items.map(card => ( */}
-
               {(card, i) => (
                 <div className="content">
                   <Card

@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  background: linear-gradient(180deg, #fdfdfd 0%, #eff1f3 50%);
+  background: linear-gradient(180deg, white 0%, #e8e8e8 90%);
   /* background: #141414; */
   transform-style: flat !important;
   overflow: hidden;

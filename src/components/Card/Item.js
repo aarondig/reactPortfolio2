@@ -12,7 +12,6 @@ export function Item({ id, scroll, handleClick, mobile, browser }) {
 
 
 
-  console.log(browser)
   const style = browser !== "safari" ? {
     transform: `translate3d(0, ${scroll}px, 0)`,
     left: 0,
