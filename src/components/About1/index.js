@@ -62,7 +62,8 @@ function About({ size, scroll }) {
       <div className="leftContainer">
         <div className="nameC">
           <h1 className="name">Aaron Diggdon</h1>
-          <h1 className="subName">Web Developer</h1>
+          <h2 className="subName">Web Developer</h2>
+          <p>Student at The New School in New York City studying Journalism + Design</p>
         </div>
         <div className="bottomTextC">
           <p>Certified by UC Berkeley Extension</p>
@@ -73,7 +74,7 @@ function About({ size, scroll }) {
         {size.width < 800 && 
         <div className="nameC" ref={nameC}>
           <h1 className="name">Aaron Diggdon</h1>
-          <h1 className="subName">Web Developer</h1>
+          <h1 className="subName">Free-Lance Web Developer</h1>
         </div>
         }
       
