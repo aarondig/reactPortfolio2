@@ -32,8 +32,9 @@ function Card({
     minHeight: slider ? null : `26%`,
     minWidth: slider ? null : `100px`,
     padding: slider ? `0` : `2%`,
- 
-    paddingBottom: size.width < 800 ? (slider ? `0` : `20%`) : (slider ? `0` : `1%`),
+
+    paddingBottom:
+      size.width < 800 ? (slider ? `0` : `20%`) : slider ? `0` : `1%`,
   };
 
   const container = {
@@ -91,69 +92,78 @@ export function List({ selectedId, handleClick, click, size }) {
   const listS = {
     width: `90%`,
     height: `80vh`,
-   
-    
+
     display: `flex`,
     flexWrap: `wrap`,
     justifyContent: `center`,
     alignContent: `flex-start`,
   };
+
+  const btnStyleC = {
+    background: slider ? "white" : "#0018a1",
+  };
+  const btnStyleG = {
+    background: slider ? "#0018a1" : "white",
+  };
   return (
-    <div className="listC">
-      <div className="lineContainer" onClick={handleSlider}>
-          <div className="row">
-            {slider ? (
-              <h2 className="viewAllBtnTxt">View All</h2>
-            ) : (
-              <h2 className="viewAllBtnTxt">Show Less</h2>
-            )}
-            <div className="vert">
-              <div className="line" />
+    <>
+      <div className="listC">
+        <ul className="project-list" style={slider ? null : listS}>
+          {slider ? (
+            <div className="main">
+              <InfiniteSlider
+                items={items}
+                itemWidth={"full"}
+                showButtons={true}
+                showCounter={true}
+                link={link}
+              >
+                {(card, i) => (
+                  <div className="content">
+                    <Card
+                      key={card.id}
+                      {...card}
+                      isSelected={card.id === selectedId}
+                      size={size}
+                      handleClick={handleClick}
+                      click={click}
+                      link={link}
+                      slider={slider}
+                    />
+                  </div>
+                )}
+              </InfiniteSlider>
+              <div className="pageInfo">
+                <h1 className="name">Projects</h1>
+                <p className="text">These were completed while studying web development and design. Showcasing my ability to quickly learn advanced technologies, and work well in teams.</p>
+              </div>
             </div>
+          ) : (
+            <>
+              {items.map((card, i) => (
+                <Card
+                  key={card.id}
+                  {...card}
+                  isSelected={card.id === selectedId}
+                  size={size}
+                  handleClick={handleClick}
+                  click={click}
+                  slider={slider}
+                />
+              ))}
+            </>
+          )}
+        </ul>
+      </div>
+      <div className="lineContainer" onClick={handleSlider}>
+        <div className="row">
+            {slider ? (
+              <span class="material-icons btnItem">view_module</span>
+            ) : (
+              <span class="material-icons btnItem">view_carousel</span>
+            )}
           </div>
-        </div>
-      <ul className="project-list" style={slider ? null : listS}>
-        {slider ? (
-          <div className="main">
-            <InfiniteSlider
-              items={items}
-              itemWidth={"full"}
-              showButtons={true}
-              showCounter={true}
-              link={link}
-            >
-              {(card, i) => (
-                <div className="content">
-                  <Card
-                    key={card.id}
-                    {...card}
-                    isSelected={card.id === selectedId}
-                    size={size}
-                    handleClick={handleClick}
-                    click={click}
-                    link={link}
-                    slider={slider}
-                  />
-                </div>
-              )}
-            </InfiniteSlider>
-          </div>
-        ) : (
-          <>
-            {items.map((card, i) => (
-              <Card
-                key={card.id}
-                {...card}
-                isSelected={card.id === selectedId}
-                size={size}
-                handleClick={handleClick}
-                click={click}
-                slider={slider}
-              />
-            ))}
-          </>
-        )}
-      </ul>
-    </div>
+      </div>
+    </>
   );
 }

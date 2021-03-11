@@ -131,10 +131,6 @@ body {
 body {
   overflow: hidden !important;
 }
-  #scroller {
-    height: auto;
-    overflow: hidden !important;
-  }
   .header {
     font-size: 50px;
   }
@@ -154,6 +150,11 @@ body {
   background: white;
   color: red;
   font-size: 40px;
+}
+
+.text {
+  color: #2a2a2a;
+  line-height: 1.4em;
 }
 
 h1 {

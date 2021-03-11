@@ -71,3 +71,31 @@
     margin-top: -0px;
     background: transparent;
 }
+
+@media (max-width: 600px) {
+    .bannerBox {
+        width: 80%;
+    }
+    .bannerTitle {
+        width: 50%;
+        text-align: left;
+        margin-left: 55px;
+        margin-right: auto;
+    }
+    .bannerSub {
+        margin: 0;
+        margin-bottom: 30px;
+        font-size: 24px;
+        font-weight: 200;
+        white-space: nowrap;
+        margin-left: 0px;
+        margin-bottom: 50px;
+      
+    }
+    .bannerText {
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        margin-top: 50px;
+    }
+}

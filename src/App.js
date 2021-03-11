@@ -65,7 +65,7 @@ function App() {
           <div id="scroller" ref={scroller} onScroll={() => onScroll()}>
           {/* onScroll={() => onScroll()} */}
             {/* <div ref={scrollContainer} className="scroll"> */}
-              {size.width > 800 ? <>
+              {/* {size.width > 800 ? <> */}
               <Landing size={size} scroll={scroll} />
               {/* <Scene  size={size} scroll={scroll}/> */}
 
@@ -74,7 +74,9 @@ function App() {
              
               <Projects size={size} scroll={scroll} scroller={scroller} mobile={mobile}/>
               {/* <ImgBanner size={size} scroll={scroll} /> */}
-              </> : <About size={size} scroll={scroll}/>}
+
+              
+              {/* </> : <About size={size} scroll={scroll}/>} */}
 
               {/* <ProgressBar/> */}
             {/* </div> */}

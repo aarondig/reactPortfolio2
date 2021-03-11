@@ -24,6 +24,14 @@ height: 400px;
   margin-right: auto;
     touch-action: pan-x;
 }
+
+.pageInfo {
+  width: 40%;
+  position: absolute;
+  left: 50px;
+  bottom: 30px;
+ 
+}
 .content {
   max-width: 80%;
   height: 100%;
@@ -79,18 +87,23 @@ height: 400px;
     box-shadow: 0 20px 25px rgba(0, 0, 0, 0.217);
     z-index: 1;
   }
-  .vert {
-    height: 100%;
-    width: 40%;
+
+
+  /* .btn {
+    width: 100%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-bottom: solid 1px white;
+  } */
+  .btnItem {
+    color: white;
+    font-size: 50px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .line {
-    height: 1px;
-    width: 100%;
-    background: white;
-  }
+
   .viewAllBtnTxt {
     color: white;
     font-size: 20px;

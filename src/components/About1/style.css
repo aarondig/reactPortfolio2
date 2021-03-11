@@ -229,8 +229,8 @@ background: white;
 }
 @media screen and (max-width: 800px)  {
     #about {
-      overflow: hidden;
-      transform-style: flat;
+      /* overflow: hidden;
+      transform-style: flat; */
     }
     .leftContainer {
         display: none;
@@ -257,6 +257,7 @@ background: white;
        margin-top: 50px;
        margin-left: auto;
        margin-right: auto;
+       
    }
    .name {
        font-size: 50px;
@@ -273,7 +274,7 @@ background: white;
    .cardContainer {
      display: flex;
      justify-content: center;
-     transform: translateZ(0px) scale(1);
+     transform-origin: 50% 50%;
    }
    .card {
      min-width: 100vw;

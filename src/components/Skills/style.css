@@ -1,0 +1,10 @@
+#skills {
+    height: 100vh;
+}
+
+.leftPanel {
+    position: relative;
+    width: 33%;
+    height: 80%;
+    float: left;
+}

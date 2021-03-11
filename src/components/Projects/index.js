@@ -55,7 +55,7 @@ function Projects({ scroll, size, scroller, mobile }) {
           )}
         />
       </Router>
-      <div className="bottomLine" />
+      {/* <div className="bottomLine" /> */}
 
       <div className="leftNav">
         {/* <a

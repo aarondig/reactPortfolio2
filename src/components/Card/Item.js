@@ -70,3 +70,15 @@ export function Item({ id, scroll, handleClick, mobile, browser }) {
     </>
   );
 }
+
+
+// const btnItemC = {
+//   color: slider ? "white" : "#0018a1",
+// }
+
+// const btnStyleG = {
+//   background: slider ? "white" : "#0018a1",
+// };
+// const btnStyleC = {
+//   background: slider ? "#0018a1" : "white",
+// };
