@@ -19,6 +19,7 @@ export function Item({ id, scroll, handleClick, mobile, browser }) {
     
   }
 
+  console.log(browser)
   const Component = component;
 
   return (

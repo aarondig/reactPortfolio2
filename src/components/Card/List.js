@@ -41,6 +41,8 @@ function Card({
     borderRadius: slider ? "5px" : `10px`,
     transition: `.4s all ease-in-out`,
   };
+
+ 
   return (
     <li className={`project`} id={`project${id}`} style={projectS}>
       <div
@@ -81,7 +83,7 @@ function Card({
   );
 }
 
-export function List({ selectedId, handleClick, click, size }) {
+export function List({ selectedId, handleClick, scroll, scrollerSize, click, size }) {
   const link = useRef();
 
   const [slider, setSlider] = useState(true);
@@ -91,7 +93,7 @@ export function List({ selectedId, handleClick, click, size }) {
   };
   const listS = {
     width: `90%`,
-    height: `80vh`,
+    height: size.width > 800 ? `80vh` : `auto`,
 
     display: `flex`,
     flexWrap: `wrap`,
@@ -105,6 +107,17 @@ export function List({ selectedId, handleClick, click, size }) {
   const btnStyleG = {
     background: slider ? "#0018a1" : "white",
   };
+
+  const btnStyle = size.width < 800 ? {
+    transform: `translate3d(0, ${scroll-(scrollerSize-size.height)}px, 0)`,
+    transition: `.05s all`
+  } : {
+    top: `initial`,
+    bottom: `25px`,
+    right: `30px`
+  }
+  console.log(scroll)
+  console.log(scrollerSize)
   return (
     <>
       <div className="listC">
@@ -135,7 +148,7 @@ export function List({ selectedId, handleClick, click, size }) {
               </InfiniteSlider>
               <div className="pageInfo">
                 <h1 className="name">Projects</h1>
-                <p className="text">These were completed while studying web development and design. Showcasing my ability to quickly learn advanced technologies, and work well in teams.</p>
+                <p className="text">These were completed while studying web development and design.</p>
               </div>
             </div>
           ) : (
@@ -155,7 +168,7 @@ export function List({ selectedId, handleClick, click, size }) {
           )}
         </ul>
       </div>
-      <div className="lineContainer" onClick={handleSlider}>
+      <div className="lineContainer" style={btnStyle} onClick={handleSlider}>
         <div className="row">
             {slider ? (
               <span class="material-icons btnItem">view_module</span>

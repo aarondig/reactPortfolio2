@@ -1,3 +1,4 @@
+
 #landing {
     position: relative;
     min-height: 90vh;
@@ -31,6 +32,13 @@ top: 5%;
 right: 40px;
 color: #0018a1;
 
+}
+.backText {
+    font-family: 'Montserrat', sans-serif;
+    
+    font-size: 300px;
+    position: absolute;
+    color: rgba(210, 210, 210, 0.416);
 }
 #topHead {
     font-family: 'Montserrat', sans-serif;
@@ -74,17 +82,7 @@ color: #0018a1;
     bottom: -50%;
     /* background: red; */
 }
-/* .outlineLine {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 50%;
-    border-color: white;
-    top: -60px;
-    right: -60px;
-} */
+
 #subText {
     font-size: 15px;
     font-weight: 200;
@@ -101,14 +99,15 @@ color: #0018a1;
     } */
 
 }
-/* @media screen and (max-width: 800px)  {
-    .mainHeader {
-        position: absolute;
+@media screen and (max-width: 800px)  {
+    .backTextC {
+
+    }
+    .backText {
         transform: rotate(270deg);
-        display: inline-grid;
-        justify-content: center;
-       flex-direction: row;
-       margin-left: 0;
+        top: 15%;
+        right: 30%;
+        font-size: 180px;
     }
 
-} */
+}

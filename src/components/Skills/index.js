@@ -6,14 +6,19 @@ function Skills({ size, scroll }) {
   
   return (
     <div id="skills" >
-      <div className="leftPanel">
+      <div className="skillsBanner">
+        
+      </div>
+      <div className="panelContainer">
+      <div className="leftPanel panel">
 
       </div>
-      <div className="middlePanel">
+      <div className="middlePanel panel">
         
         </div>
-        <div className="rightPanel">
+        <div className="rightPanel panel">
         
+        </div>
         </div>
     </div>
   );

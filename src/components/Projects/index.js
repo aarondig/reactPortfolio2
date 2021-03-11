@@ -5,7 +5,7 @@ import useWindowSize from "../../hooks/windowSize";
 import { HashRouter as Router, Route } from "react-router-dom";
 import Store from "../Card/index";
 
-function Projects({ scroll, size, scroller, mobile }) {
+function Projects({ scroll, size, scroller,scrollerSize, mobile }) {
   // const opacity = -Math.pow((scroll / size.height) * 2 - 0.2, 2) + 1;
 
   const opacity = scroll > size.height * 0.9 * 2.5 ? 1 : 0;
@@ -50,12 +50,12 @@ function Projects({ scroll, size, scroller, mobile }) {
               size={size}
               scroller={scroller}
               mobile={mobile}
+              scrollerSize={scrollerSize}
               {...props}
             />
           )}
         />
       </Router>
-      {/* <div className="bottomLine" /> */}
 
       <div className="leftNav">
         {/* <a

@@ -43,12 +43,15 @@ safariAgent && setBrowser("safari")
 firefoxAgent && setBrowser("firefox")
 IExplorerAgent && setBrowser("IE")
 operaAgent && setBrowser("opera")
+
+
+console.log(navigator.userAgent)
 }
 
 
 
 useEffect(()=> {
-  detect()
+  detect();
 },[])
 
 return browser;

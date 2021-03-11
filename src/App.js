@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import useWindowSize from "./hooks/windowSize";
 import "./App.css";
+import "./fonts/fonts.css";
 import About from "./components/About1";
 import Wrapper from "./components/Wrapper";
 import Landing from "./components/Landing";
@@ -12,6 +13,7 @@ import ImgBanner from "./components/ImgBanner";
 import useScroll from "./hooks/scroll"
 import Scene from "./components/Scene";
 import { HashRouter as Router, Route } from "react-router-dom";
+import Skills from "./components/Skills";
 
 function App() {
   const size = useWindowSize();
@@ -35,7 +37,11 @@ function App() {
   // }, [size.height]);
 
 
- 
+ useEffect(()=>{
+const scrollerHeight = scroller.current.scrollHeight
+setScrollerSize(scrollerHeight)
+ },[size.height])
+
 
   const [scroll, setScroll] = useState(0);
 
@@ -71,11 +77,11 @@ function App() {
 
               <Banner size={size} scroll={scroll} />
               <About size={size} scroll={scroll}/>
-             
-              <Projects size={size} scroll={scroll} scroller={scroller} mobile={mobile}/>
+             {/* <Skills/> */}
+              <Projects size={size} scroll={scroll} scroller={scroller} scrollerSize={scrollerSize} mobile={mobile}/>
               {/* <ImgBanner size={size} scroll={scroll} /> */}
 
-              
+
               {/* </> : <About size={size} scroll={scroll}/>} */}
 
               {/* <ProgressBar/> */}

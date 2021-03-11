@@ -6,28 +6,15 @@ import { motion, useViewportScroll } from "framer-motion";
 import "./style.css";
 
 function Landing({ size, scroll}) {
-  const { scrollYProgress } = useViewportScroll();
 
-  const [progress, setProgress] = useState(0);
-  scrollYProgress.onChange((e) => setProgress(e));
-  const blurValue = progress * 10 + "px";
-  const num = progress * -6;
-  const titlePosi = -6 + Math.pow(num, 3);
-
-  const pageSize = size.height*.8;
-  // const opacity = {
-  //   opacity: scroll > pageSize && scroll < pageSize * 3.5 ? `0` : `1`,
-  //   transition: `opacity .4s ease-in-out`
-  // }
-  
-  
   return (
     <div id="landing">
-      <Scene blurValue={blurValue} size={size} scroll={scroll}/>
+      <Scene  size={size} scroll={scroll}/>
       <div className="landingWrap">
-      <div className="center">
-        {/* <div className="outlineLine" /> */}
-        <div className="outline" />
+      
+      <div className="center backTextC">
+        {/* <div className="outline" /> */}
+        <h1 className="backText">hello!</h1>
       </div>
   
       
